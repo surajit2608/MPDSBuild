@@ -12,6 +12,7 @@ import ExtraContent from '../components/ExtraContent'
 import PostFeed from '../components/PostFeed'
 import PreviewableImage from '../components/PreviewableImage'
 import HTMLContent from '../components/HTMLContent'
+import Banner from '../components/Banner'
 
 export const PageTemplate = ({
   header,
@@ -29,73 +30,84 @@ export const PageTemplate = ({
   inlineImages,
   formText,
 }) => (
-  <div
-    className={`post-content page-template page-${cssSlug} ${
-      !!featuredImage ? 'has-image' : 'no-image'
-    }`}
-    style={{
-      padding: 0,
-      maxWidth: '1000px',
-    }}
-  >
-    <PageHeader
-      header={header}
-      subheader={subheader}
-      missionStatement={missionStatement}
-    />
-    <section className="post-content-body">
-      {/* Featured Image, but not on homepage */}
-      {templateKey !== 'index-page' && !!featuredImage && (
-        <figure className="gatsby-resp-image-card-full">
-          <PreviewableImage
-            isPreview={isPreview}
-            src={
-              isPreview
-                ? featuredImage.src
-                : { m: featuredImage.m, d: featuredImage.d }
-            }
-            alt={featuredImage.alt}
-            caption={featuredImage.caption}
+  <div className={`post-content page-template page-${cssSlug} ${!!featuredImage ? 'has-image' : 'no-image'}`}>
+
+    {!!featuredImage && (
+      <Banner
+        name={name}
+        jobTitle={jobTitle}
+      />
+    )}
+
+    <section className="sec-intro-text">
+      <div className="pg-width">
+        <div className="content">
+
+          <PageHeader
+            header={header}
+            subheader={subheader}
+            missionStatement={missionStatement}
           />
-        </figure>
-      )}
-      {/* homepage short biography and photo */}
-      {!!shortBiography && (
-        <ShortBiography
-          learnMoreButton={learnMoreButton}
-          shortBiography={shortBiography}
-          image={featuredImage}
-          isPreview={isPreview}
-        />
-      )}
-      {/* about page long bio */}
-      {!!longBiography_MD && (
-        <HTMLContent
-          className="gatsby-resp-image-card"
-          content={longBiography_MD}
-          inlineImages={inlineImages}
-        />
-      )}
-      {/* contact form fields, if present */}
-      {templateKey === 'contact-page' && !!formText && (
-        <ContactForm formText={formText} isPreview={isPreview} />
-      )}
-      {/* optionally display recent posts */}
-      {!!recentPosts && !!recentPosts.length && (
-        <Fragment>
-          <hr />
-          <h2>Recent Blog Posts</h2>
-          <PostFeed isPreview={isPreview} posts={recentPosts} />
-        </Fragment>
-      )}
-      {/* display any extra content */}
-      {!!extraContent && (
-        <ExtraContent
-          content={extraContent}
-          page={templateKey}
-          inlineImages={inlineImages}
-        />
-      )}
+          <section className="post-content-body">
+            {/* Featured Image, but not on homepage */}
+            {templateKey !== 'index-page' && !!featuredImage && (
+              <figure className="gatsby-resp-image-card-full">
+                <PreviewableImage
+                  isPreview={isPreview}
+                  src={
+                    isPreview
+                      ? featuredImage.src
+                      : { m: featuredImage.m, d: featuredImage.d }
+                  }
+                  alt={featuredImage.alt}
+                  caption={featuredImage.caption}
+                />
+              </figure>
+            )}
+            {/* homepage short biography and photo */}
+            {!!shortBiography && (
+              <ShortBiography
+                learnMoreButton={learnMoreButton}
+                shortBiography={shortBiography}
+                image={featuredImage}
+                isPreview={isPreview}
+              />
+            )}
+            {/* about page long bio */}
+            {!!longBiography_MD && (
+              <HTMLContent
+                className="gatsby-resp-image-card"
+                content={longBiography_MD}
+                inlineImages={inlineImages}
+              />
+            )}
+            {/* contact form fields, if present */}
+            {templateKey === 'contact-page' && !!formText && (
+              <ContactForm formText={formText} isPreview={isPreview} />
+            )}
+            {templateKey === 'gallery-page' && !!formText && (
+              <ContactForm formText={formText} isPreview={isPreview} />
+            )}
+            {/* optionally display recent posts */}
+            {!!recentPosts && !!recentPosts.length && (
+              <Fragment>
+                <hr />
+                <h2>Recent Blog Posts</h2>
+                <PostFeed isPreview={isPreview} posts={recentPosts} />
+              </Fragment>
+            )}
+            {/* display any extra content */}
+            {!!extraContent && (
+              <ExtraContent
+                content={extraContent}
+                page={templateKey}
+                inlineImages={inlineImages}
+              />
+            )}
+          </section>
+
+        </div>
+      </div>
     </section>
   </div>
 )
@@ -150,8 +162,7 @@ const Page = ({ data }) => {
     shortBiography,
     longBiography_MD,
     // null out the featured image if empty to prevent erroneous proptype warnings
-    featuredImage:
-      !!featuredImage && !!featuredImage.src ? featuredImage : null,
+    featuredImage: !!featuredImage && !!featuredImage.src ? featuredImage : null,
     extraContent: data.markdownRemark.html,
     recentPosts: showRecentPosts ? recentPosts : [],
     inlineImages,

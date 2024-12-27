@@ -2,7 +2,6 @@ import React, { Fragment, useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import Nav from './Nav'
 import Footer from './Footer'
-import Banner from './Banner'
 import Fonts from './Fonts'
 import { ThemeOptionsContext } from '../context/ThemeOptions'
 import { useSiteData } from '../hooks'
@@ -51,24 +50,7 @@ const Layout = ({ seoProps, children }) => {
       />
 
       <div className="all-sections">
-
-        <Banner
-          name={name}
-          jobTitle={jobTitle}
-        />
-
-        <section className="sec-intro-text">
-          <div className="pg-width">
-            <div className="content">
-              {children}
-              {/* <p>Since joining the web-based restaurant review company in its startup phase, <strong>Chandler Villacruz</strong> has spearheaded <em>market research</em> activities that have allowed the firm to build <i>effective advertising</i> campaigns and achieve sound <b><a>business growth</a></b>.</p>
-              <div className="btn-row">
-                <Link to={`/profile`} className="btn-primary">View Profile</Link>
-                <Link to={`/blog`} className="btn-primary">Visit My Blog</Link>
-              </div> */}
-            </div>
-          </div>
-        </section>
+        {children}
       </div>
 
       <Footer />
