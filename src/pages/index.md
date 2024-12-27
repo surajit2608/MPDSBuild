@@ -8,7 +8,7 @@ schemaType: WebPage
 header: Chandler Villacruz
 subheader: Senior Marketing Manager
 featuredImage:
-  src: /img/headshot.jpg
+  src: /img/pic-executive-main-banner-01.webp
   alt: Headshot of Chandler Villacruz
   caption: null
 missionStatement: "{{mission_statement}}"
