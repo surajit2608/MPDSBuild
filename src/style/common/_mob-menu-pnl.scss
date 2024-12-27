@@ -1,0 +1,160 @@
+#menu__toggle {
+    opacity: 0;
+    display: none;
+}
+
+.mob-menu-pnl {
+    position: fixed;
+    top: 0px;
+    right: -330px;
+    bottom: 0px;
+    width: 320px;
+    display: unset;
+    background-color: var(--clr-rd-black);
+    padding: 20px;
+    overflow: hidden;
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    .heading-row {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+
+        a.logo-title {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.3s ease;
+
+            span.logo {
+                background-color: var(--clr-rd-white);
+                color: var(--clr-rd-black);
+                font-size: 16px;
+                line-height: 42px;
+                font-weight: 600;
+                border-radius: 42px;
+                overflow: hidden;
+                padding: 0px 8px;
+                max-width: 42px;
+                min-width: 42px;
+                text-align: center;
+                transition: all 0.3s ease;
+            }
+
+            span.title {
+                font-size: 18px;
+                line-height: 22px;
+                font-weight: 500;
+                color: var(--clr-rd-white);
+                transition: all 0.3s ease;
+
+                b {
+                    font-weight: 700;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+
+        label.mobile-menu {
+            background-color: var(--clr-rd-black);
+            color: var(--clr-rd-white);
+            padding: 0px 6px;
+            margin: 0px;
+            border-radius: 6px;
+            border: 1px solid var(--clr-rd-white);
+            overflow: hidden;
+            font-size: 16px;
+            line-height: 32px;
+            font-weight: 600;
+            text-align: center;
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    nav {
+        position: relative;
+        display: block;
+        margin: 40px 0px 0px 0px;
+        padding: 0px;
+        overflow: hidden;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+            list-style: none;
+
+            li {
+                margin: 0px;
+                padding: 0px;
+
+                a {
+                    display: block;
+                    margin: 0px;
+                    padding: 14px 20px;
+                    font-size: 16px;
+                    line-height: 22px;
+                    font-weight: 600;
+                    color: var(--clr-rd-white);
+                    overflow: hidden;
+                }
+
+                a[aria-current="page"] {
+                    background-color: var(--clr-rd-white);
+                    border-radius: 6px;
+                    overflow: hidden;
+                    font-weight: 800;
+                    color: var(--clr-rd-black);
+                }
+            }
+
+            li.active {
+                background-color: var(--clr-rd-white);
+                border-radius: 6px;
+                overflow: hidden;
+
+                a {
+                    font-weight: 800;
+                    color: var(--clr-rd-black);
+                }
+            }
+        }
+    }
+}
+
+label.overlay-bg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 1px;
+    z-index: 90;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+
+@media screen and (max-width: 991px) {
+    #menu__toggle:checked+.mob-menu-pnl {
+        display: unset;
+        right: 0px;
+        opacity: 1;
+    }
+
+    #menu__toggle:checked+.mob-menu-pnl+label.overlay-bg {
+        bottom: 0px;
+        height: unset;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(20px);
+        opacity: 1;
+    }
+}

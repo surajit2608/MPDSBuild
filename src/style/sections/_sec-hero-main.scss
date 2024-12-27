@@ -1,0 +1,194 @@
+section.sec-hero-main {
+    overflow: hidden;
+
+    .banner {
+        position: relative;
+        display: flex;
+        align-items: end;
+        margin: 0px;
+        padding: 40px 150px;
+        height: 450px;
+        background-color: var(--clr-rd-gray-light);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        img.bg {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            display: block;
+            margin: 0px;
+            padding: 0px;
+            width: 100% !important;
+            height: 100% !important;
+            border-radius: 10px;
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .content-box {
+            position: relative;
+            display: block;
+            margin: 0px;
+            padding: 0px;
+
+            img.profile {
+                position: relative;
+                display: block;
+                margin: 0px;
+                padding: 0px;
+                width: 140px !important;
+                height: 140px !important;
+                border-radius: 80px;
+                object-fit: cover;
+                border: 2px solid var(--clr-rd-white);
+                background-color: var(--clr-rd-gray);
+                transition: all 0.3s ease;
+            }
+
+            h1 {
+                display: block;
+                padding: 0px;
+                margin: 20px 0px 2px 0px;
+                font-size: 46px;
+                line-height: 52px;
+                font-weight: 700;
+                color: var(--clr-rd-white);
+                text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+                transition: all 0.3s ease;
+
+                span {
+                    font-weight: 500;
+                }
+            }
+
+            p {
+                display: block;
+                padding: 0px;
+                margin: 0px;
+                font-size: 24px;
+                line-height: 28px;
+                font-weight: 500;
+                color: var(--clr-rd-white);
+                text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+                transition: all 0.3s ease;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    section.sec-hero-main {
+        .banner {
+            padding: 30px 100px;
+            height: 400px;
+
+            .content-box {
+
+                img.profile {
+                    width: 120px !important;
+                    height: 120px !important;
+                }
+
+                h1 {
+                    margin: 15px 0px 2px 0px;
+                    font-size: 40px;
+                    line-height: 50px;
+                }
+
+                p {
+                    font-size: 22px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    section.sec-hero-main {
+        .banner {
+            padding: 40px 60px;
+            height: 350px;
+
+            .content-box {
+
+                img.profile {
+                    width: 100px !important;
+                    height: 100px !important;
+                }
+
+                h1 {
+                    margin: 15px 0px 2px 0px;
+                    font-size: 36px;
+                    line-height: 40px;
+                }
+
+                p {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section.sec-hero-main {
+        .banner {
+            padding: 30px 40px;
+            height: 300px;
+
+            .content-box {
+
+                img.profile {
+                    width: 80px !important;
+                    height: 80px !important;
+                }
+
+                h1 {
+                    margin: 15px 0px 2px 0px;
+                    font-size: 32px;
+                    line-height: 36px;
+                }
+
+                p {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 467px) {
+    section.sec-hero-main {
+        .banner {
+            padding: 20px 20px;
+            height: 260px;
+
+            .content-box {
+
+                img.profile {
+                    width: 60px !important;
+                    height: 60px !important;
+                }
+
+                h1 {
+                    margin: 15px 0px 2px 0px;
+                    font-size: 28px;
+                    line-height: 32px;
+                }
+
+                p {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

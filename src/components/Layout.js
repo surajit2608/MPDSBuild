@@ -8,7 +8,7 @@ import { ThemeOptionsContext } from '../context/ThemeOptions'
 import { useSiteData } from '../hooks'
 import SEO, { seoPropTypes } from './SEO'
 
-import '../style/all.sass'
+import '../style/main.scss'
 
 const Layout = ({ seoProps, children }) => {
   const [toggleNav, setToggleNav] = useState(false)

@@ -146,7 +146,7 @@ module.exports = {
       options: {
         develop: false, // Activates purging in npm run develop
         printRejected: true,
-        purgeOnly: ['/style/all.sass'], // applies purging only on the bulma css file
+        purgeOnly: ['/style/main.scss'], // applies purging only on the bulma css file
         // content: [path.join(process.cwd(), 'src/**/!(*.d).{ts,js,jsx,tsx,md,mdx}')]
         whitelistPatterns: [
           /^table$/,

@@ -1,0 +1,118 @@
+section.sec-intro-text {
+    position: relative;
+    display: block;
+    margin: 50px 0px;
+    padding: 0px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    .pg-width {
+        .content {
+            position: relative;
+            display: block;
+            padding: 0px 150px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+
+            p {
+                display: block;
+                padding: 0px;
+                margin: 10px 0px;
+                font-size: 24px;
+                line-height: 34px;
+                font-weight: 500;
+                color: var(--clr-rd-black);
+                transition: all 0.3s ease;
+
+                strong,
+                b {
+                    font-weight: 700;
+                }
+
+                i,
+                em {
+                    font-weight: inherit;
+                }
+
+                a {
+                    font-weight: inherit;
+                    text-decoration: underline;
+                    color: var(--clr-rd-blue);
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1299px) {
+    section.sec-intro-text {
+        margin: 40px 0px;
+
+        .pg-width {
+            .content {
+                p {
+                    font-size: 22px;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    section.sec-intro-text {
+        margin: 30px 0px;
+
+        .pg-width {
+            .content {
+                padding: 0px 100px;
+
+                p {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    section.sec-intro-text {
+        .pg-width {
+            .content {
+                padding: 0px 60px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section.sec-intro-text {
+        .pg-width {
+            .content {
+                padding: 0px 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 467px) {
+    section.sec-intro-text {
+        margin: 20px 0px;
+
+        .pg-width {
+            .content {
+                padding: 0px 20px;
+
+                p {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
