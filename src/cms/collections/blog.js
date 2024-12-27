@@ -28,16 +28,14 @@ export default {
       label: 'Published Date',
       name: 'date',
       widget: 'datetime',
-      hint:
-        "Optionally, the date you want to appear on your blog post. It doesn't have to be the actual publication date. If you leave this blank, it will be automatically generated",
+      hint: "Optionally, the date you want to appear on your blog post. It doesn't have to be the actual publication date. If you leave this blank, it will be automatically generated",
     },
     {
       label: 'Teaser Text',
       name: 'teaser',
       widget: 'text',
       required: false,
-      hint:
-        'If your theme shows a short preview of each article on the blog page, you can optionally customize the text here. Write 2-3 sentences max.',
+      hint: 'If your theme shows a short preview of each article on the blog page, you can optionally customize the text here. Write 2-3 sentences max.',
     },
     featuredImage,
     {

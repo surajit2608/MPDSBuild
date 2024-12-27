@@ -29,8 +29,7 @@ export default ({ label, file, templateKey, pageSlug, additionalFields }) => {
       name: 'formText',
       widget: 'object',
       required: true,
-      hint:
-        'The text you want to appear for each section of your contact form.',
+      hint: 'The text you want to appear for each section of your contact form.',
       fields: [
         {
           label: 'Sender Name',
@@ -84,8 +83,7 @@ export default ({ label, file, templateKey, pageSlug, additionalFields }) => {
       name: 'body',
       widget: 'markdown',
       required: false,
-      hint:
-        'Any additional content you want to place at the bottom of the page.',
+      hint: 'Any additional content you want to place at the bottom of the page.',
     },
     showRecentPosts: {
       label: 'Show the 4 most recent blog posts at the bottom of the page?',
@@ -95,9 +93,7 @@ export default ({ label, file, templateKey, pageSlug, additionalFields }) => {
     },
   }
 
-  const others = !additionalFields
-    ? []
-    : additionalFields.map((name) => optionalFields[name])
+  const others = !additionalFields ? [] : additionalFields.map((name) => optionalFields[name])
 
   return {
     file,
@@ -124,8 +120,7 @@ export default ({ label, file, templateKey, pageSlug, additionalFields }) => {
         widget: 'select',
         required: true,
         default: 'WebPage',
-        hint:
-          'The type of page this is, used by Google\'s structured data tool. If you\'re not sure, choose "WebPage".',
+        hint: 'The type of page this is, used by Google\'s structured data tool. If you\'re not sure, choose "WebPage".',
         options: ['WebPage', 'AboutPage', 'ContactPage'],
       },
       {
