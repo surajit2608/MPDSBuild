@@ -7,13 +7,13 @@ siteUrl: https://mpdsbuild.netlify.app/
 favicon: /img/favicon.png
 socialLinks:
   twitter:
-    url: ""
+    url: https://www.x.com
     show: false
   facebook:
-    url: ""
+    url: https://www.facebook.com
     show: false
   linkedin:
-    url: ""
+    url: https://www.linkedin.com
     show: false
   pinterest:
     url: ""
