@@ -7,7 +7,7 @@ import meta from './collections/meta'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
 import PagePreview from './preview-templates/PagePreview'
 
-import '../style/main.scss'
+import '../style/all.sass'
 
 const pages = [
   {
