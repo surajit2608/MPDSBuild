@@ -5,6 +5,7 @@ import { Layout, PreviewableImage, PostFeed } from '../components'
 import { postPropTypes } from '../components/PostCard'
 import { featuredImagePropTypes } from '../proptypes'
 import { seoProps, getValidDates } from '../utils'
+import Banner from '../components/Banner'
 
 export const BlogArchiveTemplate = ({
   header,
@@ -16,35 +17,19 @@ export const BlogArchiveTemplate = ({
   const hasFeaturedImage = !!featuredImage && !!featuredImage.src
   return (
     <Fragment>
-      <div
-        className={`post-content page-template ${
-          hasFeaturedImage ? 'with-image' : 'no-image'
-        }`}
-        style={{ padding: 0 }}
-      >
+      <div className={hasFeaturedImage ? 'with-image' : 'no-image'}>
+        {!!featuredImage && (
+          <Banner
+            isPreview={isPreview}
+            featuredImage={featuredImage}
+          />
+        )}
+
         <header className="page-head">
           <h1 className="page-head-title">{header}</h1>
           {!!subheader && <p className="page-head-description">{subheader}</p>}
         </header>
-        <section className="post-content-body">
-          {hasFeaturedImage && (
-            <figure
-              className="gatsby-resp-image-card-full"
-              style={{ marginBottom: '1rem' }}
-            >
-              <PreviewableImage
-                isPreview={isPreview}
-                src={
-                  isPreview
-                    ? featuredImage.src
-                    : { m: featuredImage.m, d: featuredImage.d }
-                }
-                alt={featuredImage.alt}
-                caption={featuredImage.caption}
-              />
-            </figure>
-          )}
-        </section>
+        
       </div>
       <PostFeed isPreview={isPreview} posts={posts} />
     </Fragment>
