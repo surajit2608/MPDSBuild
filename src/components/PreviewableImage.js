@@ -20,9 +20,9 @@ const PreviewableImage = ({ src, isPreview, alt, caption }) => {
   return (
     <Fragment>
       {!!sources ? (
-        <Img className="gatsby-resp-image-image" fluid={sources} alt={alt} />
+        <Img className="bg" fluid={sources} alt={alt} />
       ) : (
-        <img className="gatsby-resp-image-image" src={src} alt={alt} />
+        <img className="bg" src={src} alt={alt} />
       )}
       {!!caption && <figcaption>{caption}</figcaption>}
     </Fragment>

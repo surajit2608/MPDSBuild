@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useSiteData } from '../hooks'
+import PreviewableImage from './PreviewableImage'
 
 const Banner = ({ isPreview, featuredImage }) => {
   const {
@@ -16,17 +17,17 @@ const Banner = ({ isPreview, featuredImage }) => {
     <section className="sec-hero-main">
       <div className="pg-width">
         <div className="banner">
-          <img
-            className="bg"
+          <PreviewableImage
+            isPreview={isPreview}
             src={
               isPreview
                 ? featuredImage.src
                 : { m: featuredImage.m, d: featuredImage.d }
             }
             alt={featuredImage.alt}
-            width={1440}
-            height={807}
+            caption={featuredImage.caption}
           />
+
           <div className="content-box">
             <img
               className="profile"
