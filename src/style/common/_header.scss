@@ -76,11 +76,6 @@ header {
                         font-weight: 600;
                         color: var(--clr-rd-blue);
 
-                        &:hover {
-                            background-color: var(--clr-rd-blue);
-                            color: var(--clr-rd-white);
-                        }
-
                         &[aria-current="page"] {
                             font-weight: 600;
                             color: var(--clr-rd-black);
@@ -89,6 +84,11 @@ header {
                                 background-color: var(--clr-rd-white);
                                 color: var(--clr-rd-black);
                             }
+                        }
+
+                        &:hover {
+                            background-color: var(--clr-rd-blue);
+                            color: var(--clr-rd-white);
                         }
                     }
                 }
