@@ -107,7 +107,7 @@
                     color: var(--clr-rd-white);
                     overflow: hidden;
 
-                    &[aria-current="page"] {
+                    .active {
                         background-color: var(--clr-rd-white);
                         border-radius: 6px;
                         overflow: hidden;

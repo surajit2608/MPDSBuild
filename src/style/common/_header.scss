@@ -76,7 +76,7 @@ header {
                         font-weight: 600;
                         color: var(--clr-rd-blue);
 
-                        &[aria-current="page"] {
+                        .active {
                             font-weight: 600;
                             color: var(--clr-rd-black);
 
