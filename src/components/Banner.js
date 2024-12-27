@@ -7,8 +7,6 @@ const Banner = ({ isPreview, featuredImage }) => {
   const {
     name,
     jobTitle,
-    themeOptions: { showThemeSwitcher, fontScheme: ssrFontScheme },
-    socialLinks: { twitter, facebook, linkedin, pinterest, instagram },
   } = useSiteData()
 
   const nameParts = name.split(' ')
