@@ -30,7 +30,7 @@ export const PageTemplate = ({
   inlineImages,
   formText,
 }) => (
-  <div className={`post-content page-template page-${cssSlug} ${!!featuredImage ? 'has-image' : 'no-image'}`}>
+  <div className={`page-${cssSlug} ${!!featuredImage ? 'has-image' : 'no-image'}`}>
 
     {!!featuredImage && (
       <Banner
