@@ -64,6 +64,13 @@ const siteDataFields = [
     hint: "Your location as you'd like it shown underneath to your name, e.g. San Francisco, California, USA.",
   },
   {
+    label: 'Profile Image',
+    name: 'profileImage',
+    widget: 'image',
+    required: false,
+    hint: "The profile image to show before your name",
+  },
+  {
     label: 'Site URL',
     name: 'siteUrl',
     widget: 'string',

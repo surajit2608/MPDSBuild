@@ -10,6 +10,7 @@ export default () => {
             jobTitle
             siteName
             location
+            profileImage
             siteUrl
             socialLinks {
               twitter {

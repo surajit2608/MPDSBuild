@@ -7,9 +7,12 @@ const Banner = ({ isPreview, featuredImage }) => {
   const {
     name,
     jobTitle,
+    profileImage,
   } = useSiteData()
 
   const nameParts = name.split(' ')
+
+  console.log(profileImage)
 
   return (
     <section className="sec-hero-main">
@@ -25,13 +28,15 @@ const Banner = ({ isPreview, featuredImage }) => {
           />
 
           <div className="content-box">
-            <img
-              className="profile"
-              src="/img/default-profile-male.svg"
-              alt={featuredImage.alt}
-              width={140}
-              height={140}
-            />
+            {!!profileImage.src && (
+              <img
+                className="profile"
+                src={profileImage.src}
+                alt={profileImage.alt}
+                width={140}
+                height={140}
+              />
+            )}
             <h1>{nameParts[0]} <span>{nameParts.slice(1).join(' ')}</span></h1>
             <p>{jobTitle}</p>
           </div>
