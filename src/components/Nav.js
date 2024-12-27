@@ -9,7 +9,7 @@ import { useNavPages } from '../hooks'
 const NavLink = ({ slug, name }) => {
   return (
     <li>
-      <Link to={slug}>{name}</Link>
+      <Link to={slug} activeClassName="active">{name}</Link>
     </li>
   )
 }
