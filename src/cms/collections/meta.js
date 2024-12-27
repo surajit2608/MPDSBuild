@@ -104,42 +104,42 @@ const siteDataFields = [
       socialLink('Instagram'),
     ],
   },
-  // {
-  //   label: 'Theme Customization Options',
-  //   name: 'themeOptions',
-  //   widget: 'object',
-  //   fields: [
-  //     {
-  //       label: 'Color Scheme',
-  //       name: 'colorScheme',
-  //       widget: 'select',
-  //       default: ['londn'],
-  //       hint: 'Select the color scheme for your website',
-  //       options: siteMetadata.colorOptions.map(({ label, value }) => ({
-  //         label,
-  //         value,
-  //       })),
-  //     },
-  //     {
-  //       label: 'Font Scheme',
-  //       name: 'fontScheme',
-  //       widget: 'select',
-  //       default: ['muli'],
-  //       hint: 'Select the font scheme for your website',
-  //       options: siteMetadata.fontOptions.map(({ label, value }) => ({
-  //         label,
-  //         value,
-  //       })),
-  //     },
-  //     {
-  //       label: 'Show Theme Switcher?',
-  //       name: 'showThemeSwitcher',
-  //       widget: 'boolean',
-  //       default: false,
-  //       hint: 'Turn on the theme switcher so you can preview themes on your site. NOTE: This should only be turned on temporarily so you can preview different styles. Turn this off again once you have made your selection.',
-  //     },
-  //   ],
-  // },
+  {
+    label: 'Theme Customization Options',
+    name: 'themeOptions',
+    widget: 'object',
+    fields: [
+      {
+        label: 'Color Scheme',
+        name: 'colorScheme',
+        widget: 'select',
+        default: ['londn'],
+        hint: 'Select the color scheme for your website',
+        options: siteMetadata.colorOptions.map(({ label, value }) => ({
+          label,
+          value,
+        })),
+      },
+      {
+        label: 'Font Scheme',
+        name: 'fontScheme',
+        widget: 'select',
+        default: ['muli'],
+        hint: 'Select the font scheme for your website',
+        options: siteMetadata.fontOptions.map(({ label, value }) => ({
+          label,
+          value,
+        })),
+      },
+      {
+        label: 'Show Theme Switcher?',
+        name: 'showThemeSwitcher',
+        widget: 'boolean',
+        default: false,
+        hint: 'Turn on the theme switcher so you can preview themes on your site. NOTE: This should only be turned on temporarily so you can preview different styles. Turn this off again once you have made your selection.',
+      },
+    ],
+  },
 ]
 
 const menuDataFields = [
