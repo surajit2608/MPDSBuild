@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 const SocialLink = ({ slug, name }) => (
   <a className="smi" rel="noopener" target="_blank" href={slug}>
-    {name}
+    <img src={`assets/svgs/${name.toLowerCase()}.svg`} alt={name} width="42" height="42" />
   </a>
 )
 
