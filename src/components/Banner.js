@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useSiteData } from '../hooks'
-import PreviewableImage from './PreviewableImage'
 
 const Banner = ({ isPreview, featuredImage }) => {
   const {
@@ -12,29 +11,27 @@ const Banner = ({ isPreview, featuredImage }) => {
 
   const nameParts = name.split(' ')
 
-  console.log(profileImage, featuredImage)
-
   return (
     <section className="sec-hero-main">
       <div className="pg-width">
         <div className="banner">
 
           <img
-            className="bg"
-            src={isPreview ? featuredImage.src : featuredImage.d ? featuredImage.d.childImageSharp.fluid.src : featuredImage.m ? featuredImage.m.childImageSharp.fluid.src : null}
-            alt={featuredImage.alt}
             width={1440}
             height={807}
+            className="bg"
+            alt={featuredImage.alt}
+            src={isPreview ? featuredImage.src : featuredImage.d ? featuredImage.d.childImageSharp.fluid.src : featuredImage.m ? featuredImage.m.childImageSharp.fluid.src : null}
           />
 
           <div className="content-box">
             {!!profileImage && (
               <img
-                className="profile"
-                src={profileImage.src}
-                alt={profileImage.alt}
+                alt={name}
                 width={140}
                 height={140}
+                className="profile"
+                src={profileImage.childImageSharp.fluid.src}
               />
             )}
             <h1>{nameParts[0]} <span>{nameParts.slice(1).join(' ')}</span></h1>
