@@ -107,7 +107,7 @@
                     color: var(--clr-rd-white);
                     overflow: hidden;
 
-                    .active {
+                    &.active {
                         background-color: var(--clr-rd-white);
                         border-radius: 6px;
                         overflow: hidden;
@@ -115,16 +115,16 @@
                         color: var(--clr-rd-black);
                     }
                 }
-            }
 
-            li.active {
-                background-color: var(--clr-rd-white);
-                border-radius: 6px;
-                overflow: hidden;
+                &.active {
+                    background-color: var(--clr-rd-white);
+                    border-radius: 6px;
+                    overflow: hidden;
 
-                a {
-                    font-weight: 800;
-                    color: var(--clr-rd-black);
+                    a {
+                        font-weight: 800;
+                        color: var(--clr-rd-black);
+                    }
                 }
             }
         }

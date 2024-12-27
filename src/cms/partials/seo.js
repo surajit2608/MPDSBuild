@@ -3,8 +3,7 @@ export default [
     label: 'Page Title',
     name: 'pageTitle',
     widget: 'string',
-    hint:
-      'The title for this page, as shown in the tab at the top of your browser. For blog articles, this is also the header text shown at the top of the article.',
+    hint: 'The title for this page, as shown in the tab at the top of your browser. For blog articles, this is also the header text shown at the top of the article.',
     required: true,
   },
   {

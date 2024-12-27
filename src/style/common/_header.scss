@@ -76,7 +76,7 @@ header {
                         font-weight: 600;
                         color: var(--clr-rd-blue);
 
-                        .active {
+                        &.active {
                             font-weight: 600;
                             color: var(--clr-rd-black);
 
@@ -91,16 +91,16 @@ header {
                             color: var(--clr-rd-white);
                         }
                     }
-                }
 
-                li.active {
-                    a {
-                        font-weight: 600;
-                        color: var(--clr-rd-black);
-
-                        &:hover {
-                            background-color: var(--clr-rd-white);
+                    &.active {
+                        a {
+                            font-weight: 600;
                             color: var(--clr-rd-black);
+
+                            &:hover {
+                                background-color: var(--clr-rd-white);
+                                color: var(--clr-rd-black);
+                            }
                         }
                     }
                 }
