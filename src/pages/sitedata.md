@@ -8,7 +8,7 @@ location: San Francisco, California, USA
 siteUrl: https://mpdsbuild.netlify.app/
 siteAnalytics: null
 favicon: /img/favicon.png
-fallbackImage: /img/headshot.jpg
+fallbackImage: /img/pic-executive-main-banner-01.webp
 socialLinks:
   twitter:
     url: https://www.x.com
