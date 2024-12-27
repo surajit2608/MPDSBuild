@@ -8,7 +8,7 @@ schemaType: WebPage
 header: Chandler Villacruz’s Blog
 subheader: null
 featuredImage:
-  ? src
-  ? alt
-  ? caption
+  src: /img/pic-executive-banner-blog-01.webp
+  alt: null
+  caption: null
 ---
