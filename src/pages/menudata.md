@@ -1,13 +1,13 @@
 ---
-templateKey: 'menu-data'
+templateKey: menu-data
 published: false
 menuItems:
   - slug: /
     label: Home
-  - slug: /about/
-    label: About
-  - slug: /blog/
+  - slug: /about
+    label: Profile
+  - slug: /blog
     label: Blog
-  - slug: /contact/
-    label: Contact
+  - slug: /contact
+    label: Gallery
 ---
