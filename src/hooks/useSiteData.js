@@ -9,6 +9,7 @@ export default () => {
             name
             jobTitle
             siteName
+            location
             siteUrl
             socialLinks {
               twitter {

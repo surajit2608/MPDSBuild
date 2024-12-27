@@ -67,6 +67,7 @@ beforeEach(() => {
     name: 'name',
     siteName: 'siteName',
     jobTitle: 'jobTitle',
+    location: 'location',
     siteUrl: 'siteUrl',
     socialLinks: {
       twitter: { url: 'https://twitter.com/foobar', show: true },

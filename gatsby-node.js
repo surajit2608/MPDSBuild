@@ -44,6 +44,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       name: String
       jobTitle: String
       siteName: String
+      location: String
       siteUrl: String
       socialLinks: SocialLinks
       favicon: File @fileByRelativePath

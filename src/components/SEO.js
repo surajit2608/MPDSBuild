@@ -31,6 +31,7 @@ const SEO = ({
     name,
     siteName,
     jobTitle,
+    location,
     siteUrl,
     socialLinks: { twitter, facebook, linkedin, pinterest, instagram },
     fallbackImage,
@@ -54,6 +55,7 @@ const SEO = ({
     name,
     jobTitle,
     siteName,
+    location,
     schemaType,
     sameAs: [twitter, facebook, linkedin, pinterest, instagram].filter(
       (item) => !!item && !!item.url && item.url.length,
