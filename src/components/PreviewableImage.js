@@ -18,7 +18,7 @@ const PreviewableImage = ({ src, isPreview, alt, caption }) => {
           ]
           : null
 
-  console.log(sources)
+  console.log('sources', sources)
   return (
     <Fragment>
       {!!sources ? (

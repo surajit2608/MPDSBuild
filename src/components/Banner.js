@@ -9,7 +9,7 @@ const Banner = ({ isPreview, featuredImage }) => {
     jobTitle,
   } = useSiteData()
 
-  console.log(isPreview, featuredImage)
+  console.log('banner', isPreview, featuredImage)
 
   const nameParts = name.split(' ')
 
