@@ -7,16 +7,18 @@ const PreviewableImage = ({ src, isPreview, alt, caption }) => {
     !!isPreview || typeof src === 'string'
       ? null
       : !!src.childImageSharp
-      ? src.childImageSharp.fluid
-      : !!src.m && !!src.d
-      ? [
-          src.m.childImageSharp.fluid,
-          {
-            ...src.d.childImageSharp.fluid,
-            media: `(min-width: 768px)`,
-          },
-        ]
-      : null
+        ? src.childImageSharp.fluid
+        : !!src.m && !!src.d
+          ? [
+            src.m.childImageSharp.fluid,
+            {
+              ...src.d.childImageSharp.fluid,
+              media: `(min-width: 768px)`,
+            },
+          ]
+          : null
+
+  console.log(sources)
   return (
     <Fragment>
       {!!sources ? (
