@@ -4,7 +4,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import { v4 as uuidv4 } from 'uuid'
-import { useNavPages, useSiteData } from '../hooks'
+import { useNavPages } from '../hooks'
 
 const NavLink = ({ slug, name }) => {
   return (
@@ -19,36 +19,8 @@ NavLink.propTypes = {
   name: PropTypes.string.isRequired,
 }
 
-const SocialLink = ({ slug, name }) => (
-  <a className="social-link" rel="noopener" target="_blank" href={slug}>
-    {name}
-  </a>
-)
-
-SocialLink.propTypes = {
-  slug: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-}
-
 const Nav = ({ toggleNav, setToggleNav, siteName }) => {
   const navPages = useNavPages()
-  const {
-    socialLinks: { twitter, facebook, linkedin, pinterest, instagram },
-  } = useSiteData()
-  const socialLinks = [
-    // get any social sites that we have
-    { Twitter: twitter },
-    { Facebook: facebook },
-    { LinkedIn: linkedin },
-    { Pinterest: pinterest },
-    { Instagram: instagram },
-  ].filter(
-    (item) =>
-      !!Object.values(item)[0] &&
-      !!Object.values(item)[0].url &&
-      !!Object.values(item)[0].show,
-  )
-
   const siteNameParts = siteName.split(' ')
 
   const getInitials = (fullName) => {
