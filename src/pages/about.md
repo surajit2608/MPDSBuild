@@ -8,7 +8,7 @@ schemaType: AboutPage
 header: About Chandler Villacruz
 subheader: Career highlights past and present
 featuredImage:
-  src: /img/about.jpg
+  src: /img/pic-executive-banner-profile-01.webp
   alt: Headshot of Chandler Villacruz
   caption: null
 longBiography_MD: |
