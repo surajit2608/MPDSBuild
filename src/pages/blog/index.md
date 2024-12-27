@@ -1,14 +1,14 @@
 ---
 templateKey: blog-archive
+pageSlug: /blog
+pageTitle: Chandler Villacruz's Blog
+metaDescription: Blog Listing Page of Chandler Villacruz, Senior Marketing Manager
 published: true
 schemaType: WebPage
-pageSlug: /blog
-pageTitle: Blog
-metaDescription: '{{client_name}}’s blog'
-header: '{{client_name}}’s Blog'
-subheader: ~
+header: Chandler Villacruz’s Blog
+subheader: null
 featuredImage:
-  src: ~
-  alt: ~
-  caption: ~
+  src: /img/pic-executive-banner-blog-01.webp
+  alt: null
+  caption: null
 ---
