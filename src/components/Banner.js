@@ -12,7 +12,7 @@ const Banner = ({ isPreview, featuredImage }) => {
 
   const nameParts = name.split(' ')
 
-  console.log(profileImage)
+  console.log(profileImage, featuredImage)
 
   return (
     <section className="sec-hero-main">
@@ -21,7 +21,7 @@ const Banner = ({ isPreview, featuredImage }) => {
 
           <img
             className="bg"
-            src={isPreview ? featuredImage.src : featuredImage.m ? featuredImage.m.childImageSharp.fluid.src : featuredImage.d ? featuredImage.d.childImageSharp.fluid.src : null}
+            src={isPreview ? featuredImage.src : featuredImage.d ? featuredImage.d.childImageSharp.fluid.src : featuredImage.m ? featuredImage.m.childImageSharp.fluid.src : null}
             alt={featuredImage.alt}
             width={1440}
             height={807}
