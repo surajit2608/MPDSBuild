@@ -9,6 +9,8 @@ const Banner = ({ isPreview, featuredImage }) => {
     jobTitle,
   } = useSiteData()
 
+  console.log(featuredImage)
+
   const nameParts = name.split(' ')
 
   return (
