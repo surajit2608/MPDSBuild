@@ -9,6 +9,18 @@ const data = {
       jobTitle: 'jobTitle',
       siteName: 'siteName',
       siteUrl: 'siteUrl',
+      location: 'location',
+      profileImage: {
+        childImageSharp: {
+          original: {
+            height: 140,
+            width: 140,
+          },
+          fluid: {
+            originalName: 'originalName',
+          },
+        },
+      },
       socialLinks: [
         {
           twitter: {

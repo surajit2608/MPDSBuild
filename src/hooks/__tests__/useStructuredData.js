@@ -43,6 +43,8 @@ describe('articleSchema', () => {
       name: '',
       siteName: '',
       jobTitle: '',
+      location: '',
+      profileImage: {},
       sameAs: [],
     }
     const expected =

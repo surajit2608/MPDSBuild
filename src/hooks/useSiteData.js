@@ -10,7 +10,18 @@ export default () => {
             jobTitle
             siteName
             location
-            profileImage
+            profileImage {
+              childImageSharp {
+                original {
+                  height
+                  width
+                }
+                fluid(maxWidth: 1440) {
+                  ...GatsbyImageSharpFluid_withWebp
+                  originalName
+                }
+              }
+            }
             siteUrl
             socialLinks {
               twitter {

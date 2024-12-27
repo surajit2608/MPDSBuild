@@ -62,6 +62,8 @@ const articleSchema = ({
   name,
   siteName,
   jobTitle,
+  location,
+  profileImage,
   sameAs,
 }) => {
   const articleSchema = {
