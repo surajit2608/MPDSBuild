@@ -28,7 +28,7 @@ const Banner = ({ isPreview, featuredImage }) => {
           />
 
           <div className="content-box">
-            {!!profileImage.src && (
+            {!!profileImage && (
               <img
                 className="profile"
                 src={profileImage.src}
