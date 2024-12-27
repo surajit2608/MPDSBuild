@@ -34,8 +34,8 @@ export const PageTemplate = ({
 
     {!!featuredImage && (
       <Banner
-        name={name}
-        jobTitle={jobTitle}
+        isPreview={isPreview}
+        featuredImage={featuredImage}
       />
     )}
 

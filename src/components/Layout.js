@@ -16,8 +16,6 @@ const Layout = ({ seoProps, children }) => {
     fontScheme,
   } = useContext(ThemeOptionsContext)
   const {
-    name,
-    jobTitle,
     siteName,
     themeOptions: { showThemeSwitcher, fontScheme: ssrFontScheme },
     socialLinks: { twitter, facebook, linkedin, pinterest, instagram },
