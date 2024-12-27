@@ -1,10 +1,10 @@
 ---
 templateKey: site-data
 published: false
-name: Surajit
-jobTitle: "{{job_title}}"
-siteName: "{{site_name}}"
-siteUrl: https://{{site_url}}
+name: Chandler Villacruz
+jobTitle: Senior Marketing Manager
+siteName: Chandler Villacruz
+siteUrl: https://mpdsbuild.netlify.app/
 siteAnalytics: null
 favicon: /img/favicon.png
 fallbackImage: /img/headshot.jpg
