@@ -106,14 +106,14 @@
                     font-weight: 600;
                     color: var(--clr-rd-white);
                     overflow: hidden;
-                }
 
-                a[aria-current="page"] {
-                    background-color: var(--clr-rd-white);
-                    border-radius: 6px;
-                    overflow: hidden;
-                    font-weight: 800;
-                    color: var(--clr-rd-black);
+                    &[aria-current="page"] {
+                        background-color: var(--clr-rd-white);
+                        border-radius: 6px;
+                        overflow: hidden;
+                        font-weight: 800;
+                        color: var(--clr-rd-black);
+                    }
                 }
             }
 
