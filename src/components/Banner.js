@@ -9,23 +9,19 @@ const Banner = ({ isPreview, featuredImage }) => {
     jobTitle,
   } = useSiteData()
 
-  console.log('banner', isPreview, featuredImage)
-
   const nameParts = name.split(' ')
 
   return (
     <section className="sec-hero-main">
       <div className="pg-width">
         <div className="banner">
-          <PreviewableImage
-            isPreview={isPreview}
-            src={
-              isPreview
-                ? featuredImage.src
-                : { m: featuredImage.m, d: featuredImage.d }
-            }
+
+          <img
+            className="bg"
+            src={isPreview ? featuredImage.src : featuredImage.m ? featuredImage.m.childImageSharp.fluid.src : featuredImage.d ? featuredImage.d.childImageSharp.fluid.src : null}
             alt={featuredImage.alt}
-            caption={featuredImage.caption}
+            width={1440}
+            height={807}
           />
 
           <div className="content-box">
@@ -46,8 +42,8 @@ const Banner = ({ isPreview, featuredImage }) => {
 }
 
 Banner.propTypes = {
-  isPreview: PropTypes.bool.isRequired,
-  featuredImage: PropTypes.object.isRequired,
+  isPreview: PropTypes.bool,
+  featuredImage: PropTypes.object,
 }
 
 export default Banner

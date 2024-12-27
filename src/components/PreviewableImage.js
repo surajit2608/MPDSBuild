@@ -7,24 +7,22 @@ const PreviewableImage = ({ src, isPreview, alt, caption }) => {
     !!isPreview || typeof src === 'string'
       ? null
       : !!src.childImageSharp
-        ? src.childImageSharp.fluid
-        : !!src.m && !!src.d
-          ? [
-            src.m.childImageSharp.fluid,
-            {
-              ...src.d.childImageSharp.fluid,
-              media: `(min-width: 768px)`,
-            },
-          ]
-          : null
-
-  console.log('sources', sources)
+      ? src.childImageSharp.fluid
+      : !!src.m && !!src.d
+      ? [
+          src.m.childImageSharp.fluid,
+          {
+            ...src.d.childImageSharp.fluid,
+            media: `(min-width: 768px)`,
+          },
+        ]
+      : null
   return (
     <Fragment>
       {!!sources ? (
-        <Img className="bg" fluid={sources} alt={alt} />
+        <Img className="gatsby-resp-image-image" fluid={sources} alt={alt} />
       ) : (
-        <img className="bg" src={src} alt={alt} />
+        <img className="gatsby-resp-image-image" src={src} alt={alt} />
       )}
       {!!caption && <figcaption>{caption}</figcaption>}
     </Fragment>
