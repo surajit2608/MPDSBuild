@@ -6,7 +6,7 @@ import Nav from '../components/Nav'
 import ThemeSwitcher from '../components/ThemeSwitcher'
 import { useSiteData } from '../hooks'
 import { ThemeOptionsContext } from '../context/ThemeOptions'
-import '../style/main.scss'
+import '../style/all.sass'
 
 const NotFoundPage = () => {
   const [toggleNav, setToggleNav] = useState(false)
