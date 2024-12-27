@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import NoScript from './components/NoScript'
 export default function HTML(props) {
@@ -16,7 +16,7 @@ export default function HTML(props) {
       <body {...props.bodyAttributes}>
         <NoScript />
         {props.preBodyComponents}
-        <Fragment
+        <div
           key={`body`}
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
