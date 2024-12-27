@@ -49,54 +49,22 @@ const Nav = ({ toggleNav, setToggleNav, siteName }) => {
       !!Object.values(item)[0].show,
   )
 
+  const siteNameParts = siteName.split(' ')
+
+  const getInitials = (fullName) => {
+    const words = fullName.split(' ')
+    const initials = words.map(word => word[0].toUpperCase()).join('')
+    return initials
+  }
+
   return (
     <Fragment>
-      {/* <button
-        className="nav-burger"
-        onClick={() => setToggleNav(!toggleNav)}
-        aria-label="Open or close menu"
-      >
-        <div className="hamburger hamburger--collapse">
-          <div className="hamburger-box">
-            <div className="hamburger-inner" />
-          </div>
-        </div>
-      </button>
-      <nav id="swup" className="site-head-left">
-        <ul className="nav">
-          {!!navPages &&
-            navPages.length > 1 &&
-            navPages.map((page) => (
-              <NavLink slug={page.slug} name={page.label} key={uuidv4()} />
-            ))}
-        </ul>
-      </nav>
-      <div className="site-head-center">
-        <Link className="site-head-logo" to={`/`}>
-          {siteName}
-        </Link>
-      </div>
-      <div className="site-head-right">
-        <div className="social-links">
-          {!!socialLinks &&
-            !!socialLinks.length &&
-            socialLinks.map((social) => (
-              <SocialLink
-                slug={Object.values(social)[0].url}
-                name={Object.keys(social)[0]}
-                key={uuidv4()}
-              />
-            ))}
-        </div>
-      </div> */}
-
-
       <input id="menu__toggle" type="checkbox" />
       <nav className="mob-menu-pnl">
         <div className="heading-row">
           <Link className="logo-title" to={`/`}>
-            <span className="logo">CV</span>
-            <span className="title">{siteName}</span>
+            <span className="logo">{getInitials(siteName)}</span>
+            <span className="title"><b>{siteNameParts[0]}</b> {siteNameParts.slice(1).join(' ')}</span>
           </Link>
           <label className="mobile-menu" for="menu__toggle">X</label>
         </div>
@@ -115,8 +83,8 @@ const Nav = ({ toggleNav, setToggleNav, siteName }) => {
       <header>
         <div className="pg-width">
           <Link className="logo-title" to={`/`}>
-            <span className="logo">CV</span>
-            <span className="title">{siteName}</span>
+            <span className="logo">{getInitials(siteName)}</span>
+            <span className="title"><b>{siteNameParts[0]}</b> {siteNameParts.slice(1).join(' ')}</span>
           </Link>
           <nav>
             <ul>
