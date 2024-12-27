@@ -4,7 +4,8 @@ published: false
 name: Chandler Villacruz
 jobTitle: Senior Marketing Manager
 siteName: Chandler Villacruz
-siteUrl: https://mpdsbuild.netlify.app/
+location: San Francisco, California, USA
+siteUrl: ""
 siteAnalytics: null
 favicon: /img/favicon.png
 fallbackImage: /img/headshot.jpg
