@@ -35,7 +35,7 @@ export const PageTemplate = ({
   inlineImages,
   formText,
 }) => (
-  <div className={`page-${cssSlug} ${!!featuredImage ? 'has-image' : 'no-image'}`}>
+  <div className={`tmpkey-${templateKey} page-${cssSlug} ${!!featuredImage ? 'has-image' : 'no-image'}`}>
 
     {!!featuredImage && (
       <section className={templateKey === 'index-page' ? 'sec-hero-main' : templateKey === 'blog-post' ? 'sec-article-pic' : 'sec-hero-sml'}>
