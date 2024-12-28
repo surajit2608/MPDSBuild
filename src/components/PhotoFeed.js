@@ -5,27 +5,29 @@ import { v4 as uuidv4 } from 'uuid'
 import moment from 'moment'
 import { addTrailingSlash } from '../utils'
 import { featuredImagePropTypes } from '../proptypes'
+import { SlideshowLightbox } from 'lightbox.js-react'
 
 const Moment = moment().constructor
 
 const PhotoFeed = ({ isPreview, posts }) => (
   <Fragment>
-    {!isPreview &&
-      !!posts &&
-      !!posts.length &&
-      posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
-        return (
-          <PhotoCard
-            key={uuidv4()}
-            count={index}
-            image={image}
-            slug={addTrailingSlash(slug)}
-            pageTitle={pageTitle}
-            date={date}
-            teaser={teaser}
-          />
-        )
-      })}
+    {!isPreview && !!posts && !!posts.length && (
+      <SlideshowLightbox className="container grid grid-cols-3 gap-2 mx-auto">
+        {posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
+          return (
+            <PhotoCard
+              key={uuidv4()}
+              count={index}
+              image={image}
+              slug={addTrailingSlash(slug)}
+              pageTitle={pageTitle}
+              date={date}
+              teaser={teaser}
+            />
+          )
+        })}
+      </SlideshowLightbox>
+    )}
     {!isPreview && (!posts || !posts.length) && (
       <div>No posts yet. Please check back again soon!</div>
     )}

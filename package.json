@@ -53,7 +53,8 @@
     "remark": "^13.0.0",
     "remark-html": "^13.0.2",
     "uuid": "^8.3.0",
-    "yaml-front-matter": "^4.1.0"
+    "yaml-front-matter": "^4.1.0",
+    "lightbox.js-react": "^1.2.4"
   },
   "keywords": [
     "gatsby"
