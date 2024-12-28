@@ -19,11 +19,11 @@ const pages = [
       'pageContent',
       'profileButton',
       'blogButton',
-      'missionStatement',
-      'shortBiography',
-      'learnMoreButton',
-      'extraContent',
-      'showRecentPosts',
+      // 'missionStatement',
+      // 'shortBiography',
+      // 'learnMoreButton',
+      // 'extraContent',
+      // 'showRecentPosts',
     ],
   },
   {
@@ -36,46 +36,48 @@ const pages = [
       'blogButton',
       'connectWithMe',
       'discoverConnectExplore',
-      'longBiography_MD',
-      'extraContent',
+      // 'longBiography_MD',
+      // 'extraContent',
     ],
   },
-  {
-    label: 'About Page',
-    file: 'src/pages/about.md',
-    templateKey: 'about-page',
-    pageSlug: '/about/',
-    additionalFields: [
-      'longBiography_MD',
-      'extraContent',
-    ],
-  },
+  // {
+  //   label: 'About Page',
+  //   file: 'src/pages/about.md',
+  //   templateKey: 'about-page',
+  //   pageSlug: '/about/',
+  //   additionalFields: [
+  //     'longBiography_MD',
+  //     'extraContent',
+  //   ],
+  // },
   {
     label: 'Blog Archive Page',
     file: 'src/pages/blog/index.md',
     templateKey: 'blog-archive',
     pageSlug: '/blog/',
     additionalFields: [
-
+      'profileButton',
     ],
   },
   {
-    label: 'Gallery Page',
-    file: 'src/pages/gallery.md',
-    templateKey: 'gallery-page',
+    label: 'Gallery Archive Page',
+    file: 'src/pages/gallery/index.md',
+    templateKey: 'gallery-archive',
     pageSlug: '/gallery/',
     additionalFields: [
       'profileButton',
       'blogButton',
     ],
   },
-  {
-    label: 'Contact Page',
-    file: 'src/pages/contact.md',
-    templateKey: 'contact-page',
-    pageSlug: '/contact/',
-    additionalFields: ['formText'],
-  },
+  // {
+  //   label: 'Contact Page',
+  //   file: 'src/pages/contact.md',
+  //   templateKey: 'contact-page',
+  //   pageSlug: '/contact/',
+  //   additionalFields: [
+  //     'formText',
+  //   ],
+  // },
 ]
 
 CMS.init({
