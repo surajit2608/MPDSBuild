@@ -2,19 +2,15 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { featuredImagePropTypes } from '../proptypes'
-import { useRecentPosts } from '../hooks'
+import { useRecentPosts, useSiteData } from '../hooks'
 import { seoProps } from '../utils'
-import PageHeader from '../components/PageHeader'
-import ShortBiography from '../components/ShortBiography'
-import ContactForm from '../components/ContactForm'
 import Layout from '../components/Layout'
-import ExtraContent from '../components/ExtraContent'
-import PostFeed from '../components/PostFeed'
-import PreviewableImage from '../components/PreviewableImage'
-import HTMLContent from '../components/HTMLContent'
 import Banner from '../components/Banner'
 
 export const PageTemplate = ({
+  name,
+  jobTitle,
+  location,
   header,
   subheader,
   cssSlug,
@@ -33,6 +29,7 @@ export const PageTemplate = ({
   profileButton,
   blogButton,
   inlineImages,
+  socialLinks,
   formText,
 }) => (
   <Fragment>
@@ -51,73 +48,55 @@ export const PageTemplate = ({
       <div className="pg-width">
         <div className="content">
 
-          {/* <PageHeader
-            header={header}
-            subheader={subheader}
-            missionStatement={missionStatement}
-          />
-          <section className="post-content-body">
-            {templateKey !== 'index-page' && !!featuredImage && (
-              <figure className="gatsby-resp-image-card-full">
-                <PreviewableImage
-                  isPreview={isPreview}
-                  src={
-                    isPreview
-                      ? featuredImage.src
-                      : { m: featuredImage.m, d: featuredImage.d }
-                  }
-                  alt={featuredImage.alt}
-                  caption={featuredImage.caption}
-                />
-              </figure>
-            )}
-            {!!shortBiography && (
-              <ShortBiography
-                learnMoreButton={learnMoreButton}
-                shortBiography={shortBiography}
-                image={featuredImage}
-                isPreview={isPreview}
-              />
-            )}
-            {!!longBiography_MD && (
-              <HTMLContent
-                className="gatsby-resp-image-card"
-                content={longBiography_MD}
-                inlineImages={inlineImages}
-              />
-            )}
-            {templateKey === 'contact-page' && !!formText && (
-              <ContactForm formText={formText} isPreview={isPreview} />
-            )}
-            {templateKey === 'gallery-page' && !!formText && (
-              <ContactForm formText={formText} isPreview={isPreview} />
-            )}
-            {!!recentPosts && !!recentPosts.length && (
-              <Fragment>
-                <hr />
-                <h2>Recent Blog Posts</h2>
-                <PostFeed isPreview={isPreview} posts={recentPosts} />
-              </Fragment>
-            )}
-            {!!extraContent && (
-              <ExtraContent
-                content={extraContent}
-                page={templateKey}
-                inlineImages={inlineImages}
-              />
-            )}
-            {!!pageContent && (
-              <ExtraContent
-                content={pageContent}
-                page={templateKey}
-                inlineImages={inlineImages}
-              />
-            )}
-          </section> */}
+          {templateKey === 'profile-page' && (
+            <Fragment>
+              <h2>{name}</h2>
+              <p class="title">{jobTitle}</p>
+              <p class="location">{location}</p>
+            </Fragment>
+          )}
 
+          <Fragment>{pageContent}</Fragment>
+
+          <div class="btn-row">
+            {!!profileButton && (
+              <Link className="btn-primary" to={addTrailingSlash(profileButton.link)}>
+                {profileButton.label}
+              </Link>
+            )}
+            {!!blogButton && (
+              <Link className="btn-primary" to={addTrailingSlash(blogButton.link)}>
+                {blogButton.label}
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </section>
+
+    {templateKey === 'profile-page' && (
+      <section class="sec-three-box">
+        <div class="pg-width">
+          <div class="heading-row">
+            <h3>{connectWithMe}</h3>
+            <p>{discoverConnectExplore}</p>
+          </div>
+          <div class="all-boxes">
+            {!!socialLinks && !!socialLinks.length && socialLinks.map((social) => (
+              <div className="ech-box" key={uuidv4()}>
+                <a href={Object.values(social)[0].url} target="_blank" className="sm-icon">
+                  <img src={`assets/svgs/${Object.keys(social)[0].toLowerCase()}-color.svg`} alt={Object.keys(social)[0]} width="60" height="60" />
+                </a>
+                <p>{Object.keys(social)[0]}</p>
+                <div class="btn-row">
+                  <a href={Object.values(social)[0].url} target="_blank" class="btn-primary">Visit</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
   </Fragment>
 )
 
@@ -177,7 +156,30 @@ const Page = ({ data }) => {
     fields: { inlineImages, slug },
   } = data.markdownRemark
   const recentPosts = useRecentPosts()
+  const {
+    name,
+    jobTitle,
+    location,
+    socialLinks: { twitter, facebook, linkedin, pinterest, instagram },
+  } = useSiteData()
+
+  const socialLinks = [
+    { Twitter: twitter },
+    { Facebook: facebook },
+    { LinkedIn: linkedin },
+    { Pinterest: pinterest },
+    { Instagram: instagram },
+  ].filter(
+    (item) =>
+      !!Object.values(item)[0] &&
+      !!Object.values(item)[0].url &&
+      !!Object.values(item)[0].show,
+  )
+
   const pageProps = {
+    name,
+    jobTitle,
+    location,
     header,
     subheader,
     templateKey,
@@ -196,6 +198,7 @@ const Page = ({ data }) => {
     learnMoreButton,
     profileButton,
     blogButton,
+    socialLinks,
     formText,
   }
 
