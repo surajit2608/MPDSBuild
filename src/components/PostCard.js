@@ -10,8 +10,6 @@ const Moment = moment().constructor
 const PostCard = ({ count, image, slug, pageTitle, date, teaser }) => {
   const [ref, inView] = useInView({ triggerOnce: true })
 
-  console.log('PostCard', image)
-
   return (
     <article ref={ref}>
       <img src={!!image ? image.d.childImageSharp.fluid.src : '/img/default-blog-thumb-01.webp'} alt={pageTitle} width={470} height={250} />

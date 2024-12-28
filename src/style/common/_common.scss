@@ -39,7 +39,8 @@
         color: var(--clr-rd-gray);
     }
 
-    font-family: "Montserrat", serif !important;
+    font-family: "Montserrat",
+    serif !important;
     font-weight: 400;
 }
 
@@ -54,6 +55,7 @@ html {
         background-color: var(--clr-rd-white) !important;
         zoom: 1.2;
         transition: all 0.3s ease;
+        color: var(--clr-rd-black) !important;
 
         .all-sections {
             display: block;
