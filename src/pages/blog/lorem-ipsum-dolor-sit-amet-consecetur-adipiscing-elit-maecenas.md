@@ -2,10 +2,7 @@
 templateKey: blog-post
 schemaType: BlogPosting
 pageTitle: Lorem ipsum dolor sit amet, consecetur adipiscing elit maecenas
-metaDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Maecenas non interdum nulla, in pulvinar urna. Sed pellentesque, augue eu
-  condimentum iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Maecenas non
+metaDescription: Lorem ipsum dolor sit amet, consecetur adipiscing elit maecenas
 published: true
 date: 2024-12-28T14:30:47.886Z
 teaser: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non
