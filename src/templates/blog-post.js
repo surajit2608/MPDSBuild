@@ -22,6 +22,8 @@ export const BlogPostTemplate = ({
   profileButton,
   blogButton,
 }) => {
+  console.log(featuredImage)
+
   const hasImg =
     featuredImage &&
     featuredImage.src &&
@@ -34,7 +36,7 @@ export const BlogPostTemplate = ({
         <Banner
           header={''}
           subheader={''}
-          imageSrc={hasImg ? featuredImage.src.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'}
+          imageSrc={isPreview ? featuredImage.src : hasImg ? featuredImage.src.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'}
         />
       </section>
 
