@@ -5,7 +5,7 @@ pageTitle: Chandler Villacruz's Blog
 metaDescription: Blog Listing Page of Chandler Villacruz, Senior Marketing Manager
 published: true
 schemaType: WebPage
-header: Chandler Villacruz’s Blog
+header: Blog
 subheader: null
 featuredImage:
   src: /img/pic-executive-banner-blog-01.webp
