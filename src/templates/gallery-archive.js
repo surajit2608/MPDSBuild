@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { Layout, PhotoFeed } from '../components'
-import { postPropTypes } from '../components/PostCard'
+import { postPropTypes } from '../components/PhotoCard'
 import { featuredImagePropTypes } from '../proptypes'
 import { seoProps, getValidDates, addTrailingSlash } from '../utils'
 import Banner from '../components/Banner'
@@ -66,6 +66,7 @@ const GalleryArchive = ({ data }) => {
       slug,
       pageTitle,
       date,
+      content: node.html,
     }
   })
   const pageProps = {
@@ -136,9 +137,9 @@ export const pageQuery = graphql`
           d: src {
             childImageSharp {
               fluid(
-                maxWidth: 1200
-                maxHeight: 450
-                quality: 80
+                maxWidth: 1440
+                maxHeight: 270
+                quality: 100
                 cropFocus: CENTER
               ) {
                 ...GatsbyImageSharpFluid_withWebp
@@ -190,6 +191,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          html
           fields {
             slug
             gitAuthorTime
@@ -198,7 +200,6 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMM DD, YYYY")
             pageTitle
-            teaser
             featuredImage {
               src {
                 childImageSharp {

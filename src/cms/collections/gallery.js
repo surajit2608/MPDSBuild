@@ -31,7 +31,7 @@ export default {
       hint: "Optionally, the date you want to appear on your blog post. It doesn't have to be the actual publication date. If you leave this blank, it will be automatically generated",
     },
     {
-      label: 'Caption',
+      label: 'Teaser Text',
       name: 'teaser',
       widget: 'text',
       required: false,

@@ -7,13 +7,13 @@ import { featuredImagePropTypes } from '../proptypes'
 
 const Moment = moment().constructor
 
-const PhotoCard = ({ count, image, slug, pageTitle, date, teaser }) => {
+const PhotoCard = ({ count, image, slug, pageTitle, date, content }) => {
   const [ref, inView] = useInView({ triggerOnce: true })
 
   return (
     <article ref={ref}>
       <img src={!!image ? image.d.childImageSharp.fluid.src : '/img/default-blog-thumb-01.webp'} alt={image.alt} width="470" height="250" />
-      <p>{teaser}</p>
+      <p>{content}</p>
     </article>
   )
 }
@@ -24,7 +24,7 @@ export const postPropTypes = {
   slug: PropTypes.string,
   pageTitle: PropTypes.string.isRequired,
   date: PropTypes.instanceOf(Moment),
-  teaser: PropTypes.string,
+  content: PropTypes.string,
 }
 
 PhotoCard.propTypes = postPropTypes

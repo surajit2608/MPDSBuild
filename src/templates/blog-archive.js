@@ -51,7 +51,7 @@ const BlogArchive = ({ data }) => {
   const { header, subheader, featuredImage, profileButton } = data.markdownRemark.frontmatter
   const posts = data.allMarkdownRemark.edges.map(({ node }) => {
     const {
-      frontmatter: { featuredImage, pageTitle, date: userDate },
+      frontmatter: { featuredImage, pageTitle, date: userDate, excerpt },
       fields: { slug, gitAuthorTime, gitCreatedTime },
     } = node
     const { date } = getValidDates(userDate, gitAuthorTime, gitCreatedTime)
@@ -60,6 +60,7 @@ const BlogArchive = ({ data }) => {
       slug,
       pageTitle,
       date,
+      excerpt,
     }
   })
   const pageProps = {
@@ -125,9 +126,9 @@ export const pageQuery = graphql`
           d: src {
             childImageSharp {
               fluid(
-                maxWidth: 1200
-                maxHeight: 450
-                quality: 80
+                maxWidth: 1440
+                maxHeight: 270
+                quality: 100
                 cropFocus: CENTER
               ) {
                 ...GatsbyImageSharpFluid_withWebp
@@ -187,7 +188,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMM DD, YYYY")
             pageTitle
-            teaser
+            excerpt
             featuredImage {
               src {
                 childImageSharp {
