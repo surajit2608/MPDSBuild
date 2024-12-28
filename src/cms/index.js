@@ -6,6 +6,7 @@ import gallery from './collections/gallery'
 import page from './collections/page'
 import meta from './collections/meta'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
+import GalleryPostPreview from './preview-templates/GalleryPostPreview'
 import PagePreview from './preview-templates/PagePreview'
 
 import '../style/all.sass'
@@ -111,6 +112,7 @@ CMS.init({
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
 CMS.registerPreviewTemplate('blog', BlogPostPreview)
+CMS.registerPreviewTemplate('gallery', GalleryPostPreview)
 pages.forEach(({ templateKey }) => {
   CMS.registerPreviewTemplate(templateKey, PagePreview)
 })
