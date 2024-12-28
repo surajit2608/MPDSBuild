@@ -10,7 +10,7 @@ header: Profile
 subheader: ""
 featuredImage:
   src: /img/pic-executive-banner-profile-01.webp
-  alt: Headshot of {{client_name}}
+  alt: Headshot of Chandler Villacruz
   caption: null
 pageContent: >-
   # Heading line here
