@@ -7,6 +7,7 @@ import { addTrailingSlash, seoProps } from '../utils'
 import { v4 as uuidv4 } from 'uuid'
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
+import HTMLContent from './HTMLContent'
 
 export const PageTemplate = ({
   name,
