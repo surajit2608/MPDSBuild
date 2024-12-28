@@ -16,14 +16,14 @@ export const GalleryArchiveTemplate = ({
   profileButton,
   blogButton
 }) => {
-  const hasFeaturedImage = !!featuredImage && !!featuredImage.src
+  const featuredImageSrc = (!!featuredImage && !!featuredImage.d) ? featuredImage.d.childImageSharp.fluid.src : (!!featuredImage && !!featuredImage.m) ? featuredImage.m.childImageSharp.fluid.src : '/img/pic-executive-banner-gallery-01.webp'
   return (
     <Fragment>
       <section className="sec-hero-sml">
         <Banner
           header={header}
           subheader={subheader}
-          imageSrc={hasFeaturedImage ? featuredImage.src.childImageSharp.fluid.src : '/img/pic-executive-banner-gallery-01.webp'}
+          imageSrc={featuredImageSrc}
         />
       </section>
 
