@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { featuredImagePropTypes } from '../proptypes'
 import { useRecentPosts, useSiteData } from '../hooks'
 import { addTrailingSlash, seoProps } from '../utils'
