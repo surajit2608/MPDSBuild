@@ -9,6 +9,8 @@ teaser: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non
   interdum nulla, in pulvinar urna. Sed pellentesque, augue eu condimentum
   iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
   non...
+featuredImage:
+  src: /img/about.jpg
 ---
 Since joining the web-based restaurant review company in its startup phase, **Chandler Villacruz** has spearheaded market research activities that have allowed the firm to build effective advertising campaigns and achieve sound business growth.
 
