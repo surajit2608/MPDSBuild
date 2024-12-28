@@ -1,10 +1,10 @@
 ---
 templateKey: gallery-page
-published: true
-schemaType: GalleryPage
 pageSlug: /gallery
 pageTitle: Gallery
-metaDescription: Gallery Page
+metaDescription: Gallery Page of Chandler Villacruz, Senior Marketing Manager
+published: true
+schemaType: WebPage
 header: Gallery
 featuredImage:
   src: /img/pic-executive-banner-gallery-01.webp

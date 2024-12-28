@@ -9,7 +9,7 @@ header: Blog
 subheader: null
 featuredImage:
   src: /img/pic-executive-banner-blog-01.webp
-  alt: null
+  alt: Blog
   caption: null
 profileButton:
   link: /profile/
