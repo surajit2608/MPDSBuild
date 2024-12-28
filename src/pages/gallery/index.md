@@ -1,5 +1,5 @@
 ---
-templateKey: gallery-page
+templateKey: gallery-archive
 pageSlug: /gallery
 pageTitle: Gallery
 metaDescription: Gallery Page of Chandler Villacruz, Senior Marketing Manager

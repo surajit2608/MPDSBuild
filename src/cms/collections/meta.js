@@ -172,7 +172,7 @@ const menuDataFields = [
         name: 'label',
         widget: 'string',
         required: true,
-        hint: 'The text you want to appear in the menu, e.g. "Home" or "About".',
+        hint: 'The text you want to appear in the menu, e.g. "Home" or "Profile".',
       },
       {
         label: 'Page URL',
