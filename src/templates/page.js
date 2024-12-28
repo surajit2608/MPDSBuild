@@ -38,23 +38,31 @@ export const PageTemplate = ({
   <div className={`page-${cssSlug} ${!!featuredImage ? 'has-image' : 'no-image'}`}>
 
     {!!featuredImage && (
-      <Banner
-        isPreview={isPreview}
-        featuredImage={featuredImage}
-      />
+      <section className={templateKey === 'index-page' ? 'sec-hero-main' : templateKey === 'blog-post' ? 'sec-article-pic' : 'sec-hero-sml'}>
+        <Banner
+          header={header}
+          subheader={subheader}
+          isPreview={isPreview}
+          featuredImage={featuredImage}
+        />
+      </section>
     )}
 
-    <section className="sec-intro-text">
+    <section className={
+      templateKey === 'index-page' ? 'sec-intro-text' :
+        templateKey === 'blog-archive' ? 'sec-article-list' :
+          templateKey === 'blog-post' ? 'sec-article-full' :
+            templateKey === 'gallery-page' ? 'sec-picture-list' : 'sec-text-full'}
+    >
       <div className="pg-width">
         <div className="content">
 
-          <PageHeader
+          {/* <PageHeader
             header={header}
             subheader={subheader}
             missionStatement={missionStatement}
           />
           <section className="post-content-body">
-            {/* Featured Image, but not on homepage */}
             {templateKey !== 'index-page' && !!featuredImage && (
               <figure className="gatsby-resp-image-card-full">
                 <PreviewableImage
@@ -69,7 +77,6 @@ export const PageTemplate = ({
                 />
               </figure>
             )}
-            {/* homepage short biography and photo */}
             {!!shortBiography && (
               <ShortBiography
                 learnMoreButton={learnMoreButton}
@@ -78,7 +85,6 @@ export const PageTemplate = ({
                 isPreview={isPreview}
               />
             )}
-            {/* about page long bio */}
             {!!longBiography_MD && (
               <HTMLContent
                 className="gatsby-resp-image-card"
@@ -86,14 +92,12 @@ export const PageTemplate = ({
                 inlineImages={inlineImages}
               />
             )}
-            {/* contact form fields, if present */}
             {templateKey === 'contact-page' && !!formText && (
               <ContactForm formText={formText} isPreview={isPreview} />
             )}
             {templateKey === 'gallery-page' && !!formText && (
               <ContactForm formText={formText} isPreview={isPreview} />
             )}
-            {/* optionally display recent posts */}
             {!!recentPosts && !!recentPosts.length && (
               <Fragment>
                 <hr />
@@ -101,7 +105,6 @@ export const PageTemplate = ({
                 <PostFeed isPreview={isPreview} posts={recentPosts} />
               </Fragment>
             )}
-            {/* display any extra content */}
             {!!extraContent && (
               <ExtraContent
                 content={extraContent}
@@ -116,7 +119,7 @@ export const PageTemplate = ({
                 inlineImages={inlineImages}
               />
             )}
-          </section>
+          </section> */}
 
         </div>
       </div>
