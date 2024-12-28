@@ -56,7 +56,7 @@ export const PageTemplate = ({
 
           {templateKey === 'profile-page' && (
             <Fragment>
-              <h2>{name}</h2>
+              <h2>{name.split(' ')[0]} {name.split(' ')[1] && (<span>{name.split(' ')[1]}</span>)}</h2>
               <p class="title">{jobTitle}</p>
               <p class="location">{location}</p>
             </Fragment>
