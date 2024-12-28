@@ -41,7 +41,11 @@ export const PageTemplate = ({
         <Banner
           header={header}
           subheader={subheader}
-          imageSrc={isPreview ? featuredImage.src : featuredImage.d ? featuredImage.d.childImageSharp.fluid.src : featuredImage.m ? featuredImage.m.childImageSharp.fluid.src : null}
+          imageSrc={
+            templateKey === 'index-page' ?
+              (isPreview ? featuredImage.src : (!!featuredImage && !!featuredImage.d) ? featuredImage.d.childImageSharp.fluid.src : null)
+              : (isPreview ? featuredImage.src : (!!featuredImage && !!featuredImage.l) ? featuredImage.l.childImageSharp.fluid.src : null)
+          }
         />
       </section>
     )}
@@ -285,6 +289,18 @@ export const pageQuery = graphql`
               fluid(
                 maxWidth: 1440
                 maxHeight: 807
+                quality: 100
+                cropFocus: CENTER
+              ) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+          l: src {
+            childImageSharp {
+              fluid(
+                maxWidth: 1440
+                maxHeight: 270
                 quality: 100
                 cropFocus: CENTER
               ) {
