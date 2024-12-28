@@ -201,6 +201,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMM DD, YYYY")
             pageTitle
+            teaser
             featuredImage {
               src {
                 childImageSharp {
