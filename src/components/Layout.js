@@ -22,7 +22,9 @@ const Layout = ({ seoProps, children }) => {
   } = useSiteData()
 
   useEffect(() => {
-    faviconLetter("#000", "#fff", getInitials(siteName))
+    setTimeout(() => {
+      faviconLetter("#000", "#fff", getInitials(siteName))
+    }, 2000)
   }, [])
 
   const faviconLetter = (bgcolor, fontcolor, letter) => {
