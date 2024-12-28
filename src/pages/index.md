@@ -11,7 +11,16 @@ featuredImage:
   src: /img/pic-executive-main-banner-01.webp
   alt: Headshot of Chandler Villacruz
   caption: null
-pageContent: Home Page Content
+pageContent: Since joining the web-based restaurant review company in its
+  startup phase, **Chandler Villacruz** has spearheaded market research
+  activities that have allowed the firm to build effective advertising campaigns
+  and achieve sound **business growth**.
+profileButton:
+  link: /profile/
+  label: View Profile
+blogButton:
+  link: /blog/
+  label: Visit My Blog
 missionStatement: "{{mission_statement}}"
 shortBiography: Since joining the web-based restaurant review company in its
   startup phase, Chandler Villacruz has spearheaded market research activities
@@ -20,11 +29,5 @@ shortBiography: Since joining the web-based restaurant review company in its
 learnMoreButton:
   link: /about/
   label: Read More
-profileButton:
-  link: /profile/
-  label: View Profile
-blogButton:
-  link: /blog/
-  label: Visit My Blog
 showRecentPosts: false
 ---
