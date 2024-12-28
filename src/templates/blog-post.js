@@ -22,8 +22,6 @@ export const BlogPostTemplate = ({
   profileButton,
   blogButton,
 }) => {
-  console.log(featuredImage)
-
   const hasImg =
     featuredImage &&
     featuredImage.src &&
