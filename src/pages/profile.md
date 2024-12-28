@@ -1,19 +1,23 @@
 ---
 templateKey: profile-page
-published: true
-schemaType: ProfilePage
 pageSlug: /profile
 pageTitle: Profile
-metaDescription: Profile of {{client_name}}, {{job_title}}
-header: Profile of {{client_name}}
-subheader: Career highlights past and present
+metaDescription: Profile of Chandler Villacruz, Senior Marketing Manager, San
+  Francisco, California, USA
+published: true
+schemaType: ProfilePage
+header: Profile
+subheader: ""
 featuredImage:
   src: /img/pic-executive-banner-profile-01.webp
   alt: Headshot of {{client_name}}
   caption: null
 pageContent: Profile Page Content
-longBiography_MD: |
-  {{long_biography}}
+blogButton:
+  label: Visit My Blog
+  link: /blog/
 connectWithMe: Connect with me
 discoverConnectExplore: Discover, Connect and Explore
+longBiography_MD: |
+  {{long_biography}}
 ---
