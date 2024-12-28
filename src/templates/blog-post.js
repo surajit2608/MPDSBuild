@@ -53,7 +53,9 @@ export const BlogPostTemplate = ({
             </div>
 
             <h1>{pageTitle}</h1>
-            <p className="date">{date.format('MMM D, YYYY')}</p>
+            {!!date && (
+              <p className="date">{date.format('MMM D, YYYY')}</p>
+            )}
 
             <HTMLContent
               content={content}
