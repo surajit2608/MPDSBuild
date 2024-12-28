@@ -16,9 +16,6 @@ export const GalleryArchiveTemplate = ({
   profileButton,
   blogButton
 }) => {
-
-  console.log(posts)
-
   const hasFeaturedImage = !!featuredImage && !!featuredImage.src
   return (
     <Fragment>
@@ -68,7 +65,7 @@ const GalleryArchive = ({ data }) => {
       slug,
       pageTitle,
       date,
-      content: teaser,
+      teaser,
     }
   })
   const pageProps = {

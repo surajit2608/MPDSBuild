@@ -10,8 +10,6 @@ const Moment = moment().constructor
 
 const PhotoFeed = ({ isPreview, posts }) => (
   <Fragment>
-    {console.log(posts)}
-
     {!isPreview &&
       !!posts &&
       !!posts.length &&
