@@ -17,21 +17,24 @@ export const BlogArchiveTemplate = ({
   const hasFeaturedImage = !!featuredImage && !!featuredImage.src
   return (
     <Fragment>
-      <div className={hasFeaturedImage ? 'with-image' : 'no-image'}>
-        {!!featuredImage && (
+      {!!featuredImage && (
+        <section className="sec-hero-sml">
           <Banner
+            header={header}
+            subheader={subheader}
             isPreview={isPreview}
             featuredImage={featuredImage}
           />
-        )}
+        </section>
+      )}
 
-        <header className="page-head">
-          <h1 className="page-head-title">{header}</h1>
-          {!!subheader && <p className="page-head-description">{subheader}</p>}
-        </header>
-        
-      </div>
-      <PostFeed isPreview={isPreview} posts={posts} />
+      <section className="sec-article-list">
+        <div className="pg-width">
+          <div className="content">
+            <PostFeed isPreview={isPreview} posts={posts} />
+          </div>
+        </div>
+      </section>
     </Fragment>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
@@ -26,58 +26,72 @@ export const BlogPostTemplate = ({
       (typeof featuredImage.src === 'string' && featuredImage.src.length > 1))
 
   return (
-    <article
-      className={`post-content post-template ${
-        hasImg ? 'with-image' : 'no-image'
-      }`}
-      style={{ padding: 0 }}
-    >
-      <header className="page-head">
-        <h1 className="page-head-title">{pageTitle}</h1>
-        {!isPreview && (
-          <div className="post-meta">
-            <span className="blog-post-author">by {name}</span>
-            <br />
-            <time
-              dateTime={date.format('YYYY-MM-DD')}
-              className="post-meta-date"
-            >
-              Published: {date.format('MMM D, YYYY')}
-            </time>
-            {dateModified.isValid() &&
-              !dateModified.startOf('day').isSame(date.startOf('day')) && (
-                <time
-                  dateTime={dateModified.format('YYYY-MM-DD')}
-                  className="post-meta-date modified"
-                >
+    <Fragment>
+      {!!hasImg && (
+        <section className="sec-article-pic">
+          <Banner
+            header={''}
+            subheader={''}
+            isPreview={isPreview}
+            featuredImage={featuredImage}
+          />
+        </section>
+      )}
+
+      <section className="sec-article-full">
+        <div className="pg-width">
+          <div className="content">
+            
+            {/* <header className="page-head">
+              <h1 className="page-head-title">{pageTitle}</h1>
+              {!isPreview && (
+                <div className="post-meta">
+                  <span className="blog-post-author">by {name}</span>
                   <br />
-                  Last updated: {dateModified.format('MMM D, YYYY')}
-                </time>
+                  <time
+                    dateTime={date.format('YYYY-MM-DD')}
+                    className="post-meta-date"
+                  >
+                    Published: {date.format('MMM D, YYYY')}
+                  </time>
+                  {dateModified.isValid() &&
+                    !dateModified.startOf('day').isSame(date.startOf('day')) && (
+                      <time
+                        dateTime={dateModified.format('YYYY-MM-DD')}
+                        className="post-meta-date modified"
+                      >
+                        <br />
+                        Last updated: {dateModified.format('MMM D, YYYY')}
+                      </time>
+                    )}
+                </div>
               )}
+            </header>
+            <section className="post-content-body">
+              {!!hasImg && (
+                <figure
+                  className="gatsby-resp-image-card-full"
+                  style={{ marginBottom: '2em' }}
+                >
+                  <PreviewableImage
+                    isPreview={isPreview}
+                    src={featuredImage.src}
+                    alt={featuredImage.alt}
+                    caption={featuredImage.caption}
+                  />
+                </figure>
+              )}
+              <HTMLContent
+                className="post-content-body-text"
+                content={content}
+                inlineImages={inlineImages}
+              />
+            </section> */}
+
           </div>
-        )}
-      </header>
-      <section className="post-content-body">
-        {!!hasImg && (
-          <figure
-            className="gatsby-resp-image-card-full"
-            style={{ marginBottom: '2em' }}
-          >
-            <PreviewableImage
-              isPreview={isPreview}
-              src={featuredImage.src}
-              alt={featuredImage.alt}
-              caption={featuredImage.caption}
-            />
-          </figure>
-        )}
-        <HTMLContent
-          className="post-content-body-text"
-          content={content}
-          inlineImages={inlineImages}
-        />
+        </div>
       </section>
-    </article>
+    </Fragment>
   )
 }
 

@@ -35,10 +35,9 @@ export const PageTemplate = ({
   inlineImages,
   formText,
 }) => (
-  <div className={`tmpkey-${templateKey} page-${cssSlug} ${!!featuredImage ? 'has-image' : 'no-image'}`}>
-
+  <Fragment>
     {!!featuredImage && (
-      <section className={templateKey === 'index-page' ? 'sec-hero-main' : templateKey === 'blog-post' ? 'sec-article-pic' : 'sec-hero-sml'}>
+      <section className={templateKey === 'index-page' ? 'sec-hero-main' : 'sec-hero-sml'}>
         <Banner
           header={header}
           subheader={subheader}
@@ -48,12 +47,7 @@ export const PageTemplate = ({
       </section>
     )}
 
-    <section className={
-      templateKey === 'index-page' ? 'sec-intro-text' :
-        templateKey === 'blog-archive' ? 'sec-article-list' :
-          templateKey === 'blog-post' ? 'sec-article-full' :
-            templateKey === 'gallery-page' ? 'sec-picture-list' : 'sec-text-full'}
-    >
+    <section className={templateKey === 'index-page' ? 'sec-intro-text' : templateKey === 'gallery-page' ? 'sec-picture-list' : 'sec-text-full'}>
       <div className="pg-width">
         <div className="content">
 
@@ -124,7 +118,7 @@ export const PageTemplate = ({
         </div>
       </div>
     </section>
-  </div>
+  </Fragment>
 )
 
 PageTemplate.propTypes = {
