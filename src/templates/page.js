@@ -14,6 +14,7 @@ export const PageTemplate = ({
   location,
   header,
   subheader,
+  slug,
   cssSlug,
   templateKey,
   missionStatement,
@@ -105,6 +106,7 @@ PageTemplate.propTypes = {
   header: PropTypes.string.isRequired,
   subheader: PropTypes.string,
   templateKey: PropTypes.string.isRequired,
+  slug: PropTypes.string,
   cssSlug: PropTypes.string.isRequired,
   missionStatement: PropTypes.string,
   shortBiography: PropTypes.string,
@@ -184,6 +186,7 @@ const Page = ({ data }) => {
     header,
     subheader,
     templateKey,
+    slug,
     cssSlug: slug === '/' ? 'home' : slug.split('/').join('-'),
     missionStatement,
     shortBiography,
@@ -193,7 +196,7 @@ const Page = ({ data }) => {
     // null out the featured image if empty to prevent erroneous proptype warnings
     featuredImage: !!featuredImage && !!featuredImage.src ? featuredImage : null,
     extraContent: data.markdownRemark.html,
-    pageContent: data.markdownRemark.html,
+    pageContent: data.markdownRemark.pageContent,
     recentPosts: showRecentPosts ? recentPosts : [],
     inlineImages,
     learnMoreButton,
@@ -231,6 +234,7 @@ export const pageQuery = graphql`
         }
       }
       html
+      pageContent
       frontmatter {
         templateKey
         pageTitle
