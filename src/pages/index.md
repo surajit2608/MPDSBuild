@@ -4,10 +4,10 @@ templateKey: index-page
 pageTitle: Chandler Villacruz, Senior Marketing Manager
 metaDescription: Personal website of Chandler Villacruz, Senior Marketing Manager.
 published: true
-pageContent: Since joining the web-based restaurant review company in its
+pageContent: <p>Since joining the web-based restaurant review company in its
   startup phase, **Chandler Villacruz** has spearheaded market research
   activities that have allowed the firm to build effective advertising campaigns
-  and achieve sound business growth.
+  and achieve sound business growth.</p>
 learnMoreButton:
   link: /about/
   label: Read More
