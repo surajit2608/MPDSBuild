@@ -59,10 +59,12 @@ export const PageTemplate = ({
             </Fragment>
           )}
 
-          <HTMLContent
-            content={pageContent}
-            inlineImages={inlineImages}
-          />
+          {(templateKey === 'index-page' && templateKey === 'profile-page') && (
+            <HTMLContent
+              content={pageContent}
+              inlineImages={inlineImages}
+            />
+          )}
 
           <div class="btn-row">
             {!!profileButton && (
