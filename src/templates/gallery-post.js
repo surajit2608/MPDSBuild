@@ -34,8 +34,7 @@ export const GalleryPostTemplate = ({
         <Banner
           header={''}
           subheader={''}
-          isPreview={hasImg ? isPreview : true}
-          featuredImage={hasImg ? featuredImage : { src: '/img/pic-executive-banner-gallery-01.webp' }}
+          imageSrc={hasImg ? featuredImage.src.childImageSharp.fluid.src : '/img/pic-executive-banner-gallery-01.webp'}
         />
       </section>
 

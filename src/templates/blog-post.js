@@ -34,8 +34,7 @@ export const BlogPostTemplate = ({
         <Banner
           header={''}
           subheader={''}
-          isPreview={hasImg ? isPreview : true}
-          featuredImage={hasImg ? featuredImage : { src: '/img/pic-executive-banner-blog-01.webp' }}
+          imageSrc={hasImg ? featuredImage.src.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'}
         />
       </section>
 

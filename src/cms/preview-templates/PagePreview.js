@@ -40,6 +40,9 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
   return (
     <div className="londn">
       <PageTemplate
+        name={''}
+        jobTitle={''}
+        location={''}
         header={header}
         subheader={subheader}
         templateKey={templateKey}
@@ -49,6 +52,7 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
         shortBiography={shortBiography}
         connectWithMe={connectWithMe}
         discoverConnectExplore={discoverConnectExplore}
+        longBiography_MD={longBiography_MD}
         featuredImage={featuredImage}
         extraContent={extraContent}
         pageContent={pageContent}
@@ -58,8 +62,8 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
         isPreview={true}
         recentPosts={[]}
         inlineImages={[]}
+        socialLinks={[]}
         formText={formText}
-        longBiography_MD={longBiography_MD}
       />
     </div>
   )
