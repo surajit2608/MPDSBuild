@@ -16,9 +16,6 @@ export const GalleryArchiveTemplate = ({
   profileButton,
   blogButton
 }) => {
-
-  console.log('GalleryArchiveTemplate', featuredImage)
-
   const hasFeaturedImage = !!featuredImage && !!featuredImage.src
   return (
     <Fragment>
@@ -193,7 +190,6 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          html
           fields {
             slug
             gitAuthorTime

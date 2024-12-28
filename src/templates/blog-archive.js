@@ -15,17 +15,14 @@ export const BlogArchiveTemplate = ({
   isPreview,
   profileButton
 }) => {
-  
-  console.log('BlogArchiveTemplate', featuredImage)
-
-  const hasFeaturedImage = !!featuredImage && !!featuredImage.src
+  const featuredImageSrc = (!!featuredImage && !!featuredImage.d) ? featuredImage.d.childImageSharp.fluid.src : (!!featuredImage && !!featuredImage.m) ? featuredImage.m.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'
   return (
     <Fragment>
       <section className="sec-hero-sml">
         <Banner
           header={header}
           subheader={subheader}
-          imageSrc={hasFeaturedImage ? featuredImage.src.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'}
+          imageSrc={featuredImageSrc}
         />
       </section>
 
