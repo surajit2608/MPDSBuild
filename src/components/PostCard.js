@@ -7,7 +7,7 @@ import { featuredImagePropTypes } from '../proptypes'
 
 const Moment = moment().constructor
 
-const PostCard = ({ count, image, slug, pageTitle, date, excerpt }) => {
+const PostCard = ({ count, image, slug, pageTitle, date, teaser }) => {
   const [ref, inView] = useInView({ triggerOnce: true })
 
   return (
@@ -19,7 +19,9 @@ const PostCard = ({ count, image, slug, pageTitle, date, excerpt }) => {
           {date.format('MMM D, YYYY')}
         </p>
       )}
-      <p>{excerpt}</p>
+      {!!teaser && (
+        <p>{teaser}</p>
+      )}
     </article>
   )
 }
@@ -30,7 +32,7 @@ export const postPropTypes = {
   slug: PropTypes.string,
   pageTitle: PropTypes.string.isRequired,
   date: PropTypes.instanceOf(Moment),
-  excerpt: PropTypes.string,
+  teaser: PropTypes.string,
 }
 
 PostCard.propTypes = postPropTypes

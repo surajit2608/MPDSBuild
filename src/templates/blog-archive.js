@@ -51,7 +51,7 @@ const BlogArchive = ({ data }) => {
   const { header, subheader, featuredImage, profileButton } = data.markdownRemark.frontmatter
   const posts = data.allMarkdownRemark.edges.map(({ node }) => {
     const {
-      frontmatter: { featuredImage, pageTitle, date: userDate, excerpt },
+      frontmatter: { featuredImage, pageTitle, date: userDate, teaser },
       fields: { slug, gitAuthorTime, gitCreatedTime },
     } = node
     const { date } = getValidDates(userDate, gitAuthorTime, gitCreatedTime)
@@ -60,7 +60,7 @@ const BlogArchive = ({ data }) => {
       slug,
       pageTitle,
       date,
-      excerpt,
+      teaser,
     }
   })
   const pageProps = {
@@ -188,7 +188,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMM DD, YYYY")
             pageTitle
-            excerpt
+            teaser
             featuredImage {
               src {
                 childImageSharp {

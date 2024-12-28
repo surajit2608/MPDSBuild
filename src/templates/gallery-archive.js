@@ -57,7 +57,7 @@ const GalleryArchive = ({ data }) => {
   const { header, subheader, featuredImage, profileButton, blogButton } = data.markdownRemark.frontmatter
   const posts = data.allMarkdownRemark.edges.map(({ node }) => {
     const {
-      frontmatter: { featuredImage, pageTitle, date: userDate },
+      frontmatter: { featuredImage, pageTitle, date: userDate, teaser },
       fields: { slug, gitAuthorTime, gitCreatedTime },
     } = node
     const { date } = getValidDates(userDate, gitAuthorTime, gitCreatedTime)
@@ -66,7 +66,7 @@ const GalleryArchive = ({ data }) => {
       slug,
       pageTitle,
       date,
-      content: node.html,
+      content: teaser,
     }
   })
   const pageProps = {

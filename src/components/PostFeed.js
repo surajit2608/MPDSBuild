@@ -15,7 +15,7 @@ const PostFeed = ({ isPreview, posts }) => (
     {!isPreview &&
       !!posts &&
       !!posts.length &&
-      posts.map(({ image, slug, pageTitle, date, excerpt }, index) => {
+      posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
         return (
           <PostCard
             key={uuidv4()}
@@ -24,7 +24,7 @@ const PostFeed = ({ isPreview, posts }) => (
             slug={addTrailingSlash(slug)}
             pageTitle={pageTitle}
             date={date}
-            excerpt={excerpt}
+            teaser={teaser}
           />
         )
       })}
@@ -45,7 +45,7 @@ PostFeed.propTypes = {
       slug: PropTypes.string,
       pageTitle: PropTypes.string.isRequired,
       date: PropTypes.instanceOf(Moment),
-      excerpt: PropTypes.string,
+      teaser: PropTypes.string,
     }),
   ),
 }

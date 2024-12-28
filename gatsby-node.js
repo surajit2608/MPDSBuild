@@ -52,7 +52,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       location: String
       profileImage: File @fileByRelativePath
       siteUrl: String
-      excerpt: String
+      teaser: String
       socialLinks: SocialLinks
       favicon: File @fileByRelativePath
       fallbackImage: File @fileByRelativePath

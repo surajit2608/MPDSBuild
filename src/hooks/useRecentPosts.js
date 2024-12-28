@@ -25,7 +25,7 @@ export default () => {
               frontmatter {
                 date(formatString: "MMM D, YYYY")
                 pageTitle
-                excerpt
+                teaser
                 featuredImage {
                   src {
                     childImageSharp {
@@ -79,7 +79,7 @@ export default () => {
   ) {
     return data.allMarkdownRemark.edges.map(({ node }) => {
       const {
-        frontmatter: { featuredImage, pageTitle, date: userDate, excerpt },
+        frontmatter: { featuredImage, pageTitle, date: userDate, teaser },
         fields: { slug, gitAuthorTime, gitCreatedTime },
       } = node
       const { date, dateModified } = getValidDates(
@@ -93,7 +93,7 @@ export default () => {
         pageTitle,
         date,
         dateModified,
-        excerpt
+        teaser
       }
     })
   } else {
