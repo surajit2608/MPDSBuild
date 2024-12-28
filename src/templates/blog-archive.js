@@ -22,7 +22,7 @@ export const BlogArchiveTemplate = ({
         <Banner
           header={header}
           subheader={subheader}
-          imageSrc={hasFeaturedImage ? featuredImage.src : featuredImage.d ? featuredImage.d.childImageSharp.fluid.src : featuredImage.m ? featuredImage.m.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'}
+          imageSrc={hasFeaturedImage ? featuredImage.src.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'}
         />
       </section>
 
