@@ -139,12 +139,11 @@ exports.createPages = ({ graphql, actions }) => {
     // Create pages
     const posts = result.data.allMarkdownRemark.edges
 
+    console.log(posts)
+
     posts.forEach((edge) => {
       const id = edge.node.id
-      const template =
-        edge.node.frontmatter.templateKey.indexOf('-page') !== -1
-          ? 'page'
-          : edge.node.frontmatter.templateKey
+      const template = edge.node.frontmatter.templateKey.indexOf('-page') !== -1 ? 'page' : edge.node.frontmatter.templateKey
       createPage({
         path: addTrailingSlash(edge.node.fields.slug),
         // tags: edge.node.frontmatter.tags,
