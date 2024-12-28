@@ -61,7 +61,7 @@ export const PageTemplate = ({
           {(templateKey === 'index-page' || templateKey === 'profile-page') && (
             <div>
               <HTMLContent
-                content={content}
+                content={pageContent}
                 inlineImages={inlineImages}
               />
             </div>

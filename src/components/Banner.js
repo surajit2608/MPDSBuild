@@ -30,7 +30,7 @@ const Banner = ({ header, subheader, imageSrc }) => {
             />
           )}
           {!!header && (
-            <h1>{header}</h1>
+            <h1>{header.split(' ')[0]} {header.split(' ')[1] && (<span>{header.split(' ')[1]}</span>)}</h1>
           )}
           {!!subheader && (
             <p>{subheader}</p>
