@@ -43,7 +43,7 @@ export const BlogPostTemplate = ({
         <div className="pg-width">
           <article className="content">
             <div class="btn-row">
-              <Link to="/blog" className="btn-back">
+              <Link to="/blog/" className="btn-back">
                 <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0.199584 7.46322L6.59973 0.26186C6.9343 -0.0787819 7.42011 -0.0758913 7.731 0.205599C8.0419 0.487085 8.0687 1.02612 7.78725 1.33707L2.57464 7.2007H23.2C23.6418 7.2007 24 7.55892 24 8.00085C24 8.44277 23.6418 8.801 23.2 8.801H2.57464L7.78725 14.6646C8.0687 14.9756 8.03263 15.5047 7.731 15.7961C7.41698 16.0994 6.88117 16.0508 6.59973 15.7398L0.199584 8.53843C-0.0831038 8.14319 -0.0494198 7.80829 0.199584 7.46322Z" fill="#3171B3"></path>
                 </svg>

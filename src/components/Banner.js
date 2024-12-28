@@ -5,6 +5,8 @@ import { useSiteData } from '../hooks'
 const Banner = ({ header, subheader, isPreview, featuredImage }) => {
   const { name, profileImage } = useSiteData()
 
+  console.log('Banner: ', isPreview, featuredImage)
+
   return (
     <div className="pg-width">
       <div className="banner">
@@ -18,7 +20,7 @@ const Banner = ({ header, subheader, isPreview, featuredImage }) => {
         />
 
         <div className="content-box">
-          {!!profileImage && (
+          {!!header && !!profileImage && (
             <img
               alt={name}
               width={140}
@@ -27,7 +29,9 @@ const Banner = ({ header, subheader, isPreview, featuredImage }) => {
               src={profileImage.childImageSharp.fluid.src}
             />
           )}
-          <h1>{header}</h1>
+          {!!header && (
+            <h1>{header}</h1>
+          )}
           {!!subheader && (
             <p>{subheader}</p>
           )}

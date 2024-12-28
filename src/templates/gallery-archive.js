@@ -100,7 +100,7 @@ export default GalleryArchive
 
 export const pageQuery = graphql`
   query GalleryArchiveTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "blog-archive" } }) {
+    markdownRemark(frontmatter: { templateKey: { eq: "gallery-archive" } }) {
       fields {
         slug
         gitAuthorTime

@@ -45,6 +45,7 @@ PostFeed.propTypes = {
       slug: PropTypes.string,
       pageTitle: PropTypes.string.isRequired,
       date: PropTypes.instanceOf(Moment),
+      teaser: PropTypes.string,
     }),
   ),
 }
