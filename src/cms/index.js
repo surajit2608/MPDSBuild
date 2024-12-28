@@ -2,6 +2,7 @@ import CMS from 'netlify-cms-app'
 import uploadcare from 'netlify-cms-media-library-uploadcare'
 import cloudinary from 'netlify-cms-media-library-cloudinary'
 import blog from './collections/blog'
+import gallery from './collections/gallery'
 import page from './collections/page'
 import meta from './collections/meta'
 import BlogPostPreview from './preview-templates/BlogPostPreview'
@@ -102,6 +103,7 @@ CMS.init({
         files: pages.map((data) => page(data)),
       },
       blog,
+      gallery,
     ],
   },
 })
