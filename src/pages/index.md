@@ -9,7 +9,7 @@ header: Chandler Villacruz
 subheader: Senior Marketing Manager
 featuredImage:
   src: /img/pic-executive-main-banner-01.webp
-  alt: Headshot of Chandler Villacruz
+  alt: Chandler Villacruz
   caption: null
 pageContent: Since joining the web-based restaurant review company in its
   startup phase, **Chandler Villacruz** has spearheaded market research
