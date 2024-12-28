@@ -5,6 +5,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import { v4 as uuidv4 } from 'uuid'
 import { useNavPages } from '../hooks'
+import { getInitials } from '../utils'
 
 const NavLink = ({ slug, name }) => {
   return (
@@ -22,12 +23,6 @@ NavLink.propTypes = {
 const Nav = ({ toggleNav, setToggleNav, siteName }) => {
   const navPages = useNavPages()
   const siteNameParts = siteName.split(' ')
-
-  const getInitials = (fullName) => {
-    const words = fullName.split(' ')
-    const initials = words.map(word => word[0].toUpperCase()).join('')
-    return initials
-  }
 
   return (
     <Fragment>
