@@ -40,7 +40,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       discoverConnectExplore: String
       showRecentPosts: Boolean
       longBiography_MD: String
-      pageContent: String
+      extraContent: String
       learnMoreButton: LearnMoreButton
       profileButton: ProfileButton
       blogButton: BlogButton

@@ -122,14 +122,14 @@ export default ({ label, file, templateKey, pageSlug, additionalFields }) => {
     },
     extraContent: {
       label: 'Extra Content',
-      name: 'body',
+      name: 'extraContent',
       widget: 'markdown',
       required: false,
       hint: 'Any additional content you want to place at the bottom of the page.',
     },
     pageContent: {
       label: 'Page Content',
-      name: 'pageContent',
+      name: 'body',
       widget: 'markdown',
       required: true,
       hint: 'Main content you want to place at the home & profile page.',

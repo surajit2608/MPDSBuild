@@ -160,7 +160,7 @@ const Page = ({ data }) => {
       connectWithMe,
       discoverConnectExplore,
       longBiography_MD,
-      pageContent,
+      extraContent,
       featuredImage,
       showRecentPosts,
       learnMoreButton,
@@ -205,10 +205,10 @@ const Page = ({ data }) => {
     connectWithMe,
     discoverConnectExplore,
     longBiography_MD,
-    pageContent,
+    pageContent: data.markdownRemark.html,
     // null out the featured image if empty to prevent erroneous proptype warnings
     featuredImage: !!featuredImage && !!featuredImage.src ? featuredImage : null,
-    extraContent: data.markdownRemark.html,
+    extraContent,
     recentPosts: showRecentPosts ? recentPosts : [],
     inlineImages,
     learnMoreButton,
@@ -257,7 +257,7 @@ export const pageQuery = graphql`
         connectWithMe
         discoverConnectExplore
         longBiography_MD
-        pageContent
+        extraContent
         missionStatement
         showRecentPosts
         learnMoreButton {

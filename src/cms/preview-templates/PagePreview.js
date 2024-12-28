@@ -34,8 +34,8 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
     message: entry.getIn(['data', 'formText', 'message']) || '',
     submit: entry.getIn(['data', 'formText', 'submit']) || '',
   }
-  const extraContent = toHTML(entry.getIn(['data', 'body']))
-  const pageContent = toHTML(entry.getIn(['data', 'pageContent']))
+  const extraContent = toHTML(entry.getIn(['data', 'extraContent']))
+  const pageContent = toHTML(entry.getIn(['data', 'body']))
 
   return (
     <div className="londn">
