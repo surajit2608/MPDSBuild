@@ -4,12 +4,12 @@ import { getValidDates } from '../utils'
 export default () => {
   const data = useStaticQuery(
     graphql`
-      query QueryRecentPosts {
+      query QueryRecentPhotos {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: {
             frontmatter: {
-              templateKey: { eq: "blog-post" }
+              templateKey: { eq: "gallery-post" }
               published: { eq: true }
             }
           }

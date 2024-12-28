@@ -183,7 +183,7 @@ export const pageQuery = graphql`
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
-          templateKey: { eq: "blog-post" }
+          templateKey: { eq: "gallery-post" }
           published: { eq: true }
         }
       }
@@ -198,6 +198,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMM DD, YYYY")
             pageTitle
+            teaser
             featuredImage {
               src {
                 childImageSharp {
