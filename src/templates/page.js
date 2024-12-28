@@ -91,7 +91,7 @@ export const PageTemplate = ({
             {!!socialLinks && !!socialLinks.length && socialLinks.map((social) => (
               <div className="ech-box" key={uuidv4()}>
                 <a href={Object.values(social)[0].url} target="_blank" className="sm-icon">
-                  <img src={`assets/svgs/${Object.keys(social)[0].toLowerCase()}-color.svg`} alt={Object.keys(social)[0]} width="60" height="60" />
+                  <img src={`/img/${Object.keys(social)[0].toLowerCase()}-color.svg`} alt={Object.keys(social)[0]} width="60" height="60" />
                 </a>
                 <p>{Object.keys(social)[0]}</p>
                 <div class="btn-row">
