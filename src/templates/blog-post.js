@@ -6,6 +6,7 @@ import { Layout, PreviewableImage, HTMLContent } from '../components'
 import { useSiteData } from '../hooks'
 import { featuredImagePropTypes } from '../proptypes'
 import { seoProps, getValidDates } from '../utils'
+import Banner from '../components/Banner'
 
 const Moment = moment().constructor
 
