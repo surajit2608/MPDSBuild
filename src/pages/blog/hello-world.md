@@ -3,8 +3,10 @@ excerpt: Hello World Hello World Hello World
 templateKey: blog-post
 schemaType: BlogPosting
 pageTitle: Title of blog Lorem ipsum dolor sit amet
-metaDescription: Hello World Hello World Hello World Hello World Hello World
-  Hello World Hello World Hello World
+metaDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Maecenas non interdum nulla, in pulvinar urna. Sed pellentesque, augue eu
+  condimentum iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Maecenas non
 published: true
 date: 2024-12-28T11:31:04.104Z
 teaser: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non
