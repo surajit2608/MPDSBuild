@@ -15,6 +15,9 @@ export const BlogArchiveTemplate = ({
   isPreview,
   profileButton
 }) => {
+  
+  console.log('BlogArchiveTemplate', featuredImage)
+
   const hasFeaturedImage = !!featuredImage && !!featuredImage.src
   return (
     <Fragment>
