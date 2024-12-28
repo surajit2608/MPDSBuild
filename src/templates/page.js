@@ -7,7 +7,6 @@ import { addTrailingSlash, seoProps } from '../utils'
 import { v4 as uuidv4 } from 'uuid'
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
-import HTMLContent from '../components/HTMLContent'
 
 export const PageTemplate = ({
   name,
@@ -47,7 +46,7 @@ export const PageTemplate = ({
       </section>
     )}
 
-    <section className={templateKey === 'index-page' ? 'sec-intro-text' : templateKey === 'gallery-page' ? 'sec-picture-list' : 'sec-text-full'}>
+    <section className={templateKey === 'index-page' ? 'sec-intro-text' : 'sec-text-full'}>
       <div className="pg-width">
         <div className="content">
 
@@ -60,9 +59,8 @@ export const PageTemplate = ({
           )}
 
           {(templateKey === 'index-page' || templateKey === 'profile-page') && (
-            <HTMLContent
-              content={pageContent}
-              inlineImages={inlineImages}
+            <div
+              dangerouslySetInnerHTML={{ __html: pageContent }}
             />
           )}
 

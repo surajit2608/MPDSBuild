@@ -18,16 +18,14 @@ export const BlogArchiveTemplate = ({
   const hasFeaturedImage = !!featuredImage && !!featuredImage.src
   return (
     <Fragment>
-      {!!featuredImage && (
-        <section className="sec-hero-sml">
-          <Banner
-            header={header}
-            subheader={subheader}
-            isPreview={isPreview}
-            featuredImage={featuredImage}
-          />
-        </section>
-      )}
+      <section className="sec-hero-sml">
+        <Banner
+          header={header}
+          subheader={subheader}
+          isPreview={hasFeaturedImage ? isPreview : true}
+          featuredImage={hasFeaturedImage ? featuredImage : { src: '/img/pic-executive-banner-blog-01.webp' }}
+        />
+      </section>
 
       <section className="sec-article-list">
         <div className="pg-width">

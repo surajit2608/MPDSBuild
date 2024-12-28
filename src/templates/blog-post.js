@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import moment from 'moment'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { Layout, PreviewableImage, HTMLContent } from '../components'
+import { graphql, Link } from 'gatsby'
+import { Layout, HTMLContent } from '../components'
 import { useSiteData } from '../hooks'
 import { featuredImagePropTypes } from '../proptypes'
 import { seoProps, getValidDates } from '../utils'
@@ -19,6 +19,8 @@ export const BlogPostTemplate = ({
   featuredImage,
   isPreview,
   inlineImages,
+  profileButton,
+  blogButton,
 }) => {
   const hasImg =
     featuredImage &&
@@ -39,55 +41,37 @@ export const BlogPostTemplate = ({
 
       <section className="sec-article-full">
         <div className="pg-width">
-          <div className="content">
+          <article className="content">
+            <div class="btn-row">
+              <Link to="/blog" className="btn-back">
+                <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.199584 7.46322L6.59973 0.26186C6.9343 -0.0787819 7.42011 -0.0758913 7.731 0.205599C8.0419 0.487085 8.0687 1.02612 7.78725 1.33707L2.57464 7.2007H23.2C23.6418 7.2007 24 7.55892 24 8.00085C24 8.44277 23.6418 8.801 23.2 8.801H2.57464L7.78725 14.6646C8.0687 14.9756 8.03263 15.5047 7.731 15.7961C7.41698 16.0994 6.88117 16.0508 6.59973 15.7398L0.199584 8.53843C-0.0831038 8.14319 -0.0494198 7.80829 0.199584 7.46322Z" fill="#3171B3"></path>
+                </svg>
+                <span>View all posts</span>
+              </Link>
+            </div>
 
-            {/* <header className="page-head">
-              <h1 className="page-head-title">{pageTitle}</h1>
-              {!isPreview && (
-                <div className="post-meta">
-                  <span className="blog-post-author">by {name}</span>
-                  <br />
-                  <time
-                    dateTime={date.format('YYYY-MM-DD')}
-                    className="post-meta-date"
-                  >
-                    Published: {date.format('MMM D, YYYY')}
-                  </time>
-                  {dateModified.isValid() &&
-                    !dateModified.startOf('day').isSame(date.startOf('day')) && (
-                      <time
-                        dateTime={dateModified.format('YYYY-MM-DD')}
-                        className="post-meta-date modified"
-                      >
-                        <br />
-                        Last updated: {dateModified.format('MMM D, YYYY')}
-                      </time>
-                    )}
-                </div>
-              )}
-            </header>
-            <section className="post-content-body">
-              {!!hasImg && (
-                <figure
-                  className="gatsby-resp-image-card-full"
-                  style={{ marginBottom: '2em' }}
-                >
-                  <PreviewableImage
-                    isPreview={isPreview}
-                    src={featuredImage.src}
-                    alt={featuredImage.alt}
-                    caption={featuredImage.caption}
-                  />
-                </figure>
-              )}
-              <HTMLContent
-                className="post-content-body-text"
-                content={content}
-                inlineImages={inlineImages}
-              />
-            </section> */}
+            <h1>{pageTitle}</h1>
+            <p className="date">{date.format('MMM D, YYYY')}</p>
 
-          </div>
+            <HTMLContent
+              content={content}
+              inlineImages={inlineImages}
+            />
+
+            <div class="btn-row">
+              {!!profileButton && (
+                <Link className="btn-primary" to={addTrailingSlash(profileButton.link)}>
+                  {profileButton.label}
+                </Link>
+              )}
+              {!!blogButton && (
+                <Link className="btn-primary" to={addTrailingSlash(blogButton.link)}>
+                  {blogButton.label}
+                </Link>
+              )}
+            </div>
+          </article>
         </div>
       </section>
     </Fragment>
@@ -100,6 +84,8 @@ const BlogPost = ({ data }) => {
     pageTitle,
     featuredImage,
     date: userDate,
+    profileButton,
+    blogButton,
   } = data.markdownRemark.frontmatter
   const {
     gitAuthorTime,
@@ -119,6 +105,8 @@ const BlogPost = ({ data }) => {
     featuredImage,
     content: data.markdownRemark.html,
     inlineImages,
+    profileButton,
+    blogButton,
   }
   return (
     <Layout seoProps={seoProps(data)}>
@@ -165,6 +153,14 @@ export const pageQuery = graphql`
         pageTitle
         metaDescription
         schemaType
+        profileButton {
+          link
+          label
+        }
+        blogButton {
+          link
+          label
+        }
         date(formatString: "MMM D, YYYY")
         featuredImage {
           src {
