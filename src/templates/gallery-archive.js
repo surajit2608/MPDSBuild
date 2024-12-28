@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { Layout, PreviewableImage, PostFeed } from '../components'
+import { graphql, Link } from 'gatsby'
+import { Layout, PhotoFeed } from '../components'
 import { postPropTypes } from '../components/PostCard'
 import { featuredImagePropTypes } from '../proptypes'
-import { seoProps, getValidDates } from '../utils'
+import { seoProps, getValidDates, addTrailingSlash } from '../utils'
 import Banner from '../components/Banner'
 
 export const GalleryArchiveTemplate = ({
@@ -13,6 +13,8 @@ export const GalleryArchiveTemplate = ({
   posts,
   featuredImage,
   isPreview,
+  profileButton,
+  blogButton
 }) => {
   const hasFeaturedImage = !!featuredImage && !!featuredImage.src
   return (
@@ -28,10 +30,24 @@ export const GalleryArchiveTemplate = ({
         </section>
       )}
 
-      <section className="sec-article-list">
+      <section className="sec-picture-list">
         <div className="pg-width">
           <div className="content">
-            <PostFeed isPreview={isPreview} posts={posts} />
+            <div className="all-pics">
+              <PhotoFeed isPreview={isPreview} posts={posts} />
+            </div>
+            <div class="btn-row">
+              {!!profileButton && (
+                <Link className="btn-primary" to={addTrailingSlash(profileButton.link)}>
+                  {profileButton.label}
+                </Link>
+              )}
+              {!!blogButton && (
+                <Link className="btn-primary" to={addTrailingSlash(blogButton.link)}>
+                  {blogButton.label}
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -40,7 +56,7 @@ export const GalleryArchiveTemplate = ({
 }
 
 const GalleryArchive = ({ data }) => {
-  const { header, subheader, featuredImage } = data.markdownRemark.frontmatter
+  const { header, subheader, featuredImage, profileButton, blogButton } = data.markdownRemark.frontmatter
   const posts = data.allMarkdownRemark.edges.map(({ node }) => {
     const {
       frontmatter: { featuredImage, pageTitle, date: userDate },
@@ -59,6 +75,8 @@ const GalleryArchive = ({ data }) => {
     subheader,
     featuredImage,
     posts,
+    profileButton,
+    blogButton
   }
 
   return (
@@ -74,6 +92,10 @@ GalleryArchiveTemplate.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.shape(postPropTypes)),
   featuredImage: featuredImagePropTypes,
   isPreview: PropTypes.bool,
+  profileButton: PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  }),
 }
 
 export default GalleryArchive
@@ -93,6 +115,14 @@ export const pageQuery = graphql`
         schemaType
         header
         subheader
+        profileButton {
+          link
+          label
+        }
+        blogButton {
+          link
+          label
+        }
         featuredImage {
           src {
             childImageSharp {

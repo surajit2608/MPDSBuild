@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import PostCard from './PostCard'
+import PhotoCard from './PhotoCard'
 import { v4 as uuidv4 } from 'uuid'
 import moment from 'moment'
 import { addTrailingSlash } from '../utils'
@@ -8,7 +8,7 @@ import { featuredImagePropTypes } from '../proptypes'
 
 const Moment = moment().constructor
 
-const PostFeed = ({ isPreview, posts }) => (
+const PhotoFeed = ({ isPreview, posts }) => (
   <Fragment>
     {console.log(posts)}
 
@@ -17,7 +17,7 @@ const PostFeed = ({ isPreview, posts }) => (
       !!posts.length &&
       posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
         return (
-          <PostCard
+          <PhotoCard
             key={uuidv4()}
             count={index}
             image={image}
@@ -37,7 +37,7 @@ const PostFeed = ({ isPreview, posts }) => (
   </Fragment>
 )
 
-PostFeed.propTypes = {
+PhotoFeed.propTypes = {
   isPreview: PropTypes.bool,
   posts: PropTypes.arrayOf(
     PropTypes.shape({
@@ -49,4 +49,4 @@ PostFeed.propTypes = {
   ),
 }
 
-export default PostFeed
+export default PhotoFeed

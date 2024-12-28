@@ -59,7 +59,7 @@ export const PageTemplate = ({
             </Fragment>
           )}
 
-          {(templateKey === 'index-page' && templateKey === 'profile-page') && (
+          {(templateKey === 'index-page' || templateKey === 'profile-page') && (
             <HTMLContent
               content={pageContent}
               inlineImages={inlineImages}
@@ -256,6 +256,14 @@ export const pageQuery = graphql`
         missionStatement
         showRecentPosts
         learnMoreButton {
+          link
+          label
+        }
+        profileButton {
+          link
+          label
+        }
+        blogButton {
           link
           label
         }

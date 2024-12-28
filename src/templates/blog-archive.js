@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { Layout, PreviewableImage, PostFeed } from '../components'
+import { graphql, Link } from 'gatsby'
+import { Layout, PostFeed } from '../components'
 import { postPropTypes } from '../components/PostCard'
 import { featuredImagePropTypes } from '../proptypes'
-import { seoProps, getValidDates } from '../utils'
+import { seoProps, getValidDates, addTrailingSlash } from '../utils'
 import Banner from '../components/Banner'
 
 export const BlogArchiveTemplate = ({
@@ -13,6 +13,7 @@ export const BlogArchiveTemplate = ({
   posts,
   featuredImage,
   isPreview,
+  profileButton
 }) => {
   const hasFeaturedImage = !!featuredImage && !!featuredImage.src
   return (
@@ -30,9 +31,16 @@ export const BlogArchiveTemplate = ({
 
       <section className="sec-article-list">
         <div className="pg-width">
-          <div className="all-articles">
-            <div className="content">
+          <div className="content">
+            <div className="all-articles">
               <PostFeed isPreview={isPreview} posts={posts} />
+            </div>
+            <div class="btn-row">
+              {!!profileButton && (
+                <Link className="btn-primary" to={addTrailingSlash(profileButton.link)}>
+                  {profileButton.label}
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -42,7 +50,7 @@ export const BlogArchiveTemplate = ({
 }
 
 const BlogArchive = ({ data }) => {
-  const { header, subheader, featuredImage } = data.markdownRemark.frontmatter
+  const { header, subheader, featuredImage, profileButton } = data.markdownRemark.frontmatter
   const posts = data.allMarkdownRemark.edges.map(({ node }) => {
     const {
       frontmatter: { featuredImage, pageTitle, date: userDate },
@@ -61,6 +69,7 @@ const BlogArchive = ({ data }) => {
     subheader,
     featuredImage,
     posts,
+    profileButton,
   }
 
   return (
@@ -76,6 +85,10 @@ BlogArchiveTemplate.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.shape(postPropTypes)),
   featuredImage: featuredImagePropTypes,
   isPreview: PropTypes.bool,
+  profileButton: PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  }),
 }
 
 export default BlogArchive
@@ -95,6 +108,10 @@ export const pageQuery = graphql`
         schemaType
         header
         subheader
+        profileButton {
+          link
+          label
+        }
         featuredImage {
           src {
             childImageSharp {

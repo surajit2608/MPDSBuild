@@ -28,21 +28,19 @@ export const BlogPostTemplate = ({
 
   return (
     <Fragment>
-      {!!hasImg && (
-        <section className="sec-article-pic">
-          <Banner
-            header={''}
-            subheader={''}
-            isPreview={isPreview}
-            featuredImage={featuredImage}
-          />
-        </section>
-      )}
+      <section className="sec-article-pic">
+        <Banner
+          header={''}
+          subheader={''}
+          isPreview={hasImg ? isPreview : true}
+          featuredImage={hasImg ? featuredImage : { src: '/img/pic-executive-banner-blog-01.webp' }}
+        />
+      </section>
 
       <section className="sec-article-full">
         <div className="pg-width">
           <div className="content">
-            
+
             {/* <header className="page-head">
               <h1 className="page-head-title">{pageTitle}</h1>
               {!isPreview && (

@@ -5,8 +5,6 @@ import { useSiteData } from '../hooks'
 const Banner = ({ header, subheader, isPreview, featuredImage }) => {
   const { name, profileImage } = useSiteData()
 
-  // const headerParts = header.split(' ')
-
   return (
     <div className="pg-width">
       <div className="banner">
