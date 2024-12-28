@@ -30,8 +30,10 @@ export const BlogArchiveTemplate = ({
 
       <section className="sec-article-list">
         <div className="pg-width">
-          <div className="content">
-            <PostFeed isPreview={isPreview} posts={posts} />
+          <div className="all-articles">
+            <div className="content">
+              <PostFeed isPreview={isPreview} posts={posts} />
+            </div>
           </div>
         </div>
       </section>

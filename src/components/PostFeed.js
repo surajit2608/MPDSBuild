@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import PostCard from './PostCard'
 import { v4 as uuidv4 } from 'uuid'
@@ -9,11 +9,11 @@ import { featuredImagePropTypes } from '../proptypes'
 const Moment = moment().constructor
 
 const PostFeed = ({ isPreview, posts }) => (
-  <div className="post-feed">
+  <Fragment>
     {!isPreview &&
       !!posts &&
       !!posts.length &&
-      posts.map(({ image, slug, pageTitle, date }, index) => {
+      posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
         return (
           <PostCard
             key={uuidv4()}
@@ -22,6 +22,7 @@ const PostFeed = ({ isPreview, posts }) => (
             slug={addTrailingSlash(slug)}
             pageTitle={pageTitle}
             date={date}
+            teaser={teaser}
           />
         )
       })}
@@ -37,7 +38,7 @@ const PostFeed = ({ isPreview, posts }) => (
         pageTitle="Your posts will appear here in reverse chronological order"
       />
     )}
-  </div>
+  </Fragment>
 )
 
 PostFeed.propTypes = {
