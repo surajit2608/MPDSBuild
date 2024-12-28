@@ -2,26 +2,26 @@ import seo from '../partials/seo'
 import featuredImage from '../partials/featuredImage'
 
 export default {
-  name: 'blog',
-  label: 'Blog',
-  folder: 'src/pages/blog',
+  name: 'gallery',
+  label: 'Gallery',
+  folder: 'src/pages/gallery',
   create: true,
   slug: '{{slug}}',
   identifier_field: 'pageTitle',
   editor: { preview: true },
-  filter: { field: 'templateKey', value: 'blog-post' },
+  filter: { field: 'templateKey', value: 'gallery-post' },
   fields: [
     {
       label: 'Template Key',
       name: 'templateKey',
       widget: 'hidden',
-      default: 'blog-post',
+      default: 'gallery-post',
     },
     {
       label: 'Schema Page Type',
       name: 'schemaType',
       widget: 'hidden',
-      default: 'BlogPosting',
+      default: 'GalleryPosting',
     },
     ...seo,
     {
@@ -31,7 +31,7 @@ export default {
       hint: "Optionally, the date you want to appear on your blog post. It doesn't have to be the actual publication date. If you leave this blank, it will be automatically generated",
     },
     {
-      label: 'Excerpt',
+      label: 'Caption',
       name: 'teaser',
       widget: 'text',
       required: false,

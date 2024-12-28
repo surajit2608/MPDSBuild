@@ -43,22 +43,23 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
         header={header}
         subheader={subheader}
         templateKey={templateKey}
+        slug="preview"
         cssSlug="preview"
         missionStatement={missionStatement}
         shortBiography={shortBiography}
         connectWithMe={connectWithMe}
         discoverConnectExplore={discoverConnectExplore}
-        longBiography_MD={longBiography_MD}
         featuredImage={featuredImage}
         extraContent={extraContent}
         pageContent={pageContent}
-        inlineImages={[]}
-        recentPosts={[]}
-        isPreview={true}
-        formText={formText}
         learnMoreButton={learnMoreButton}
         profileButton={profileButton}
         blogButton={blogButton}
+        isPreview={true}
+        recentPosts={[]}
+        inlineImages={[]}
+        formText={formText}
+        longBiography_MD={longBiography_MD}
       />
     </div>
   )
