@@ -5,7 +5,7 @@ import { useSiteData } from '../hooks'
 const Banner = ({ header, subheader, isPreview, featuredImage }) => {
   const { name, profileImage } = useSiteData()
 
-  const headerParts = header.split(' ')
+  // const headerParts = header.split(' ')
 
   return (
     <div className="pg-width">
@@ -29,7 +29,7 @@ const Banner = ({ header, subheader, isPreview, featuredImage }) => {
               src={profileImage.childImageSharp.fluid.src}
             />
           )}
-          <h1>{headerParts[0]} <span>{headerParts.slice(1).join(' ')}</span></h1>
+          <h1>{header}</h1>
           {!!subheader && (
             <p>{subheader}</p>
           )}
