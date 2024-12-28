@@ -10,7 +10,11 @@ import { getInitials } from '../utils'
 const NavLink = ({ slug, name }) => {
   return (
     <li>
-      <Link to={slug} activeClassName="active" partiallyActive={name.indexOf('/blog') !== -1}>{name}</Link>
+      {slug.indexOf('blog') === -1 ? (
+        <Link to={slug} activeClassName="active">{name}</Link>
+      ) : (
+        <Link to={slug} activeClassName="active" partiallyActive>{name}</Link>
+      )}
     </li>
   )
 }
