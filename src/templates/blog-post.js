@@ -5,7 +5,7 @@ import { graphql, Link } from 'gatsby'
 import { Layout, HTMLContent } from '../components'
 import { useSiteData } from '../hooks'
 import { featuredImagePropTypes } from '../proptypes'
-import { seoProps, getValidDates } from '../utils'
+import { seoProps, getValidDates, addTrailingSlash } from '../utils'
 import Banner from '../components/Banner'
 
 const Moment = moment().constructor
