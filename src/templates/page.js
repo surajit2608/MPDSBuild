@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import { featuredImagePropTypes } from '../proptypes'
 import { useRecentPosts, useSiteData } from '../hooks'
 import { seoProps } from '../utils'
+import { v4 as uuidv4 } from 'uuid'
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
 
