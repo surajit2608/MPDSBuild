@@ -21,12 +21,17 @@ export const PageTemplate = ({
   templateKey,
   missionStatement,
   shortBiography,
+  connectWithMe,
+  discoverConnectExplore,
   longBiography_MD,
   featuredImage,
   extraContent,
+  pageContent,
   isPreview,
   recentPosts,
   learnMoreButton,
+  profileButton,
+  blogButton,
   inlineImages,
   formText,
 }) => (
@@ -104,6 +109,13 @@ export const PageTemplate = ({
                 inlineImages={inlineImages}
               />
             )}
+            {!!pageContent && (
+              <ExtraContent
+                content={pageContent}
+                page={templateKey}
+                inlineImages={inlineImages}
+              />
+            )}
           </section>
 
         </div>
@@ -119,9 +131,20 @@ PageTemplate.propTypes = {
   cssSlug: PropTypes.string.isRequired,
   missionStatement: PropTypes.string,
   shortBiography: PropTypes.string,
+  connectWithMe: PropTypes.string,
+  discoverConnectExplore: PropTypes.string,
   featuredImage: featuredImagePropTypes,
   extraContent: PropTypes.string,
+  pageContent: PropTypes.string,
   learnMoreButton: PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  }),
+  profileButton: PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  }),
+  blogButton: PropTypes.shape({
     link: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
   }),
@@ -144,10 +167,14 @@ const Page = ({ data }) => {
       templateKey,
       missionStatement,
       shortBiography,
+      connectWithMe,
+      discoverConnectExplore,
       longBiography_MD,
       featuredImage,
       showRecentPosts,
       learnMoreButton,
+      profileButton,
+      blogButton,
       formText,
     },
     fields: { inlineImages, slug },
@@ -160,13 +187,18 @@ const Page = ({ data }) => {
     cssSlug: slug === '/' ? 'home' : slug.split('/').join('-'),
     missionStatement,
     shortBiography,
+    connectWithMe,
+    discoverConnectExplore,
     longBiography_MD,
     // null out the featured image if empty to prevent erroneous proptype warnings
     featuredImage: !!featuredImage && !!featuredImage.src ? featuredImage : null,
     extraContent: data.markdownRemark.html,
+    pageContent: data.markdownRemark.html,
     recentPosts: showRecentPosts ? recentPosts : [],
     inlineImages,
     learnMoreButton,
+    profileButton,
+    blogButton,
     formText,
   }
 
@@ -206,6 +238,8 @@ export const pageQuery = graphql`
         header
         subheader
         shortBiography
+        connectWithMe
+        discoverConnectExplore
         longBiography_MD
         missionStatement
         showRecentPosts

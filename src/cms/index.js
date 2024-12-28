@@ -16,6 +16,9 @@ const pages = [
     templateKey: 'index-page',
     pageSlug: '/',
     additionalFields: [
+      'pageContent',
+      'profileButton',
+      'blogButton',
       'missionStatement',
       'shortBiography',
       'learnMoreButton',
@@ -24,18 +27,47 @@ const pages = [
     ],
   },
   {
+    label: 'Profile Page',
+    file: 'src/pages/profile.md',
+    templateKey: 'profile-page',
+    pageSlug: '/profile/',
+    additionalFields: [
+      'pageContent',
+      'blogButton',
+      'connectWithMe',
+      'discoverConnectExplore',
+      'longBiography_MD',
+      'extraContent',
+    ],
+  },
+  {
     label: 'About Page',
     file: 'src/pages/about.md',
     templateKey: 'about-page',
     pageSlug: '/about/',
-    additionalFields: ['longBiography_MD', 'extraContent'],
+    additionalFields: [
+      'longBiography_MD',
+      'extraContent',
+    ],
   },
   {
     label: 'Blog Archive Page',
     file: 'src/pages/blog/index.md',
     templateKey: 'blog-archive',
     pageSlug: '/blog/',
-    additionalFields: [],
+    additionalFields: [
+
+    ],
+  },
+  {
+    label: 'Gallery Page',
+    file: 'src/pages/gallery.md',
+    templateKey: 'gallery-page',
+    pageSlug: '/gallery/',
+    additionalFields: [
+      'profileButton',
+      'blogButton',
+    ],
   },
   {
     label: 'Contact Page',

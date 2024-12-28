@@ -15,9 +15,19 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
     link: entry.getIn(['data', 'learnMoreButton', 'link']) || '/about/',
     label: entry.getIn(['data', 'learnMoreButton', 'label']) || 'Read More',
   }
+  const profileButton = {
+    link: entry.getIn(['data', 'profileButton', 'link']) || '/profile/',
+    label: entry.getIn(['data', 'profileButton', 'label']) || 'View Profile',
+  }
+  const blogButton = {
+    link: entry.getIn(['data', 'blogButton', 'link']) || '/blog/',
+    label: entry.getIn(['data', 'blogButton', 'label']) || 'Visit My Blog',
+  }
   const longBiography_MD = toHTML(entry.getIn(['data', 'longBiography_MD']))
   const missionStatement = entry.getIn(['data', 'missionStatement']) || ''
   const shortBiography = entry.getIn(['data', 'shortBiography']) || ''
+  const connectWithMe = entry.getIn(['data', 'connectWithMe']) || 'Connect with me'
+  const discoverConnectExplore = entry.getIn(['data', 'discoverConnectExplore']) || 'Discover, Connect and Explore'
   const formText = {
     name: entry.getIn(['data', 'formText', 'name']) || '',
     email: entry.getIn(['data', 'formText', 'email']) || '',
@@ -25,6 +35,7 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
     submit: entry.getIn(['data', 'formText', 'submit']) || '',
   }
   const extraContent = toHTML(entry.getIn(['data', 'body']))
+  const pageContent = toHTML(entry.getIn(['data', 'pageContent']))
 
   return (
     <div className="londn">
@@ -35,14 +46,19 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
         cssSlug="preview"
         missionStatement={missionStatement}
         shortBiography={shortBiography}
+        connectWithMe={connectWithMe}
+        discoverConnectExplore={discoverConnectExplore}
         longBiography_MD={longBiography_MD}
         featuredImage={featuredImage}
         extraContent={extraContent}
+        pageContent={pageContent}
         inlineImages={[]}
         recentPosts={[]}
         isPreview={true}
         formText={formText}
         learnMoreButton={learnMoreButton}
+        profileButton={profileButton}
+        blogButton={blogButton}
       />
     </div>
   )

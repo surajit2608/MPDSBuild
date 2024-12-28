@@ -36,9 +36,13 @@ exports.createSchemaCustomization = ({ actions }) => {
       featuredImage: FeaturedImage
       missionStatement: String
       shortBiography: String
+      connectWithMe: String
+      discoverConnectExplore: String
       showRecentPosts: Boolean
       longBiography_MD: String
       learnMoreButton: LearnMoreButton
+      profileButton: ProfileButton
+      blogButton: BlogButton
       formText: FormText
       menuItems: [MenuItems]
       name: String
@@ -53,6 +57,14 @@ exports.createSchemaCustomization = ({ actions }) => {
       themeOptions: ThemeOptions
     }
     type LearnMoreButton {
+      label: String!
+      link: String!
+    }
+    type ProfileButton {
+      label: String!
+      link: String!
+    }
+    type BlogButton {
       label: String!
       link: String!
     }
