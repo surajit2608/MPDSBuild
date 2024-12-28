@@ -184,7 +184,7 @@ export default ({ label, file, templateKey, pageSlug, additionalFields }) => {
         required: true,
         default: 'WebPage',
         hint: 'The type of page this is, used by Google\'s structured data tool. If you\'re not sure, choose "WebPage".',
-        options: ['WebPage', 'AboutPage', 'ContactPage', 'GalleryPage'],
+        options: ['WebPage', 'ProfilePage', 'AboutPage', 'ContactPage', 'GalleryPage'],
       },
       {
         label: 'Header',
