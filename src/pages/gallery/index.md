@@ -2,7 +2,7 @@
 templateKey: gallery-page
 pageSlug: /gallery
 pageTitle: Gallery
-metaDescription: Chandler Villacruz's Image Gallery, Chandler Villacruz's Image Gallery
+metaDescription: Gallery Page of Chandler Villacruz, Senior Marketing Manager
 published: true
 schemaType: WebPage
 header: Gallery
