@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useSiteData } from '../hooks'
 
 const Banner = ({ header, subheader, imageSrc, imageAlt }) => {
-  const { name, profileImage } = useSiteData()
+  const { profileImage } = useSiteData()
 
   return (
     <div className="pg-width">
@@ -43,6 +43,7 @@ Banner.propTypes = {
   header: PropTypes.string.isRequired,
   subheader: PropTypes.string,
   imageSrc: PropTypes.object,
+  imageAlt: PropTypes.string,
 }
 
 export default Banner
