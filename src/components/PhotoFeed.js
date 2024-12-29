@@ -50,23 +50,27 @@ const PhotoFeed = ({ isPreview, posts }) => {
 
   return (
     <Fragment>
-      {!isPreview &&
-        !!posts &&
-        !!posts.length &&
-        posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
-          return (
-            <PhotoCard
-              date={date}
-              count={index}
-              image={image}
-              key={uuidv4()}
-              teaser={teaser}
-              pageTitle={pageTitle}
-              slug={addTrailingSlash(slug)}
-              onClick={() => handleClick({ image, slug, pageTitle, date, teaser })}
-            />
-          )
-        })}
+      {console.log(posts)}
+
+      {!isPreview && !!posts && !!posts.length && (
+        <Fragment>
+          {posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
+            return (
+              <PhotoCard
+                date={date}
+                count={index}
+                image={image}
+                key={uuidv4()}
+                teaser={teaser}
+                pageTitle={pageTitle}
+                slug={addTrailingSlash(slug)}
+                onClick={() => handleClick({ image, slug, pageTitle, date, teaser })}
+              />
+            )
+          })}
+        </Fragment>
+      )}
+
       {!isPreview && (!posts || !posts.length) && (
         <div>No posts yet. Please check back again soon!</div>
       )}

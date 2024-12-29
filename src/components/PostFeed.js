@@ -10,6 +10,8 @@ const Moment = moment().constructor
 
 const PostFeed = ({ isPreview, posts }) => (
   <Fragment>
+    {console.log(posts)}
+
     {!isPreview && !!posts && !!posts.length && (
       <Fragment>
         {posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
