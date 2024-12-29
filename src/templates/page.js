@@ -115,18 +115,24 @@ export const PageTemplate = ({
 }
 
 PageTemplate.propTypes = {
+  name: PropTypes.string,
+  jobTitle: PropTypes.string,
+  location: PropTypes.string,
   header: PropTypes.string.isRequired,
   subheader: PropTypes.string,
-  templateKey: PropTypes.string.isRequired,
   slug: PropTypes.string,
   cssSlug: PropTypes.string.isRequired,
+  templateKey: PropTypes.string.isRequired,
   missionStatement: PropTypes.string,
   shortBiography: PropTypes.string,
   connectWithMe: PropTypes.string,
   discoverConnectExplore: PropTypes.string,
+  longBiography_MD: PropTypes.string,
   featuredImage: featuredImagePropTypes,
   extraContent: PropTypes.string,
   pageContent: PropTypes.string,
+  isPreview: PropTypes.bool,
+  recentPosts: PropTypes.array,
   learnMoreButton: PropTypes.shape({
     link: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
@@ -139,9 +145,8 @@ PageTemplate.propTypes = {
     link: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
   }),
-  isPreview: PropTypes.bool,
-  recentPosts: PropTypes.array,
   inlineImages: PropTypes.array,
+  socialLinks: PropTypes.any,
   formText: PropTypes.shape({
     name: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,

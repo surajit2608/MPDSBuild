@@ -112,13 +112,21 @@ const GalleryPost = ({ data }) => {
 
 GalleryPostTemplate.propTypes = {
   pageTitle: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   date: PropTypes.instanceOf(Moment).isRequired,
   dateModified: PropTypes.instanceOf(Moment).isRequired,
   content: PropTypes.string.isRequired,
   featuredImage: featuredImagePropTypes,
   isPreview: PropTypes.bool,
   inlineImages: PropTypes.array,
+  profileButton: PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  }),
+  blogButton: PropTypes.shape({
+    link: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+  }),
 }
 
 export default GalleryPost
