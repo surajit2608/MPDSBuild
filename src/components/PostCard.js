@@ -12,7 +12,7 @@ const PostCard = ({ count, image, slug, pageTitle, date, teaser }) => {
 
   return (
     <article ref={ref}>
-      <img src={!!image ? image.childImageSharp.fluid.src : '/img/default-blog-thumb-01.webp'} alt={pageTitle} width={470} height={250} />
+      <img src={!!image ? image.d.childImageSharp.fluid.src : '/img/default-blog-thumb-01.webp'} alt={pageTitle} width={470} height={250} />
       <Link to={slug} className="title">{pageTitle}</Link>
       {!!date && (
         <p className="date">{date.format('MMM D, YYYY')}</p>
