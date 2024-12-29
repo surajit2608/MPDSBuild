@@ -22,7 +22,7 @@ export const BlogPostTemplate = ({
   profileButton,
   blogButton,
 }) => {
-  const hasImg = featuredImage && featuredImage.src && (featuredImage.src.childImageSharp || (typeof featuredImage.src === 'string' && featuredImage.src.length > 1))
+  const featuredImageSrc = (!!featuredImage && !!featuredImage.d) ? featuredImage.d.childImageSharp.fluid.src : (!!featuredImage && !!featuredImage.m) ? featuredImage.m.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'
 
   return (
     <Fragment>
@@ -30,7 +30,7 @@ export const BlogPostTemplate = ({
         <Banner
           header={''}
           subheader={''}
-          imageSrc={isPreview ? featuredImage.src : hasImg ? featuredImage.src.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'}
+          imageSrc={isPreview ? featuredImage.src : featuredImageSrc}
         />
       </section>
 
