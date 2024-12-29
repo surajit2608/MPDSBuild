@@ -8,4 +8,5 @@ date: 2024-12-28T19:59:28.668Z
 featuredImage:
   src: /img/headshot.jpg
   alt: Executive
+  caption: Executive
 ---
