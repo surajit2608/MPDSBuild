@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useSiteData } from '../hooks'
 
 const Banner = ({ header, subheader, imageSrc, imageAlt, profileImage }) => {
   return (

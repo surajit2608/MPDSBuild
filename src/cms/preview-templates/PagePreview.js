@@ -1,10 +1,8 @@
 import React from 'react'
 import { toHTML, findImgPath } from '../utils'
 import { PageTemplate } from '../../templates/page'
-import { useSiteData } from '../../hooks'
 
 const PagePreview = ({ entry, getAsset, widgetFor }) => {
-  const { name, jobTitle, location } = useSiteData()
   const header = entry.getIn(['data', 'header']) || ''
   const subheader = entry.getIn(['data', 'subheader']) || ''
   const templateKey = entry.getIn(['data', 'templateKey'])
@@ -42,9 +40,10 @@ const PagePreview = ({ entry, getAsset, widgetFor }) => {
   return (
     <div className="londn">
       <PageTemplate
-        name={name}
-        jobTitle={jobTitle}
-        location={location}
+        name={''}
+        jobTitle={''}
+        location={''}
+        profileImage={''}
         header={header}
         subheader={subheader}
         slug="preview"
