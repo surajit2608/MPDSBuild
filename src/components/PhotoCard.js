@@ -12,7 +12,7 @@ const PhotoCard = ({ count, image, slug, pageTitle, date, teaser, onClick }) => 
 
   return (
     <article ref={ref}>
-      <img src={!!image ? image.d.childImageSharp.fluid.src : '/img/default-blog-thumb-01.webp'} alt={pageTitle} width={470} height={250} onClick={onClick} />
+      <img src={!!image ? image.square.childImageSharp.fluid.src : '/img/default-blog-thumb-01.webp'} alt={pageTitle} onClick={onClick} />
       <p>{teaser}</p>
     </article>
   )

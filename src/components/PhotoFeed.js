@@ -50,8 +50,6 @@ const PhotoFeed = ({ isPreview, posts }) => {
 
   return (
     <Fragment>
-      {console.log(posts)}
-
       {!isPreview && !!posts && !!posts.length && (
         <Fragment>
           {posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
