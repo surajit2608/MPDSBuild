@@ -43,10 +43,7 @@ function findMd(input) {
 
 exports.extractInlineImages = (node) => {
   const { rawMarkdownBody: html } = node
-  const mdKeys =
-    node.frontmatter && node.frontmatter
-      ? _.flatMapDeep(findMd(node.frontmatter), (i) => i).filter((i) => i)
-      : null
+  const mdKeys = node.frontmatter && node.frontmatter ? _.flatMapDeep(findMd(node.frontmatter), (i) => i).filter((i) => i) : null
   if (!mdKeys && !html) {
     return []
   }
@@ -54,7 +51,7 @@ exports.extractInlineImages = (node) => {
 
   const matches = []
   mdKeys.forEach((item) => {
-    matches.push(item.match(regex))
+    matches.push(item && typeof item === 'string' && item.match(regex))
   })
   matches.push(html.match(regex))
   const flat = _.flattenDeep(matches.filter((i) => i))
