@@ -1,8 +1,8 @@
 ---
 templateKey: index-page
 pageSlug: /
-pageTitle: Chandler Villacruz, Senior Marketing Manager
-metaDescription: Personal website of Chandler Villacruz, Senior Marketing Manager.
+pageTitle: Chandler Villacruz, Senior Marketing Executive
+metaDescription: Personal website of Chandler Villacruz, Senior Marketing Executive.
 published: true
 schemaType: WebPage
 header: Chandler Villacruz
