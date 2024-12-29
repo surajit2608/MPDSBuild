@@ -209,6 +209,18 @@ export const pageQuery = graphql`
                   }
                 }
               }
+              square: src {
+                childImageSharp {
+                  fluid(maxWidth: 270, maxHeight: 270, quality: 100, cropFocus: CENTER) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    originalName
+                  }
+                  original {
+                    height
+                    width
+                  }
+                }
+              }
               alt
             }
           }
