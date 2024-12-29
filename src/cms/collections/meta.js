@@ -14,7 +14,7 @@ const socialLink = (label) => ({
       required: false,
     },
     {
-      label: 'Show in Profile',
+      label: 'Enable',
       name: 'show',
       widget: 'boolean',
       default: true,
@@ -107,8 +107,8 @@ const siteDataFields = [
       socialLink('Twitter'),
       socialLink('Facebook'),
       socialLink('LinkedIn'),
-      socialLink('Pinterest'),
-      socialLink('Instagram'),
+      // socialLink('Pinterest'),
+      // socialLink('Instagram'),
     ],
   },
   {
