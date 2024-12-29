@@ -13,6 +13,7 @@ const Moment = moment().constructor
 export const BlogPostTemplate = ({
   pageTitle,
   name,
+  profileImage,
   date,
   dateModified,
   content,
@@ -32,6 +33,7 @@ export const BlogPostTemplate = ({
           subheader={''}
           imageSrc={featuredImageSrc}
           imageAlt={!!featuredImage && !!featuredImage.alt ? featuredImage.alt : pageTitle}
+          profileImage={!!profileImage ? profileImage : null}
         />
       </section>
 
@@ -77,7 +79,7 @@ export const BlogPostTemplate = ({
 }
 
 const BlogPost = ({ data }) => {
-  const { name } = useSiteData()
+  const { name, profileImage } = useSiteData()
   const {
     pageTitle,
     featuredImage,
@@ -98,6 +100,7 @@ const BlogPost = ({ data }) => {
   const pageProps = {
     pageTitle,
     name,
+    profileImage,
     date,
     dateModified,
     featuredImage,
@@ -116,6 +119,7 @@ const BlogPost = ({ data }) => {
 BlogPostTemplate.propTypes = {
   pageTitle: PropTypes.string.isRequired,
   name: PropTypes.string,
+  profileImage: PropTypes.object,
   date: PropTypes.instanceOf(Moment).isRequired,
   dateModified: PropTypes.instanceOf(Moment).isRequired,
   content: PropTypes.string.isRequired,

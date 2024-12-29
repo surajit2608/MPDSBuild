@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useSiteData } from '../hooks'
 
-const Banner = ({ header, subheader, imageSrc, imageAlt }) => {
-  const { profileImage } = useSiteData()
-
+const Banner = ({ header, subheader, imageSrc, imageAlt, profileImage }) => {
   return (
     <div className="pg-width">
       <div className="banner">
@@ -23,7 +21,7 @@ const Banner = ({ header, subheader, imageSrc, imageAlt }) => {
               width={140}
               height={140}
               className="profile"
-              alt={profileImage.alt}
+              alt={!!profileImage && profileImage.alt}
               src={profileImage.src.childImageSharp.fluid.src}
             />
           )}
@@ -42,8 +40,9 @@ const Banner = ({ header, subheader, imageSrc, imageAlt }) => {
 Banner.propTypes = {
   header: PropTypes.string.isRequired,
   subheader: PropTypes.string,
-  imageSrc: PropTypes.object,
+  imageSrc: PropTypes.string,
   imageAlt: PropTypes.string,
+  profileImage: PropTypes.object
 }
 
 export default Banner

@@ -6,8 +6,10 @@ import { postPropTypes } from '../components/PostCard'
 import { featuredImagePropTypes } from '../proptypes'
 import { seoProps, getValidDates, addTrailingSlash } from '../utils'
 import Banner from '../components/Banner'
+import { useSiteData } from '../hooks'
 
 export const BlogArchiveTemplate = ({
+  profileImage,
   header,
   subheader,
   posts,
@@ -25,6 +27,7 @@ export const BlogArchiveTemplate = ({
           subheader={''}
           imageSrc={featuredImageSrc}
           imageAlt={!!featuredImage && !!featuredImage.alt ? featuredImage.alt : header}
+          profileImage={!!profileImage ? profileImage : null}
         />
       </section>
 
@@ -49,6 +52,7 @@ export const BlogArchiveTemplate = ({
 }
 
 const BlogArchive = ({ data }) => {
+  const { profileImage } = useSiteData()
   const { header, subheader, featuredImage, profileButton } = data.markdownRemark.frontmatter
   const posts = data.allMarkdownRemark.edges.map(({ node }) => {
     const {
@@ -65,6 +69,7 @@ const BlogArchive = ({ data }) => {
     }
   })
   const pageProps = {
+    profileImage,
     header,
     subheader,
     featuredImage,
@@ -80,6 +85,7 @@ const BlogArchive = ({ data }) => {
 }
 
 BlogArchiveTemplate.propTypes = {
+  profileImage: PropTypes.object,
   header: PropTypes.string.isRequired,
   subheader: PropTypes.string,
   posts: PropTypes.arrayOf(PropTypes.shape(postPropTypes)),

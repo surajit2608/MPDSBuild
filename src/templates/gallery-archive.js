@@ -6,8 +6,10 @@ import { postPropTypes } from '../components/PhotoCard'
 import { featuredImagePropTypes } from '../proptypes'
 import { seoProps, getValidDates, addTrailingSlash } from '../utils'
 import Banner from '../components/Banner'
+import { useSiteData } from '../hooks'
 
 export const GalleryArchiveTemplate = ({
+  profileImage,
   header,
   subheader,
   posts,
@@ -26,6 +28,7 @@ export const GalleryArchiveTemplate = ({
           subheader={''}
           imageSrc={featuredImageSrc}
           imageAlt={!!featuredImage && !!featuredImage.alt ? featuredImage.alt : header}
+          profileImage={!!profileImage ? profileImage : null}
         />
       </section>
 
@@ -55,6 +58,7 @@ export const GalleryArchiveTemplate = ({
 }
 
 const GalleryArchive = ({ data }) => {
+  const { profileImage } = useSiteData()
   const { header, subheader, featuredImage, profileButton, blogButton } = data.markdownRemark.frontmatter
   const posts = data.allMarkdownRemark.edges.map(({ node }) => {
     const {
@@ -71,6 +75,7 @@ const GalleryArchive = ({ data }) => {
     }
   })
   const pageProps = {
+    profileImage,
     header,
     subheader,
     featuredImage,
@@ -87,6 +92,7 @@ const GalleryArchive = ({ data }) => {
 }
 
 GalleryArchiveTemplate.propTypes = {
+  profileImage: PropTypes.object,
   header: PropTypes.string.isRequired,
   subheader: PropTypes.string,
   posts: PropTypes.arrayOf(PropTypes.shape(postPropTypes)),

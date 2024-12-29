@@ -13,6 +13,7 @@ export const PageTemplate = ({
   name,
   jobTitle,
   location,
+  profileImage,
   header,
   subheader,
   slug,
@@ -46,6 +47,7 @@ export const PageTemplate = ({
             subheader={templateKey === 'index-page' ? jobTitle : ''}
             imageSrc={featuredImageSrc}
             imageAlt={!!featuredImage && !!featuredImage.alt ? featuredImage.alt : templateKey === 'index-page' ? name : header}
+            profileImage={!!profileImage ? profileImage : null}
           />
         </section>
       )}
@@ -118,6 +120,7 @@ PageTemplate.propTypes = {
   name: PropTypes.string,
   jobTitle: PropTypes.string,
   location: PropTypes.string,
+  profileImage: PropTypes.object,
   header: PropTypes.string.isRequired,
   subheader: PropTypes.string,
   slug: PropTypes.string,
@@ -181,6 +184,7 @@ const Page = ({ data }) => {
     name,
     jobTitle,
     location,
+    profileImage,
     socialLinks: { twitter, facebook, linkedin, pinterest, instagram },
   } = useSiteData()
 
@@ -201,6 +205,7 @@ const Page = ({ data }) => {
     name,
     jobTitle,
     location,
+    profileImage,
     header,
     subheader,
     templateKey,
