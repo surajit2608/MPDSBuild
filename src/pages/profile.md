@@ -2,16 +2,13 @@
 templateKey: profile-page
 pageSlug: /profile
 pageTitle: Profile
-metaDescription: Profile of Chandler Villacruz, Senior Marketing Manager, San
-  Francisco, California, USA
+metaDescription: Profile of Chandler Villacruz, Senior Marketing Manager, San Francisco, California, USA
 published: true
 schemaType: ProfilePage
 header: Profile
-subheader: ""
+subheader: 
 connectWithMe: Connect with me
 pageContent: >-
-  
-
   # Heading line here
 
 
@@ -58,8 +55,7 @@ blogButton:
   label: Visit My Blog
   link: /blog/
 discoverConnectExplore: Discover, Connect & Explore
-longBiography_MD: |
-  {{long_biography}}
+longBiography_MD: {{long_biography}}
 ---
 # Heading line here
 

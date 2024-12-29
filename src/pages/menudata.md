@@ -1,6 +1,6 @@
 ---
 templateKey: menu-data
-published: false
+published: true
 menuItems:
   - slug: /
     label: Home

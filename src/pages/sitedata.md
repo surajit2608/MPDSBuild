@@ -1,11 +1,13 @@
 ---
 templateKey: site-data
-published: false
+published: true
 name: Chandler Villacruz
 jobTitle: Senior Marketing Executive
-siteName: "Chandler Villacruz "
+siteName: Chandler Villacruz
 location: San Francisco, California, USA
-profileImage: /img/default-profile-male.png
+profileImage: 
+  src: /img/default-profile-male.png
+  alt: 
 siteUrl: https://mpdsbuild.netlify.app/
 socialLinks:
   twitter:
