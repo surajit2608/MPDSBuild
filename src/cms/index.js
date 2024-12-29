@@ -86,6 +86,7 @@ CMS.init({
   config: {
     backend: {
       name: 'git-gateway',
+      repo: 'surajit2608/MPDSBuild',
       branch: 'master',
     },
     // publish_mode: 'editorial_workflow',
