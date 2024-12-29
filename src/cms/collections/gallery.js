@@ -27,7 +27,7 @@ export default {
     {
       label: 'Published Date',
       name: 'date',
-      widget: 'datetime',
+      widget: 'string',
       hint: "Optionally, the date you want to appear on your blog post. It doesn't have to be the actual publication date. If you leave this blank, it will be automatically generated",
     },
     {
