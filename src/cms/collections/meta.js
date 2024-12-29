@@ -85,19 +85,19 @@ const siteDataFields = [
     required: false,
     hint: 'If you use Google Analytics, insert your ID, e.g. UA-123456789-1',
   },
-  {
-    label: 'Favicon',
-    name: 'favicon',
-    widget: 'image',
-    hint: 'A square favicon to show in the corner of the browser tab on your site. You can use a free online favicon generator to make one. Upload the verison that is 32x32 in PNG format.',
-  },
-  {
-    label: 'Default Fallback Image',
-    name: 'fallbackImage',
-    widget: 'image',
-    required: true,
-    hint: "The default image that will be used for pages that don't have their own featured image. Your headshot is usually a good choice for this.",
-  },
+  // {
+  //   label: 'Favicon',
+  //   name: 'favicon',
+  //   widget: 'image',
+  //   hint: 'A square favicon to show in the corner of the browser tab on your site. You can use a free online favicon generator to make one. Upload the verison that is 32x32 in PNG format.',
+  // },
+  // {
+  //   label: 'Default Fallback Image',
+  //   name: 'fallbackImage',
+  //   widget: 'image',
+  //   required: true,
+  //   hint: "The default image that will be used for pages that don't have their own featured image. Your headshot is usually a good choice for this.",
+  // },
   {
     label: 'Social Media Links',
     name: 'socialLinks',
@@ -111,42 +111,42 @@ const siteDataFields = [
       // socialLink('Instagram'),
     ],
   },
-  {
-    label: 'Theme Customization Options',
-    name: 'themeOptions',
-    widget: 'object',
-    fields: [
-      {
-        label: 'Color Scheme',
-        name: 'colorScheme',
-        widget: 'select',
-        default: ['londn'],
-        hint: 'Select the color scheme for your website',
-        options: siteMetadata.colorOptions.map(({ label, value }) => ({
-          label,
-          value,
-        })),
-      },
-      {
-        label: 'Font Scheme',
-        name: 'fontScheme',
-        widget: 'select',
-        default: ['muli'],
-        hint: 'Select the font scheme for your website',
-        options: siteMetadata.fontOptions.map(({ label, value }) => ({
-          label,
-          value,
-        })),
-      },
-      {
-        label: 'Show Theme Switcher?',
-        name: 'showThemeSwitcher',
-        widget: 'boolean',
-        default: false,
-        hint: 'Turn on the theme switcher so you can preview themes on your site. NOTE: This should only be turned on temporarily so you can preview different styles. Turn this off again once you have made your selection.',
-      },
-    ],
-  },
+  // {
+  //   label: 'Theme Customization Options',
+  //   name: 'themeOptions',
+  //   widget: 'object',
+  //   fields: [
+  //     {
+  //       label: 'Color Scheme',
+  //       name: 'colorScheme',
+  //       widget: 'select',
+  //       default: ['londn'],
+  //       hint: 'Select the color scheme for your website',
+  //       options: siteMetadata.colorOptions.map(({ label, value }) => ({
+  //         label,
+  //         value,
+  //       })),
+  //     },
+  //     {
+  //       label: 'Font Scheme',
+  //       name: 'fontScheme',
+  //       widget: 'select',
+  //       default: ['muli'],
+  //       hint: 'Select the font scheme for your website',
+  //       options: siteMetadata.fontOptions.map(({ label, value }) => ({
+  //         label,
+  //         value,
+  //       })),
+  //     },
+  //     {
+  //       label: 'Show Theme Switcher?',
+  //       name: 'showThemeSwitcher',
+  //       widget: 'boolean',
+  //       default: false,
+  //       hint: 'Turn on the theme switcher so you can preview themes on your site. NOTE: This should only be turned on temporarily so you can preview different styles. Turn this off again once you have made your selection.',
+  //     },
+  //   ],
+  // },
 ]
 
 const menuDataFields = [
