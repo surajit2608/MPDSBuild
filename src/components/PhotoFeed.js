@@ -56,9 +56,22 @@ const PhotoFeed = ({ isPreview, posts }) => {
 
       {isLightboxActive && (
         <section className="lightbox-container active">
-          <span className="material-symbols-outlined material-icons lightbox-btn left" onClick={() => handleNavigation('left')}>{'<'}</span>
-          <span className="material-symbols-outlined material-icons lightbox-btn right" onClick={() => handleNavigation('right')}>{'>'}</span>
-          <span id="close" className="close material-icons material-symbols-outlined" onClick={handleClose}>X</span>
+          <span className="lightbox-btn left" onClick={() => handleNavigation('left')}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.5 17L9.5 12L14.5 7" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span className="lightbox-btn right" onClick={() => handleNavigation('right')}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.5 7L14.5 12L9.5 17" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span className="lightbox-btn close" onClick={handleClose}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 17L16.8995 7.10051" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7 7.00001L16.8995 16.8995" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
           <div className="lightbox-image-wrapper">
             <img alt={activePost.pageTitle} className="lightbox-image" src={activePost.image.d.childImageSharp.fluid.src} />
             {!!activePost.teaser && (

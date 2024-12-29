@@ -1,32 +1,32 @@
 .lightboxpreview {
-  transition: all .3s linear;
-  padding-top: 60%;
   cursor: pointer;
+  padding-top: 60%;
   background-size: cover;
+  transition: all .3s linear;
 }
 
 .lightbox-content {
-  max-height: 75vh;
-  height: 75vh;
   width: 100%;
+  height: 75vh;
+  max-height: 75vh;
   max-width: 1000px;
 }
 
 .lightbox-close {
-  cursor: pointer;
-  margin-left: auto;
-  position: absolute;
-  right: -30px;
   top: -30px;
+  right: -30px;
   color: white;
+  line-height: 1;
+  cursor: pointer;
   font-size: 2rem;
   font-weight: 700;
-  line-height: 1;
+  margin-left: auto;
+  position: absolute;
 }
 
 .modal_inner_image {
-  min-height: 400px;
   z-index: 1000;
+  min-height: 400px;
 }
 
 .modal-content {
@@ -34,30 +34,30 @@
 }
 
 .modalscale {
-  transform: scale(0);
   opacity: 0;
+  transform: scale(0);
 }
 
-.lightbox-container,
 .lightbox-btn,
-.lightbox-image-wrapper,
-.lightbox-enabled {
+.lightbox-enabled,
+.lightbox-container,
+.lightbox-image-wrapper {
   transition: all .4s ease-in-out;
 }
 
 .lightbox_img_wrap {
   padding-top: 65%;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .lightbox-enabled {
+  top: 0;
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  object-fit: cover;
   cursor: pointer;
+  object-fit: cover;
+  position: absolute;
 
   &:hover {
     transform: scale(1.1);
@@ -65,18 +65,18 @@
 }
 
 .lightbox-container {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, .6);
-  z-index: 9999;
   opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  position: fixed;
+  align-items: center;
   pointer-events: none;
+  justify-content: center;
+  display: flex !important;
+  background-color: rgba(0, 0, 0, .6);
 
   &.active {
     opacity: 1;
@@ -86,25 +86,34 @@
 
 .lightbox-image-wrapper {
   display: flex;
-  transform: scale(0);
-  align-items: center;
-  justify-content: center;
   max-width: 90vw;
   max-height: 90vh;
+  overflow: hidden;
   position: relative;
+  transform: scale(0);
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  justify-content: center;
+
+  p {
+    margin: 0;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
 
   .lightbox-container.active & {
     transform: scale(1);
   }
 }
 
-.lightbox-btn,
-#close {
+.lightbox-btn {
   color: white;
-  z-index: 9999999;
   cursor: pointer;
-  position: absolute;
   font-size: 50px;
+  z-index: 9999999;
+  position: absolute;
 
   &:focus {
     outline: none;
@@ -119,51 +128,51 @@
   right: 50px;
 }
 
-#close {
+.close {
   top: 50px;
   right: 50px;
 }
 
 .lightbox-image {
   width: 100%;
-  -webkit-box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.19);
-  box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.19);
   max-height: 95vh;
   object-fit: cover;
+  box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.19);
 }
 
 @keyframes slideleft {
   33% {
-    transform: translateX(-300px);
     opacity: 0;
+    transform: translateX(-300px);
   }
 
   66% {
-    transform: translateX(300px);
     opacity: 0;
+    transform: translateX(300px);
   }
 }
 
 .slideleft {
-  animation-name: slideleft;
   animation-duration: .5s;
+  animation-name: slideleft;
   animation-timing-function: ease;
 }
 
 @keyframes slideright {
   33% {
-    transform: translateX(300px);
     opacity: 0;
+    transform: translateX(300px);
   }
 
   66% {
-    transform: translateX(-300px);
     opacity: 0;
+    transform: translateX(-300px);
   }
 }
 
 .slideright {
-  animation-name: slideright;
   animation-duration: .5s;
+  animation-name: slideright;
   animation-timing-function: ease;
 }
