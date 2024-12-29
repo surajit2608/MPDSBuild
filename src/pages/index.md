@@ -31,4 +31,4 @@ learnMoreButton:
   label: Read More
 showRecentPosts: false
 ---
-Since joining the web-based restaurant review company in its startup phase, **Chandler Villacruz** has spearheaded *market research* activities that have allowed the firm to build *effective advertising* campaigns and achieve sound **[business growth](<>)**.
+Since joining the web-based **restaurant review** company in its startup phase, **Chandler Villacruz** has spearheaded *market research* activities that have allowed the firm to build *effective advertising* campaigns and achieve sound **[business growth](<>)**.
