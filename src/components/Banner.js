@@ -18,7 +18,7 @@ const Banner = ({ header, subheader, imageSrc, imageAlt }) => {
         />
 
         <div className="content-box">
-          {!!header && !!profileImage && (
+          {!!header && !!profileImage && !!profileImage.src && !!profileImage.src.childImageSharp && !!profileImage.src.childImageSharp.fluid && !!profileImage.src.childImageSharp.fluid.src && (
             <img
               width={140}
               height={140}

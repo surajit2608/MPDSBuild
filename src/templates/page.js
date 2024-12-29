@@ -34,85 +34,85 @@ export const PageTemplate = ({
   inlineImages,
   socialLinks,
   formText,
-}) => (
-  <Fragment>
-    {!!featuredImage && (
-      <section className={templateKey === 'index-page' ? 'sec-hero-main' : 'sec-hero-sml'}>
-        <Banner
-          header={templateKey === 'index-page' ? name : header}
-          subheader={templateKey === 'index-page' ? jobTitle : ''}
-          imageSrc={
-            templateKey === 'index-page' ?
-              (isPreview ? featuredImage.src : (!!featuredImage && !!featuredImage.d) ? featuredImage.d.childImageSharp.fluid.src : null)
-              : (isPreview ? featuredImage.src : (!!featuredImage && !!featuredImage.l) ? featuredImage.l.childImageSharp.fluid.src : null)
-          }
-          imageAlt={featuredImage.alt}
-        />
-      </section>
-    )}
+}) => {
+  const featuredImageSrc = isPreview ? featuredImage.src : templateKey === 'index-page' ? !!featuredImage && !!featuredImage.d && !!featuredImage.d.childImageSharp && !!featuredImage.d.childImageSharp.fluid && !!featuredImage.d.childImageSharp.fluid.src && featuredImage.d.childImageSharp.fluid.src : !!featuredImage && !!featuredImage.l && !!featuredImage.l.childImageSharp && !!featuredImage.l.childImageSharp.fluid && !!featuredImage.l.childImageSharp.fluid.src && featuredImage.l.childImageSharp.fluid.src
 
-    <section className={templateKey === 'index-page' ? 'sec-intro-text' : 'sec-text-full'}>
-      <div className="pg-width">
-        <div className="content">
+  return (
+    <Fragment>
+      {!!featuredImage && (
+        <section className={templateKey === 'index-page' ? 'sec-hero-main' : 'sec-hero-sml'}>
+          <Banner
+            header={templateKey === 'index-page' ? name : header}
+            subheader={templateKey === 'index-page' ? jobTitle : ''}
+            imageSrc={featuredImageSrc}
+            imageAlt={featuredImage.alt}
+          />
+        </section>
+      )}
 
-          {templateKey === 'profile-page' && (
-            <Fragment>
-              <h2>{name.split(' ')[0]} {name.split(' ')[1] && (<span>{name.split(' ')[1]}</span>)}</h2>
-              <p class="title">{jobTitle}</p>
-              <p class="location">{location}</p>
-            </Fragment>
-          )}
+      <section className={templateKey === 'index-page' ? 'sec-intro-text' : 'sec-text-full'}>
+        <div className="pg-width">
+          <div className="content">
 
-          {(templateKey === 'index-page' || templateKey === 'profile-page') && (
-            <div>
-              <HTMLContent
-                content={pageContent}
-                inlineImages={inlineImages}
-              />
-            </div>
-          )}
-
-          <div class="btn-row">
-            {!!profileButton && (
-              <Link className="btn-primary" to={addTrailingSlash(profileButton.link)}>
-                {profileButton.label}
-              </Link>
+            {templateKey === 'profile-page' && (
+              <Fragment>
+                <h2>{name.split(' ')[0]} {name.split(' ')[1] && (<span>{name.split(' ')[1]}</span>)}</h2>
+                <p class="title">{jobTitle}</p>
+                <p class="location">{location}</p>
+              </Fragment>
             )}
-            {!!blogButton && (
-              <Link className="btn-primary" to={addTrailingSlash(blogButton.link)}>
-                {blogButton.label}
-              </Link>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
 
-    {templateKey === 'profile-page' && (
-      <section class="sec-three-box">
-        <div class="pg-width">
-          <div class="heading-row">
-            <h3>{connectWithMe}</h3>
-            <p>{discoverConnectExplore}</p>
-          </div>
-          <div class="all-boxes">
-            {!!socialLinks && !!socialLinks.length && socialLinks.map((social) => (
-              <div className="ech-box" key={uuidv4()}>
-                <a href={Object.values(social)[0].url} target="_blank" className="sm-icon">
-                  <img src={`/img/${Object.keys(social)[0].toLowerCase()}-color.svg`} alt={Object.keys(social)[0]} width="60" height="60" />
-                </a>
-                <p>{Object.keys(social)[0]}</p>
-                <div class="btn-row">
-                  <a href={Object.values(social)[0].url} target="_blank" class="btn-primary">{Object.values(social)[0].label}</a>
-                </div>
+            {(templateKey === 'index-page' || templateKey === 'profile-page') && (
+              <div>
+                <HTMLContent
+                  content={pageContent}
+                  inlineImages={inlineImages}
+                />
               </div>
-            ))}
+            )}
+
+            <div class="btn-row">
+              {!!profileButton && (
+                <Link className="btn-primary" to={addTrailingSlash(profileButton.link)}>
+                  {profileButton.label}
+                </Link>
+              )}
+              {!!blogButton && (
+                <Link className="btn-primary" to={addTrailingSlash(blogButton.link)}>
+                  {blogButton.label}
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </section>
-    )}
-  </Fragment>
-)
+
+      {templateKey === 'profile-page' && (
+        <section class="sec-three-box">
+          <div class="pg-width">
+            <div class="heading-row">
+              <h3>{connectWithMe}</h3>
+              <p>{discoverConnectExplore}</p>
+            </div>
+            <div class="all-boxes">
+              {!!socialLinks && !!socialLinks.length && socialLinks.map((social) => (
+                <div className="ech-box" key={uuidv4()}>
+                  <a href={Object.values(social)[0].url} target="_blank" className="sm-icon">
+                    <img src={`/img/${Object.keys(social)[0].toLowerCase()}-color.svg`} alt={Object.keys(social)[0]} width="60" height="60" />
+                  </a>
+                  <p>{Object.keys(social)[0]}</p>
+                  <div class="btn-row">
+                    <a href={Object.values(social)[0].url} target="_blank" class="btn-primary">{Object.values(social)[0].label}</a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </Fragment>
+  )
+}
 
 PageTemplate.propTypes = {
   header: PropTypes.string.isRequired,

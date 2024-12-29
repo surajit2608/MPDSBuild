@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
 import { useInView } from 'react-intersection-observer'
 import moment from 'moment'
 import { featuredImagePropTypes } from '../proptypes'
@@ -12,7 +11,7 @@ const PhotoCard = ({ count, image, slug, pageTitle, date, teaser, onClick }) => 
 
   return (
     <article ref={ref}>
-      <img src={!!image ? image.square.childImageSharp.fluid.src : '/img/default-blog-thumb-01.webp'} alt={pageTitle} onClick={onClick} />
+      <img src={!!image && !!image.square && !!image.square.childImageSharp && !!image.square.childImageSharp.fluid && !!image.square.childImageSharp.fluid.src ? image.square.childImageSharp.fluid.src : '/img/default-blog-thumb-01.webp'} alt={image.alt} />
       <p>{teaser}</p>
     </article>
   )

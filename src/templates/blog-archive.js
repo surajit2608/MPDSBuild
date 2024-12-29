@@ -15,7 +15,8 @@ export const BlogArchiveTemplate = ({
   isPreview,
   profileButton
 }) => {
-  const featuredImageSrc = (!!featuredImage && !!featuredImage.d) ? featuredImage.d.childImageSharp.fluid.src : (!!featuredImage && !!featuredImage.m) ? featuredImage.m.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'
+  const featuredImageSrc = isPreview ? featuredImage.src : !!featuredImage && !!featuredImage.d && !!featuredImage.d.childImageSharp && !!featuredImage.d.childImageSharp.fluid && !!featuredImage.d.childImageSharp.fluid.src ? featuredImage.d.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'
+
   return (
     <Fragment>
       <section className="sec-hero-sml">
@@ -23,6 +24,7 @@ export const BlogArchiveTemplate = ({
           header={header}
           subheader={subheader}
           imageSrc={featuredImageSrc}
+          imageAlt={featuredImage.alt}
         />
       </section>
 
@@ -222,6 +224,7 @@ export const pageQuery = graphql`
                 }
               }
               alt
+              caption
             }
           }
         }
