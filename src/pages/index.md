@@ -11,7 +11,7 @@ featuredImage:
   src: /img/pic-executive-main-banner-01.webp
   alt: Chandler Villacruz
   caption: null
-pageContent: Since joining the web-based restaurant review company in its
+pageContent: Since joining the web-based **restaurant review** company in its
   startup phase, **Chandler Villacruz** has spearheaded *market research*
   activities that have allowed the firm to build *effective advertising*
   campaigns and achieve sound **[business growth](<>)**.
