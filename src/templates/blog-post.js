@@ -49,7 +49,7 @@ export const BlogPostTemplate = ({
 
             <h1>{pageTitle}</h1>
             {!!date && (
-              <p className="date">{date.format('MMM D, YYYY')}</p>
+              <p className="date">{moment(date).format('MMM D, YYYY')}</p>
             )}
 
             <HTMLContent
