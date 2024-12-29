@@ -23,7 +23,7 @@ const PhotoFeed = ({ isPreview, posts }) => {
   }
 
   const handleNavigation = (direction) => {
-    const currentIndex = posts.findIndex(({ image, slug, pageTitle, date, teaser }) => image.d.childImageSharp.fluid.src === activePost.image.d.childImageSharp.fluid.src)
+    const currentIndex = posts.findIndex(({ image, slug, pageTitle, date, teaser }) => image.childImageSharp.fluid.src === activePost.image.childImageSharp.fluid.src)
     const newIndex = direction === 'left' ? (currentIndex === 0 ? posts.length - 1 : currentIndex - 1) : (currentIndex === posts.length - 1 ? 0 : currentIndex + 1)
     setActivePost(posts[newIndex])
   }
@@ -93,7 +93,7 @@ const PhotoFeed = ({ isPreview, posts }) => {
             </svg>
           </span>
           <div className="lightbox-image-wrapper">
-            <img alt={activePost.pageTitle} className="lightbox-image" src={activePost.image.d.childImageSharp.fluid.src} />
+            <img alt={activePost.pageTitle} className="lightbox-image" src={activePost.image.childImageSharp.fluid.src} />
             {!!activePost.teaser && (
               <p>{activePost.teaser}</p>
             )}
