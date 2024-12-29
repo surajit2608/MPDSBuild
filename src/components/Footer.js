@@ -16,6 +16,7 @@ SocialLink.propTypes = {
 
 const Footer = () => {
   const {
+    siteUrl,
     siteName,
     location,
     socialLinks: { twitter, facebook, linkedin, pinterest, instagram },
@@ -52,7 +53,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="col">
-            <p className="sml">© {new Date().getFullYear()} {siteName},<br />All rights reserved.</p>
+            <p className="sml">© {new Date().getFullYear()} <a href={siteUrl} target="_blank">{siteName}</a>,<br />All rights reserved.</p>
           </div>
         </div>
       </div>
