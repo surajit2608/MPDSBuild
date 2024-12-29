@@ -31,7 +31,7 @@ export const BlogPostTemplate = ({
           header={''}
           subheader={''}
           imageSrc={featuredImageSrc}
-          imageAlt={featuredImage.alt}
+          imageAlt={!!featuredImage && !!featuredImage.alt ? featuredImage.alt : pageTitle}
         />
       </section>
 

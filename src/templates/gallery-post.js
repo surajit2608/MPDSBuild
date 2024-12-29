@@ -31,7 +31,7 @@ export const GalleryPostTemplate = ({
           header={''}
           subheader={''}
           imageSrc={featuredImageSrc}
-          imageAlt={featuredImage.alt}
+          imageAlt={!!featuredImage && !!featuredImage.alt ? featuredImage.alt : pageTitle}
         />
       </section>
 

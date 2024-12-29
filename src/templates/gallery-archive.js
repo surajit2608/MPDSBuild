@@ -23,9 +23,9 @@ export const GalleryArchiveTemplate = ({
       <section className="sec-hero-sml">
         <Banner
           header={header}
-          subheader={subheader}
+          subheader={''}
           imageSrc={featuredImageSrc}
-          imageAlt={featuredImage.alt}
+          imageAlt={!!featuredImage && !!featuredImage.alt ? featuredImage.alt : header}
         />
       </section>
 

@@ -45,7 +45,7 @@ export const PageTemplate = ({
             header={templateKey === 'index-page' ? name : header}
             subheader={templateKey === 'index-page' ? jobTitle : ''}
             imageSrc={featuredImageSrc}
-            imageAlt={featuredImage.alt}
+            imageAlt={!!featuredImage && !!featuredImage.alt ? featuredImage.alt : templateKey === 'index-page' ? name : header}
           />
         </section>
       )}
