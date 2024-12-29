@@ -10,22 +10,24 @@ const Moment = moment().constructor
 
 const PostFeed = ({ isPreview, posts }) => (
   <Fragment>
-    {!isPreview &&
-      !!posts &&
-      !!posts.length &&
-      posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
-        return (
-          <PostCard
-            key={uuidv4()}
-            count={index}
-            image={image}
-            slug={addTrailingSlash(slug)}
-            pageTitle={pageTitle}
-            date={date}
-            teaser={teaser}
-          />
-        )
-      })}
+    {!isPreview && !!posts && !!posts.length && (
+      <Fragment>
+        {posts.map(({ image, slug, pageTitle, date, teaser }, index) => {
+          return (
+            <PostCard
+              key={uuidv4()}
+              count={index}
+              image={image}
+              slug={addTrailingSlash(slug)}
+              pageTitle={pageTitle}
+              date={date}
+              teaser={teaser}
+            />
+          )
+        })}
+      </Fragment>
+    )}
+
     {!isPreview && (!posts || !posts.length) && (
       <div>No posts yet. Please check back again soon!</div>
     )}

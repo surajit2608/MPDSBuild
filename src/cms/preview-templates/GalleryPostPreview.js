@@ -1,5 +1,5 @@
 import React from 'react'
-import { toHTML, findImgPath } from '../utils'
+import { findImgPath } from '../utils'
 import { GalleryPostTemplate } from '../../templates/gallery-post'
 
 const GalleryPostPreview = ({ entry, getAsset, widgetFor }) => {
@@ -18,7 +18,7 @@ const GalleryPostPreview = ({ entry, getAsset, widgetFor }) => {
     link: entry.getIn(['data', 'blogButton', 'link']) || '/blog/',
     label: entry.getIn(['data', 'blogButton', 'label']) || 'Visit My Blog',
   }
-  
+
   return (
     <div className="londn">
       <GalleryPostTemplate

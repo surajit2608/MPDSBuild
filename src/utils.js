@@ -31,9 +31,7 @@ export function seoProps(data) {
   return {
     pageTitle,
     metaDescription,
-    // null out the featured image if empty to prevent erroneous proptype warnings
-    featuredImage:
-      !!featuredImage && !!featuredImage.src ? featuredImage : null,
+    featuredImage: !!featuredImage && !!featuredImage.src ? featuredImage : null,
     slug,
     date,
     dateModified,
@@ -43,21 +41,14 @@ export function seoProps(data) {
 }
 
 export function getValidDates(date, gitAuthorTime, gitCreatedTime) {
-  const mDate =
-    !!date && typeof date === 'string' && date.replace(/\D/g, '').length
-      ? moment(date, 'MMM D, YYYY')
-      : null
+  const mDate = !!date && typeof date === 'string' && date.replace(/\D/g, '').length ? moment(date, 'MMM D, YYYY') : null
   const mCreate = moment(gitCreatedTime)
-  const mModified =
-    !!gitAuthorTime && gitAuthorTime !== 'Invalid Date'
-      ? moment(gitAuthorTime)
-      : null
+  const mModified = !!gitAuthorTime && gitAuthorTime !== 'Invalid Date' ? moment(gitAuthorTime) : null
 
   const output = {
     date: !!mDate && mDate.isValid() ? mDate : mCreate,
   }
-  output.dateModified =
-    mModified && mModified.isValid() ? mModified : output.date
+  output.dateModified = mModified && mModified.isValid() ? mModified : output.date
   return output
 }
 
@@ -65,10 +56,7 @@ export function addTrailingSlash(path) {
   if (path === '/') {
     return path
   }
-  return `/${path
-    .split('/')
-    .filter((x) => x)
-    .join('/')}/`
+  return `/${path.split('/').filter((x) => x).join('/')}/`
 }
 
 export function getInitials(name) {

@@ -137,7 +137,7 @@ export const pageQuery = graphql`
         gitCreatedTime
         inlineImages {
           childImageSharp {
-            fluid(maxWidth: 1000, quality: 80, cropFocus: CENTER) {
+            fluid(maxWidth: 1440, quality: 100, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid_withWebp
               originalName
               presentationWidth
@@ -174,7 +174,7 @@ export const pageQuery = graphql`
           }
           m: src {
             childImageSharp {
-              fluid(maxWidth: 500, maxHeight: 664, cropFocus: CENTER) {
+              fluid(maxWidth: 720, maxHeight: 270, quality: 100, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp
                 originalName
               }
@@ -186,7 +186,7 @@ export const pageQuery = graphql`
           }
           d: src {
             childImageSharp {
-              fluid(maxWidth: 1000, maxHeight: 664, cropFocus: CENTER) {
+              fluid(maxWidth: 1440, maxHeight: 270, quality: 100, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp
                 originalName
               }

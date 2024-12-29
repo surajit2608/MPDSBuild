@@ -37,8 +37,7 @@ const SEO = ({
     fallbackImage,
   } = useSiteData()
 
-  const image =
-    featuredImage && featuredImage.src ? featuredImage.src : fallbackImage
+  const image = featuredImage && featuredImage.src ? featuredImage.src : fallbackImage
 
   const schemaData = {
     templateKey,
@@ -46,10 +45,7 @@ const SEO = ({
     description: metaDescription,
     url: `${siteUrl}${addTrailingSlash(slug)}`,
     fallbackImage: buildImage(fallbackImage, siteUrl),
-    pageType:
-      templateKey && templateKey.indexOf('blog-post') !== -1
-        ? 'article'
-        : 'webpage',
+    pageType: templateKey && templateKey.indexOf('blog-post') !== -1 ? 'article' : 'webpage',
     datePublished: date.format('YYYY-MM-DD'),
     dateModified: dateModified.format('YYYY-MM-DD'),
     name,
@@ -62,12 +58,9 @@ const SEO = ({
     ),
   }
 
-  schemaData.image = !!image
-    ? buildImage(image, siteUrl)
-    : schemaData.fallbackImage
+  schemaData.image = !!image ? buildImage(image, siteUrl) : schemaData.fallbackImage
 
-  const twitterHandle =
-    twitter && twitter.url ? '@' + twitter.url.split('twitter.com/')[1] : null
+  const twitterHandle = twitter && twitter.url ? '@' + twitter.url.split('twitter.com/')[1] : null
 
   const ldjson = useStructuredData(schemaData)
 

@@ -40,7 +40,7 @@ export default () => {
                   }
                   m: src {
                     childImageSharp {
-                      fluid(maxWidth: 500, maxHeight: 664) {
+                      fluid(maxWidth: 720, maxHeight: 270, quality: 100, cropFocus: CENTER) {
                         ...GatsbyImageSharpFluid_withWebp
                         originalName
                       }
@@ -52,7 +52,7 @@ export default () => {
                   }
                   d: src {
                     childImageSharp {
-                      fluid(maxWidth: 1000, maxHeight: 664) {
+                      fluid(maxWidth: 1440, maxHeight: 270, quality: 100, cropFocus: CENTER) {
                         ...GatsbyImageSharpFluid_withWebp
                         originalName
                       }

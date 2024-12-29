@@ -236,7 +236,7 @@ export const pageQuery = graphql`
         gitCreatedTime
         inlineImages {
           childImageSharp {
-            fluid(maxWidth: 1000, quality: 80, cropFocus: CENTER) {
+            fluid(maxWidth: 1440, quality: 100, cropFocus: CENTER) {
               ...GatsbyImageSharpFluid_withWebp
               originalName
               presentationWidth
@@ -286,48 +286,28 @@ export const pageQuery = graphql`
           }
           d: src {
             childImageSharp {
-              fluid(
-                maxWidth: 1440
-                maxHeight: 807
-                quality: 100
-                cropFocus: CENTER
-              ) {
+              fluid(maxWidth: 1440, maxHeight: 807, quality: 100, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           l: src {
             childImageSharp {
-              fluid(
-                maxWidth: 1440
-                maxHeight: 270
-                quality: 100
-                cropFocus: CENTER
-              ) {
+              fluid(maxWidth: 1440, maxHeight: 270, quality: 100, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           m: src {
             childImageSharp {
-              fluid(
-                maxWidth: 900
-                maxHeight: 506
-                quality: 80
-                cropFocus: CENTER
-              ) {
+              fluid(maxWidth: 1440, maxHeight: 270, quality: 100, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
           square: src {
             childImageSharp {
-              fluid(
-                maxWidth: 420
-                maxHeight: 360
-                quality: 80
-                cropFocus: CENTER
-              ) {
+              fluid(maxWidth: 270, maxHeight: 270, quality: 100, cropFocus: CENTER) {
                 ...GatsbyImageSharpFluid_withWebp
                 originalName
               }
