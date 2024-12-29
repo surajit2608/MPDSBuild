@@ -8,7 +8,7 @@ metaDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   condimentum iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   Maecenas non
 published: true
-date: 2024-12-28T11:31:04.104Z
+date: Chandler Villacruz
 teaser: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non
   interdum nulla, in pulvinar urna. Sed pellentesque, augue eu condimentum
   iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
