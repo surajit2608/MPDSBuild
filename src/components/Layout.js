@@ -18,20 +18,20 @@ const Layout = ({ seoProps, children }) => {
     fontScheme,
   } = useContext(ThemeOptionsContext)
   const {
-    siteName,
+    name,
     themeOptions: { showThemeSwitcher, fontScheme: ssrFontScheme },
   } = useSiteData()
 
   return (
     <Fragment>
-      <DynamicFavicon letter={getInitials(siteName)} bgcolor="#000" fontcolor="#fff" />
+      <DynamicFavicon letter={getInitials(name)} bgcolor="#000" fontcolor="#fff" />
       <Fonts
         fontScheme={typeof window === 'undefined' ? ssrFontScheme : fontScheme}
       />
       <SEO {...seoProps} />
 
       <Nav
-        siteName={siteName}
+        name={name}
         toggleNav={toggleNav}
         setToggleNav={setToggleNav}
       />

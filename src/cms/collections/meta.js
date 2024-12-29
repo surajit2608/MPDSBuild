@@ -14,6 +14,13 @@ const socialLink = (label) => ({
       required: false,
     },
     {
+      label: `Button Text`,
+      name: 'label',
+      widget: 'string',
+      hint: 'Text to shown on the button in profile page social icons',
+      required: false,
+    },
+    {
       label: 'Enable',
       name: 'show',
       widget: 'boolean',
@@ -49,13 +56,13 @@ const siteDataFields = [
     required: true,
     hint: "Your job title as you'd like it shown next to your name, e.g. CEO of ABC Widget Corp.",
   },
-  {
-    label: 'Site Name',
-    name: 'siteName',
-    widget: 'string',
-    required: true,
-    hint: 'The name of your website, e.g. "JohnSmith.com" or "John Smith\'s Blog"',
-  },
+  // {
+  //   label: 'Site Name',
+  //   name: 'siteName',
+  //   widget: 'string',
+  //   required: true,
+  //   hint: 'The name of your website, e.g. "JohnSmith.com" or "John Smith\'s Blog"',
+  // },
   {
     label: 'Location',
     name: 'location',
@@ -66,9 +73,24 @@ const siteDataFields = [
   {
     label: 'Profile Image',
     name: 'profileImage',
-    widget: 'image',
+    widget: 'object',
     required: false,
     hint: "The profile image to show before your name",
+    fields: [
+      {
+        label: 'Image File',
+        name: 'src',
+        widget: 'image',
+        required: false,
+      },
+      {
+        label: 'Alt Text',
+        name: 'alt',
+        widget: 'string',
+        hint: "Describe what is shown in the image. This description is very important for SEO, don't leave it blank.",
+        required: false,
+      }
+    ]
   },
   {
     label: 'Site URL',

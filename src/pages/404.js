@@ -47,9 +47,9 @@ const NotFoundPage = () => {
         <header className="site-head">
           <div className="site-head-container">
             <Nav
+              name={name}
               toggleNav={toggleNav}
               setToggleNav={setToggleNav}
-              siteName={siteName}
             />
             {!!showThemeSwitcher && (
               <ThemeSwitcher

@@ -24,9 +24,9 @@ NavLink.propTypes = {
   name: PropTypes.string.isRequired,
 }
 
-const Nav = ({ toggleNav, setToggleNav, siteName }) => {
+const Nav = ({ toggleNav, setToggleNav, name }) => {
   const navPages = useNavPages()
-  const siteNameParts = siteName.split(' ')
+  const nameParts = name.split(' ')
 
   return (
     <Fragment>
@@ -34,8 +34,8 @@ const Nav = ({ toggleNav, setToggleNav, siteName }) => {
       <nav className="mob-menu-pnl">
         <div className="heading-row">
           <Link className="logo-title" to={`/`}>
-            <span className="logo">{getInitials(siteName)}</span>
-            <span className="title"><b>{siteNameParts[0]}</b> {siteNameParts.slice(1).join(' ')}</span>
+            <span className="logo">{getInitials(name)}</span>
+            <span className="title"><b>{nameParts[0]}</b> {nameParts.slice(1).join(' ')}</span>
           </Link>
           <label className="mobile-menu" for="menu__toggle">X</label>
         </div>
@@ -54,8 +54,8 @@ const Nav = ({ toggleNav, setToggleNav, siteName }) => {
       <header>
         <div className="pg-width">
           <Link className="logo-title" to={`/`}>
-            <span className="logo">{getInitials(siteName)}</span>
-            <span className="title"><b>{siteNameParts[0]}</b> {siteNameParts.slice(1).join(' ')}</span>
+            <span className="logo">{getInitials(name)}</span>
+            <span className="title"><b>{nameParts[0]}</b> {nameParts.slice(1).join(' ')}</span>
           </Link>
           <nav>
             <ul>
@@ -84,7 +84,7 @@ const Nav = ({ toggleNav, setToggleNav, siteName }) => {
 
 Nav.propTypes = {
   toggleNav: PropTypes.bool.isRequired,
-  siteName: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 }
 
 export default Nav

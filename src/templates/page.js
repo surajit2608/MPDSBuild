@@ -39,13 +39,14 @@ export const PageTemplate = ({
     {!!featuredImage && (
       <section className={templateKey === 'index-page' ? 'sec-hero-main' : 'sec-hero-sml'}>
         <Banner
-          header={header}
-          subheader={subheader}
+          header={templateKey === 'index-page' ? name : header}
+          subheader={templateKey === 'index-page' ? jobTitle : ''}
           imageSrc={
             templateKey === 'index-page' ?
               (isPreview ? featuredImage.src : (!!featuredImage && !!featuredImage.d) ? featuredImage.d.childImageSharp.fluid.src : null)
               : (isPreview ? featuredImage.src : (!!featuredImage && !!featuredImage.l) ? featuredImage.l.childImageSharp.fluid.src : null)
           }
+          imageAlt={featuredImage.alt}
         />
       </section>
     )}
@@ -102,7 +103,7 @@ export const PageTemplate = ({
                 </a>
                 <p>{Object.keys(social)[0]}</p>
                 <div class="btn-row">
-                  <a href={Object.values(social)[0].url} target="_blank" class="btn-primary">Visit</a>
+                  <a href={Object.values(social)[0].url} target="_blank" class="btn-primary">{Object.values(social)[0].label}</a>
                 </div>
               </div>
             ))}

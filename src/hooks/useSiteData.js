@@ -11,37 +11,45 @@ export default () => {
             siteName
             location
             profileImage {
-              childImageSharp {
-                original {
-                  height
-                  width
-                }
-                fluid(maxWidth: 1440) {
-                  ...GatsbyImageSharpFluid_withWebp
-                  originalName
+              src {
+                childImageSharp {
+                  original {
+                    height
+                    width
+                  }
+                  fluid(maxWidth: 1440) {
+                    ...GatsbyImageSharpFluid_withWebp
+                    originalName
+                  }
                 }
               }
+              alt
             }
             siteUrl
             socialLinks {
               twitter {
                 url
+                label
                 show
               }
               facebook {
                 url
+                label
                 show
               }
               linkedin {
                 url
+                label
                 show
               }
               pinterest {
                 url
+                label
                 show
               }
               instagram {
                 url
+                label
                 show
               }
             }

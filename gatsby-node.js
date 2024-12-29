@@ -50,7 +50,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       jobTitle: String
       siteName: String
       location: String
-      profileImage: File @fileByRelativePath
+      profileImage: ProfileImage
       siteUrl: String
       teaser: String
       socialLinks: SocialLinks
@@ -75,6 +75,10 @@ exports.createSchemaCustomization = ({ actions }) => {
       alt: String
       caption: String
     }
+    type ProfileImage {
+      src: File @fileByRelativePath
+      alt: String
+    }
     type FormText {
       name: String!
       email: String!
@@ -94,6 +98,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type SocialLink {
       url: String
+      label: String
       show: Boolean
     }
     type ThemeOptions {

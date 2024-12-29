@@ -10,18 +10,23 @@ siteUrl: https://mpdsbuild.netlify.app/
 socialLinks:
   twitter:
     url: https://www.x.com
+    label: Visit
     show: true
   facebook:
     url: https://www.facebook.com
+    label: Visit
     show: true
   linkedin:
     url: https://www.linkedin.com
+    label: Visit
     show: true
   pinterest:
-    url: ""
+    url: 
+    label: Visit
     show: false
   instagram:
-    url: ""
+    url: 
+    label: Visit
     show: false
 favicon: /img/favicon.png
 themeOptions:

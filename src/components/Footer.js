@@ -16,8 +16,7 @@ SocialLink.propTypes = {
 
 const Footer = () => {
   const {
-    siteUrl,
-    siteName,
+    name,
     location,
     socialLinks: { twitter, facebook, linkedin, pinterest, instagram },
   } = useSiteData()
@@ -40,7 +39,7 @@ const Footer = () => {
       <div className="pg-width">
         <div className="three-col">
           <div className="col">
-            <p>{siteName}<span>{location}</span></p>
+            <p>{name}<span>{location}</span></p>
           </div>
           <div className="col">
             <p>Get In Touch<span>Let’s connect</span></p>
@@ -53,7 +52,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="col">
-            <p className="sml">© {new Date().getFullYear()} <a href={siteUrl} target="_blank">{siteName}</a>,<br />All rights reserved.</p>
+            <p className="sml">© {new Date().getFullYear()} {name},<br />All rights reserved.</p>
           </div>
         </div>
       </div>

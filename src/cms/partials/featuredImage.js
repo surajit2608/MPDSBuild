@@ -18,12 +18,12 @@ export default {
       hint: "Describe what is shown in the image. This description is very important for SEO, don't leave it blank.",
       required: false,
     },
-    {
-      label: 'Caption',
-      name: 'caption',
-      wiget: 'string',
-      hint: 'Optionally, provide a caption for this image.',
-      required: false,
-    },
+    // {
+    //   label: 'Caption',
+    //   name: 'caption',
+    //   wiget: 'string',
+    //   hint: 'Optionally, provide a caption for this image.',
+    //   required: false,
+    // },
   ],
 }
