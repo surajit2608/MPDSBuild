@@ -15,9 +15,7 @@ const PostCard = ({ count, image, slug, pageTitle, date, teaser }) => {
       <img src={!!image ? image.d.childImageSharp.fluid.src : '/img/default-blog-thumb-01.webp'} alt={pageTitle} width={470} height={250} />
       <Link to={slug} className="title">{pageTitle}</Link>
       {!!date && (
-        <p className="date" dateTime={date.format('YYYY-MM-DD')}>
-          {date.format('MMM D, YYYY')}
-        </p>
+        <p className="date">{date}</p>
       )}
       {!!teaser && (
         <p>{teaser}</p>
