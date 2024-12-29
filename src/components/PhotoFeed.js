@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import PhotoCard from './PhotoCard'
 import { v4 as uuidv4 } from 'uuid'
@@ -9,16 +9,16 @@ import { featuredImagePropTypes } from '../proptypes'
 const Moment = moment().constructor
 
 const PhotoFeed = ({ isPreview, posts }) => {
+  const [isOpen, setIsOpen] = useState(false)
   const [activePost, setActivePost] = useState(null)
-  const [isLightboxActive, setIsLightboxActive] = useState(false)
 
   const handleClick = (post) => {
     setActivePost(post)
-    setIsLightboxActive(true)
+    setIsOpen(true)
   }
 
   const handleClose = () => {
-    setIsLightboxActive(false)
+    setIsOpen(false)
     setActivePost(null)
   }
 
@@ -27,6 +27,26 @@ const PhotoFeed = ({ isPreview, posts }) => {
     const newIndex = direction === 'left' ? (currentIndex === 0 ? posts.length - 1 : currentIndex - 1) : (currentIndex === posts.length - 1 ? 0 : currentIndex + 1)
     setActivePost(posts[newIndex])
   }
+
+  const handleKeyDown = (event) => {
+    if (!isOpen) return;
+
+    if (event.key === 'ArrowRight') {
+      handleNavigation('right')
+    } else if (event.key === 'ArrowLeft') {
+      handleNavigation('left')
+    } else if (event.key === 'Escape') {
+      handleClose()
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isOpen])
 
   return (
     <Fragment>
@@ -54,7 +74,7 @@ const PhotoFeed = ({ isPreview, posts }) => {
         <div>Your posts will appear here in reverse chronological order</div>
       )}
 
-      {isLightboxActive && (
+      {isOpen && (
         <section className="lightbox-container active">
           <span className="lightbox-btn left" onClick={() => handleNavigation('left')}>
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
