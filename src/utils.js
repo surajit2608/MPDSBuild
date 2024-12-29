@@ -72,10 +72,9 @@ export function addTrailingSlash(path) {
 }
 
 export function getInitials(name) {
-  if (!name) {
-    return '*'
-  }
+  if (!name) return '*'
+
   const words = name.split(' ')
-  const initials = words.map(word => word[0].toUpperCase()).join('')
+  const initials = words.map(word => (!!word && !!word[0]) && word[0].toUpperCase()).join('')
   return initials
 }
