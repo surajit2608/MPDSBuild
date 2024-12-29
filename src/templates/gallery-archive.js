@@ -198,7 +198,7 @@ export const pageQuery = graphql`
               }
               m: src {
                 childImageSharp {
-                  fluid(maxWidth: 720, quality: 100, cropFocus: CENTER) {
+                  fluid(maxWidth: 500, quality: 100, cropFocus: CENTER) {
                     ...GatsbyImageSharpFluid_withWebp
                     originalName
                   }
@@ -210,7 +210,7 @@ export const pageQuery = graphql`
               }
               d: src {
                 childImageSharp {
-                  fluid(maxWidth: 1440, quality: 100, cropFocus: CENTER) {
+                  fluid(maxWidth: 1000, quality: 100, cropFocus: CENTER) {
                     ...GatsbyImageSharpFluid_withWebp
                     originalName
                   }
