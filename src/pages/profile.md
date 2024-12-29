@@ -55,7 +55,8 @@ blogButton:
   label: Visit My Blog
   link: /blog/
 discoverConnectExplore: Discover, Connect & Explore
-longBiography_MD: {{long_biography}}
+longBiography_MD: |
+  {{long_biography}}
 ---
 # Heading line here
 
