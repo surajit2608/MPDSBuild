@@ -1,6 +1,9 @@
 import seo from '../partials/seo'
 import featuredImage from '../partials/featuredImage'
 
+featuredImage.required = true
+featuredImage.fields[0].required = true
+
 export default {
   name: 'gallery',
   label: 'Gallery',
