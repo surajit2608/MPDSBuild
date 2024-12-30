@@ -11,6 +11,6 @@ profileButton:
   link: /profile/
 blogButton:
   label: View all posts
-  link: '/blog/'
+  link: /blogs/
 ---
 New test blog without featured image, lets try to post without image
