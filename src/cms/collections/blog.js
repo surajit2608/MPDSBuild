@@ -70,5 +70,47 @@ export default {
       name: 'body',
       widget: 'markdown',
     },
+    {
+      label: 'Profile Button',
+      name: 'profileButton',
+      widget: 'object',
+      required: true,
+      hint: 'The text and link for the button on the page',
+      fields: [
+        {
+          label: 'Button Text',
+          name: 'label',
+          widget: 'string',
+          required: true,
+        },
+        {
+          label: 'Button Link',
+          name: 'link',
+          widget: 'string',
+          required: true,
+        },
+      ],
+    },
+    {
+      label: 'Blog Button',
+      name: 'blogButton',
+      widget: 'object',
+      required: true,
+      hint: 'The text and link for the button on the page',
+      fields: [
+        {
+          label: 'Button Text',
+          name: 'label',
+          widget: 'string',
+          required: true,
+        },
+        {
+          label: 'Button Link',
+          name: 'link',
+          widget: 'string',
+          required: true,
+        },
+      ],
+    },
   ],
 }
