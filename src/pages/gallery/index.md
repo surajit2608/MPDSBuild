@@ -14,6 +14,6 @@ profileButton:
   link: /profile/
   label: View Profile
 blogButton:
-  link: /blogs/
+  link: /blog/
   label: Visit My Blog
 ---

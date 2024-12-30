@@ -53,7 +53,7 @@ featuredImage:
   caption: null
 blogButton:
   label: Visit My Blog
-  link: /blogs/
+  link: /blog/
 discoverConnectExplore: Discover, Connect & Explore
 longBiography_MD: |
   {{long_biography}}

@@ -1,6 +1,6 @@
 ---
 templateKey: blog-archive
-pageSlug: /blogs
+pageSlug: /blog
 pageTitle: Blog
 metaDescription: Blog Listing Page of Chandler Villacruz, Senior Marketing Manager
 published: true

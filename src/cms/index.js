@@ -56,7 +56,7 @@ const pages = [
     label: 'Blog Archive Page',
     file: 'src/pages/blog/index.md',
     templateKey: 'blog-archive',
-    pageSlug: '/blogs/',
+    pageSlug: '/blog/',
     additionalFields: [
       'profileButton',
     ],
