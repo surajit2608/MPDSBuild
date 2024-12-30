@@ -11,9 +11,9 @@ featuredImage:
   alt: Gallery
   caption: null
 profileButton:
-  link: /profile/
+  link: /profile
   label: View Profile
 blogButton:
-  link: /blog/
+  link: /blog
   label: Visit My Blog
 ---
