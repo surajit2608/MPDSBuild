@@ -2,11 +2,15 @@
 templateKey: profile-page
 pageSlug: /profile
 pageTitle: Profile
-metaDescription: Profile of Chandler Villacruz, Senior Marketing Manager, San Francisco, California, USA
+metaDescription: Profile of Chandler Villacruz, Senior Marketing Manager, San
+  Francisco, California, USA
 published: true
 schemaType: ProfilePage
 header: Profile
-subheader: 
+featuredImage:
+  src: /img/pic-executive-banner-profile-01.webp
+  alt: Headshot of Chandler Villacruz
+  caption: null
 connectWithMe: Connect with me
 pageContent: >-
   # Heading line here
@@ -47,13 +51,10 @@ pageContent: >-
   * **Chandler Villacruz** launched his career at the San Francisco-based Healthy Living. After only six years with the firm, he advanced from his position of marketing associate to the role of marketing director.
 
   * **Mr. Villacruz** obtained a bachelor of business administration in marketing from the Mays Business School at Texas A&M University, where he pursued the Advertising Strategy career track. Subsequently, he earned a master of science in marketing at the University of Southern California.
-featuredImage:
-  src: /img/pic-executive-banner-profile-01.webp
-  alt: Headshot of Chandler Villacruz
-  caption: null
+subheader: null
 blogButton:
   label: Visit My Blog
-  link: /blog/
+  link: /blog
 discoverConnectExplore: Discover, Connect & Explore
 longBiography_MD: |
   {{long_biography}}
