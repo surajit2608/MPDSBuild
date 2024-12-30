@@ -21,9 +21,9 @@ export const BlogPostTemplate = ({
   isPreview,
   inlineImages,
   profileButton,
-  blogButton,
+  buttonBlog,
 }) => {
-  console.log(blogButton)
+  console.log(buttonBlog)
   const featuredImageSrc = isPreview ? featuredImage.src : !!featuredImage && !!featuredImage.d && !!featuredImage.d.childImageSharp && !!featuredImage.d.childImageSharp.fluid && !!featuredImage.d.childImageSharp.fluid.src ? featuredImage.d.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'
 
   return (
@@ -66,9 +66,9 @@ export const BlogPostTemplate = ({
                   {profileButton.label}
                 </Link>
               )}
-              {!!blogButton && (
-                <Link className="btn-primary" to={addTrailingSlash(blogButton.link)}>
-                  {blogButton.label}
+              {!!buttonBlog && (
+                <Link className="btn-primary" to={addTrailingSlash(buttonBlog.link)}>
+                  {buttonBlog.label}
                 </Link>
               )}
             </div>
@@ -86,7 +86,7 @@ const BlogPost = ({ data }) => {
     featuredImage,
     date: userDate,
     profileButton,
-    blogButton,
+    buttonBlog,
   } = data.markdownRemark.frontmatter
   const {
     gitAuthorTime,
@@ -108,7 +108,7 @@ const BlogPost = ({ data }) => {
     content: data.markdownRemark.html,
     inlineImages,
     profileButton,
-    blogButton,
+    buttonBlog,
   }
   return (
     <Layout seoProps={seoProps(data)}>
@@ -131,7 +131,7 @@ BlogPostTemplate.propTypes = {
     link: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
   }),
-  blogButton: PropTypes.shape({
+  buttonBlog: PropTypes.shape({
     link: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
   }),
@@ -168,7 +168,7 @@ export const pageQuery = graphql`
           link
           label
         }
-        blogButton {
+        buttonBlog {
           link
           label
         }

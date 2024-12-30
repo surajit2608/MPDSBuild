@@ -93,7 +93,7 @@ export default {
     },
     {
       label: 'Blog Button',
-      name: 'blogButton',
+      name: 'buttonBlog',
       widget: 'object',
       required: true,
       hint: 'The text and link for the button on the page',

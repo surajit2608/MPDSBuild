@@ -9,7 +9,7 @@ teaser: New test blog without featured image, lets try to post...
 profileButton:
   label: View Profile
   link: /profile/
-blogButton:
+buttonBlog:
   label: Visit My Blog
   link: /blog/
 ---

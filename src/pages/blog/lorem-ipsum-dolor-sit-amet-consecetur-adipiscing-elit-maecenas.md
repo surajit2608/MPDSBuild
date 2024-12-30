@@ -14,7 +14,7 @@ featuredImage:
 profileButton:
   label: View Profile
   link: /profile/
-blogButton:
+buttonBlog:
   label: Visit My Blog
   link: /blog/
 ---
