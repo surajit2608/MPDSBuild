@@ -20,7 +20,7 @@ featuredImage:
   alt: Chandler Villacruz
   caption: null
 blogButton:
-  link: /blog/
+  link: /blogs/
   label: Visit My Blog
 shortBiography: Since joining the web-based restaurant review company in its
   startup phase, Chandler Villacruz has spearheaded market research activities

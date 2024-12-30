@@ -17,7 +17,7 @@ const BlogPostPreview = ({ entry, getAsset, widgetFor }) => {
     label: entry.getIn(['data', 'profileButton', 'label']) || 'View Profile',
   }
   const blogButton = {
-    link: entry.getIn(['data', 'blogButton', 'link']) || '/blog/',
+    link: entry.getIn(['data', 'blogButton', 'link']) || '/blogs/',
     label: entry.getIn(['data', 'blogButton', 'label']) || 'Visit My Blog',
   }
 
