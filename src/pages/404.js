@@ -4,10 +4,10 @@ import Fonts from '../components/Fonts'
 import Nav from '../components/Nav'
 import { useSiteData } from '../hooks'
 import { ThemeOptionsContext } from '../context/ThemeOptions'
-import '../style/all.sass'
 import { getInitials } from '../utils'
 import Footer from '../components/Footer'
 import DynamicFavicon from '../components/DynamicFavicon'
+import '../style/main.scss'
 
 const NotFoundPage = () => {
   const [toggleNav, setToggleNav] = useState(false)
@@ -43,13 +43,11 @@ const NotFoundPage = () => {
       />
 
       <div className="all-sections">
-        <section className="sec-intro-text">
+        <section className="sec-text-full">
           <div className="pg-width">
             <div className="content">
-              <h1 className="page-head-title">Not Found</h1>
-              <p className="page-head-description">
-                You just hit a route that doesn&#39;t exist... the sadness.
-              </p>
+              <h2>Not Found</h2>
+              <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
             </div>
           </div>
         </section>
