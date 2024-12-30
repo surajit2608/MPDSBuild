@@ -44,7 +44,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       learnMoreButton: LearnMoreButton
       profileButton: ProfileButton
       blogButton: BlogButton
-      buttonBlog: BlogButton
       formText: FormText
       menuItems: [MenuItems]
       name: String

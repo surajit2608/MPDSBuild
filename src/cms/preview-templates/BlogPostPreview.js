@@ -16,9 +16,9 @@ const BlogPostPreview = ({ entry, getAsset, widgetFor }) => {
     link: entry.getIn(['data', 'profileButton', 'link']) || '/profile/',
     label: entry.getIn(['data', 'profileButton', 'label']) || 'View Profile',
   }
-  const buttonBlog = {
-    link: entry.getIn(['data', 'buttonBlog', 'link']) || '/blog/',
-    label: entry.getIn(['data', 'buttonBlog', 'label']) || 'Visit My Blog',
+  const blogButton = {
+    link: entry.getIn(['data', 'blogButton', 'link']) || '/blog/',
+    label: entry.getIn(['data', 'blogButton', 'label']) || 'Visit My Blog',
   }
 
   return (
@@ -34,7 +34,7 @@ const BlogPostPreview = ({ entry, getAsset, widgetFor }) => {
         isPreview={true}
         inlineImages={[]}
         profileButton={profileButton}
-        buttonBlog={buttonBlog}
+        blogButton={blogButton}
       />
     </div>
   )
