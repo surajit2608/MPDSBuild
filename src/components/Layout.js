@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useContext, useEffect } from 'react'
+import React, { Fragment, useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import Nav from './Nav'
 import Footer from './Footer'
