@@ -72,8 +72,9 @@ export default ({ label, file, templateKey, pageSlug, additionalFields }) => {
         {
           label: 'Button Link',
           name: 'link',
-          widget: 'string',
+          widget: 'select',
           required: true,
+          options: ['/', '/profile', '/blog', '/gallery'],
         },
       ],
     },
@@ -93,8 +94,9 @@ export default ({ label, file, templateKey, pageSlug, additionalFields }) => {
         {
           label: 'Button Link',
           name: 'link',
-          widget: 'string',
+          widget: 'select',
           required: true,
+          options: ['/', '/profile', '/blog', '/gallery'],
         },
       ],
     },
