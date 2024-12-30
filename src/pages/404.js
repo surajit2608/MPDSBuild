@@ -7,6 +7,7 @@ import { ThemeOptionsContext } from '../context/ThemeOptions'
 import '../style/all.sass'
 import { getInitials } from '../utils'
 import Footer from '../components/Footer'
+import DynamicFavicon from '../components/DynamicFavicon'
 
 const NotFoundPage = () => {
   const [toggleNav, setToggleNav] = useState(false)
