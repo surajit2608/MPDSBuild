@@ -21,7 +21,6 @@ const NotFoundPage = () => {
 
   return (
     <Fragment>
-      <DynamicFavicon letter={getInitials(name)} bgcolor="#000" fontcolor="#fff" />
       <Fonts
         fontScheme={typeof window === 'undefined' ? ssrFontScheme : fontScheme}
       />
@@ -36,6 +35,7 @@ const NotFoundPage = () => {
         <link rel="icon" type="image/png" />
       </Helmet>
 
+      <DynamicFavicon letter={getInitials(name)} bgcolor="#000" fontcolor="#fff" />
       <Nav
         name={name}
         toggleNav={toggleNav}
