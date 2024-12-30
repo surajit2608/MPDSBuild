@@ -42,10 +42,16 @@ const NotFoundPage = () => {
       />
 
       <div className="all-sections">
-        <h1 className="page-head-title">Not Found</h1>
-        <p className="page-head-description">
-          You just hit a route that doesn&#39;t exist... the sadness.
-        </p>
+        <section className="sec-intro-text">
+          <div className="pg-width">
+            <div className="content">
+              <h1 className="page-head-title">Not Found</h1>
+              <p className="page-head-description">
+                You just hit a route that doesn&#39;t exist... the sadness.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
 
       <Footer />
