@@ -6,5 +6,11 @@ metaDescription: New test blog without featured image, lets try to post without 
 published: true
 date: 2024-12-29T19:59:45.175Z
 teaser: New test blog without featured image, lets try to post...
+profileButton:
+  label: View Profile
+  link: /profile/
+blogButton:
+  label: Visit My Blog
+  link: /blog/
 ---
 New test blog without featured image, lets try to post without image
