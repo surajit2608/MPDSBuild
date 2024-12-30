@@ -23,6 +23,7 @@ export const BlogPostTemplate = ({
   profileButton,
   blogButton,
 }) => {
+  console.log(blogButton)
   const featuredImageSrc = isPreview ? featuredImage.src : !!featuredImage && !!featuredImage.d && !!featuredImage.d.childImageSharp && !!featuredImage.d.childImageSharp.fluid && !!featuredImage.d.childImageSharp.fluid.src ? featuredImage.d.childImageSharp.fluid.src : '/img/pic-executive-banner-blog-01.webp'
 
   return (
